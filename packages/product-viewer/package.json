@@ -1,0 +1,53 @@
+{
+    "name": "@lowesinnovationlab/product-viewer",
+    "version": "0.0.6",
+    "main": "dist/product-viewer.js",
+    "module": "dist/product-viewer.js",
+    "types": "lib/product-viewer.d.ts",
+    "files": [
+        "src",
+        "dist/product-viewer.js",
+        "dist/product-viewer.js.map",
+        "dist/product-viewer.min",
+        "dist/product-viewer.min.js.map",
+        "lib"
+    ],
+    "scripts": {
+        "build": "npm run build:tsc && webpack --config webpack.prod.js",
+        "build:tsc": "tsc",
+        "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
+        "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js"
+    },
+    "devDependencies": {
+        "@babylonjs/core": "^4.2.0",
+        "@babylonjs/gui": "^4.2.0",
+        "@babylonjs/inspector": "^4.2.0",
+        "@babylonjs/loaders": "^4.2.0",
+        "@lowesinnovationlab/viewer-assets": "^0.0.2",
+        "@types/react": "17.0.11",
+        "@types/react-dom": "17.0.7",
+        "chokidar": "^3.5.1",
+        "clean-webpack-plugin": "^4.0.0-alpha.0",
+        "copy-webpack-plugin": "^9.0.0",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.3.1",
+        "lit": "^2.0.0-rc.2",
+        "source-map-loader": "^3.0.0",
+        "symlink-dir": "^5.0.1",
+        "ts-loader": "^9.2.3",
+        "typescript": "4.0.2",
+        "webpack": "^5.38.1",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2",
+        "webpack-merge": "^5.8.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "targets": {
+        "main": {
+            "isLibrary": true
+        }
+    },
+    "gitHead": "0c99c041aa091427490c97cb0f0876d8d7b0eb5a"
+}

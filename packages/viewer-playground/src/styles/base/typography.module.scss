@@ -1,0 +1,86 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import "../abstracts/_mixins.scss";
+
+/*spacing*/
+$type-spacing: (
+	space: 1rem,
+	vspace: 1rem,
+	vspace-0: 3rem,
+	vspace-1: 2rem,
+	vspace-2: 1.5rem,
+	vspace-3: 0.5rem,
+);
+
+$typography: (
+	/*headers*/
+	/* h1 */
+	h1FontSize: 3rem,
+	h1LineHeight: 2.5rem,
+	h1FontWeight: 700,
+	h1LetterSpacing: -0.02em,
+	/* h2 */
+	h2FontSize: 2.5rem,
+	h2LineHeight: 2.25rem,
+	h2FontWeight: 700,
+	h2LetterSpacing: -0.02em,
+	/* h3 */
+	h3FontSize: 2.25rem,
+	h3LineHeight: 2.25rem,
+	h3FontWeight: 700,
+	h3LetterSpacing: -0.015em,
+	/* h4 */
+	h4FontSize: 2rem,
+	h4LineHeight: 2rem,
+	h4FontWeight: 700,
+	h4LetterSpacing: -0.01em,
+	/* h5 */
+	h5FontSize: 1.5rem,
+	h5LineHeight: 1.65rem,
+	h5FontWeight: 700,
+	h5LetterSpacing: -0.005em,
+	/* h6 */
+	h6FontSize: 1.25rem,
+	h6LineHeight: 1.375rem,
+	h6FontWeight: 700,
+	/* subtitle1 */
+	sub1FontSize: 1.125rem,
+	sub1LineHeight: 1.35rem,
+	sub1FontWeight: 600,
+	/* subtitle2 */
+	sub2FontSize: 1.125rem,
+	sub2LineHeight: 1.35rem,
+	sub2FontWeight: 400,
+	sub2FontStyle: italic,
+	sub2LetterSpacing: -0.005em,
+	/* body1 */
+	body1FontSize: 1.125rem,
+	body1LineHeight: 1.35rem,
+	body1FontWeight: 400,
+	body1LetterSpacing: -0.005em,
+	/* body2 */
+	body2FontSize: 1rem,
+	body2LineHeight: 1.2rem,
+	body2FontWeight: 400,
+	body2LetterSpacing: -0.005em,
+	/* button */
+	buttonFontSize: 1rem,
+	buttonLineHeight: 1.2rem,
+	buttonFontWeight: 600,
+	buttonLetterSpacing: -0.02em,
+	/* overline */
+	overlineFontSize: 0.875rem,
+	overlineLineHeight: 1.0125rem,
+	overlineFontWeight: 400,
+	overlineLetterSpacing: 0.01em,
+	/* caption */
+	captionFontSize: 0.75rem,
+	captionLineHeight: 0.9rem,
+	captionFontWeight: 400,
+	captionLetterSpacing: 0.01em
+);
+
+:export {
+	@include map-to-props($typography);
+	@include map-to-props($type-spacing);
+}

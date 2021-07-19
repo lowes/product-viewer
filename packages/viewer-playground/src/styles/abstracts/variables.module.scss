@@ -1,0 +1,120 @@
+@import "../abstracts/_mixins.scss";
+
+//FONTS
+$primary_font_stack: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$code_font_stack: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+$font_scale: 16px;
+
+//COLORS
+$palette: (
+	//PRIMARY
+	p_s900: #063a53,
+	p_s800: #063f5f,
+	p_s700: #06426a,
+	p_s600: #064576,
+	p_s500: #054783,
+	p_s400: #05488f,
+	p_s300: #004990,
+	p_s200: #0347a8,
+	p_s100: #0145b5,
+	p_base: #0042c2,
+	p_t100: #1759c9,
+	p_t200: #2d6fcf,
+	p_t300: #4484d6,
+	p_t400: #5b98dc,
+	p_t500: #71aae1,
+	p_t600: #88bbe7,
+	p_t700: #9fcbec,
+	p_t800: #b5daf1,
+	p_t900: #cce7f6,
+	//Neutral
+	n_900: #030405,
+	n_800: #13171c,
+	n_700: #242a33,
+	n_600: #343d4a,
+	n_500: #455060,
+	n_450: #586271,
+	n_400: #6c7582,
+	n_350: #7f8793,
+	n_300: #939aa4,
+	n_250: #a7acb5,
+	n_200: #babfc5,
+	n_150: #ced1d6,
+	n_100: #e2e4e7,
+	n_050: #f6f6f7,
+	//SECONDARY
+	s_s900: #000e1a,
+	s_s800: #001f33,
+	s_s700: #00314d,
+	s_s600: #014666,
+	s_s500: #065b80,
+	s_s400: #0d7199,
+	s_s300: #1687b3,
+	s_s200: #219ec7,
+	s_s100: #2eb3d8,
+	s_base: #3cc8e6,
+	s_t100: #47d3f1,
+	s_t200: #54ddfa,
+	s_t300: #63e5ff,
+	s_t400: #73edff,
+	s_t500: #86f3ff,
+	s_t600: #9af8ff,
+	s_t700: #b3fbff,
+	s_t800: #ccefef,
+	s_t900: #e6ffff,
+	//TERTIARY
+	t_s900: #03080d,
+	t_s800: #060f18,
+	t_s700: #091724,
+	t_s600: #0d1e2f,
+	t_s500: #122639,
+	t_s400: #172d43,
+	t_s300: #1d354c,
+	t_s200: #243c54,
+	t_s100: #2b445d,
+	t_base: #324b64,
+	t_t100: #445d76,
+	t_t200: #576f87,
+	t_t300: #6a8198,
+	t_t400: #7d93a9,
+	t_t500: #92a5b8,
+	t_t600: #a6b7c8,
+	t_t700: #bcc9d6,
+	t_t800: #d2dbe4,
+	t_t900: #e8edf2,
+	a_error: #e74c3c,
+	a_warning: #e67e22,
+	a_success: #2ecc71,
+	a_info: #0081c6,
+	ui_border: #9199a0,
+	ui_link: #0062ff
+);
+
+//SPACING
+$spacing: (
+	spacing_01: 0.125rem,
+	spacing_02: 0.25rem,
+	spacing_03: 0.5rem,
+	spacing_04: 0.75rem,
+	spacing_05: 1rem,
+	spacing_06: 1.5rem,
+	spacing_07: 2rem,
+	spacing_08: 2.5rem,
+	spacing_09: 3rem,
+	layout_01: 1rem,
+	layout_02: 1.5rem,
+	layout_03: 2rem,
+	layout_04: 3rem,
+	layout_05: 4rem,
+	layout_06: 6rem,
+	layout_07: 10rem,
+);
+
+:export {
+	@include map-to-props($palette);
+	@include map-to-props($spacing);
+	primary_font_stack: $primary_font_stack;
+	code_font_stack: $code_font_stack;
+	font_scale: $font-scale;
+}

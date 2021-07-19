@@ -1,0 +1,56 @@
+//typography mixins
+@mixin typography(
+	$size,
+	$line-height,
+	$weight: 400,
+	$letter-spacing: 0px,
+	$transform: none,
+	$style: normal,
+	$font: "Inter"
+) {
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $weight;
+	letter-spacing: $letter-spacing;
+	text-transform: $transform;
+	font-style: $style;
+	font-family: $font;
+}
+
+/**
+ * Converts a SASS map of css property names and values into CSS output.
+ * Properties named `description` will have their value inserted as comments.
+ * 
+ * Nested maps will be processed recursively.
+ * 
+ * @param  {map} $map the map of properties to output
+ */
+@mixin map-to-props($map) {
+	@if type-of($map) == map {
+		@each $prop, $value in $map {
+			@if type-of($value) != map {
+				@if inspect($prop) == "description" {
+					/* #{inspect($value)} */
+				} @else {
+					#{inspect($prop)}: #{inspect($value)};
+				}
+			} @else {
+				@include map-to-props($value);
+			}
+		}
+	}
+}
+
+/**
+ * Gets a property nested multiple levels deep within a scss map
+ *
+ * @param {map} $map the map of properties to search for properties
+ * @param {keys} $keys the heirarchy of keys to search for
+ */
+@function nested-map-get($map, $keys...) {
+	@return if(
+		length($keys) == 1,
+		map-get($map, nth($keys, 1)),
+		nested-map-get(map-get($map, nth($keys, 1)), list-slice($keys, 2)...)
+	);
+}
