@@ -1,4 +1,4 @@
-# 3d-viewer
+# product-viewer
 This is a monorepo containing packages related to 3D product rendering and web based mixed reality.
 
 ### Getting Started
