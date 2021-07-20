@@ -1,7 +1,7 @@
 {
     "name": "@lowesinnovationlab/product-viewer",
     "repository": "git://github.com/lowesinnovationlab/product-viewer.git",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "dist/product-viewer.js",
     "module": "dist/product-viewer.js",
     "types": "lib/product-viewer.d.ts",
