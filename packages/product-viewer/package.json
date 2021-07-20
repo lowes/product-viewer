@@ -1,5 +1,6 @@
 {
     "name": "@lowesinnovationlab/product-viewer",
+    "repository": "git://github.com/lowesinnovationlab/product-viewer.git",
     "version": "0.0.6",
     "main": "dist/product-viewer.js",
     "module": "dist/product-viewer.js",
@@ -40,9 +41,6 @@
         "webpack-cli": "^4.7.2",
         "webpack-dev-server": "^3.11.2",
         "webpack-merge": "^5.8.0"
-    },
-    "publishConfig": {
-        "access": "public"
     },
     "targets": {
         "main": {
