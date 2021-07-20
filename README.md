@@ -1,6 +1,19 @@
 # product-viewer
 This is a monorepo containing packages related to 3D product rendering and web based mixed reality.
 
+## Installation
+1. To use the product-viewer package you will need to authenticate with GitHub as it is currently a private package. More details on [GitHub docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+2. Once you are authenticated, add `@lowesinnovationlab:registry=https://npm.pkg.github.com` to a new or existing .npmrc file in the same directory as your package.json.
+3. Push the .npmrc file to your repository
+4. Add product viewer as a dependency in your package.json
+```
+"dependencies": {
+  "@lowesinnovationlab/product-viewer": "0.0.2"
+}
+```
+4. Run the install command `npm install`
+
+
 ## Projects
 ### product-viewer
 A 3D viewer custom web component powered by BabylonJS
@@ -11,7 +24,7 @@ A react web app demonstrating the features of product-viewer and sample implemen
 ### viewer-assets
 Package containing shared assets for use across all product-viewer repos
 
-## Getting Started
+## Development
 This project uses lerna to syncronize multiple sub projects. Once the "root" project is installed, it will manage cross-project dependencies, assets, and npm packages.
 
 1. `npm install` 
