@@ -11,8 +11,17 @@ This is a monorepo containing packages related to 3D product rendering and web b
   "@lowesinnovationlab/product-viewer": "0.0.2"
 }
 ```
-4. Run the install command `npm install`
-
+4. Run the install command 
+```
+npm install
+```
+5. Import the product-viewer and add it to the page
+```
+import "@lowesinnovationlab/product-viewer";
+```
+```
+<product-viewer model-url="path/to/filename.glb" />
+```
 
 ## Projects
 ### product-viewer
