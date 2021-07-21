@@ -16,7 +16,10 @@ function Home(): ReactElement {
 
 	return (
 		<div className="App">
-			<product-viewer model-url="./common-assets/models/WaterBottle.glb" />
+			<product-viewer
+				model-url="./common-assets/models/WaterBottle.glb"
+				environment="./common-assets/environments/neutral.env"
+			/>
 		</div>
 	);
 }

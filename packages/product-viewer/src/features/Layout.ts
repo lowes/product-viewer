@@ -4,15 +4,14 @@ import { property } from "lit/decorators.js";
 import { AbstractMesh, BoundingBox } from "@babylonjs/core";
 
 export declare interface LayoutInterface {
-    groundAlign: boolean;
 }
 
 export const LayoutMixin = <T extends Constructor<ProductViewerElementBase>>(BaseViewerElement: T): Constructor<LayoutInterface> & T => {
     class LayoutModelViewerElement extends BaseViewerElement {
-        @property({type: Boolean, attribute: 'ground-align'}) groundAlign: boolean;
 
         modelLoaded(meshes: AbstractMesh[]) {
             super.modelLoaded(meshes);
+
             for (let mesh of meshes) {
                 const bounds = mesh.getHierarchyBoundingVectors();
                 const boundingBox = new BoundingBox(bounds.min, bounds.max);

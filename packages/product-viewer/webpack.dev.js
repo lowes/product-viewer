@@ -18,6 +18,7 @@ module.exports = merge(common, {
             patterns: [
                 { from: "public" },
                 { from: "common-assets/models/WaterBottle.glb", to: "assets" },
+                { from: "common-assets/environments/neutral.env", to: "assets" }
             ],
         }),
     ]
