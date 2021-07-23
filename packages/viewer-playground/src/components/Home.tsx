@@ -101,7 +101,7 @@ function Home(): ReactElement {
 					</Typography>
 				</Toolbar>
 			</StyledAppBar>
-			<NavDrawer aria-label="mailbox folders">
+			<NavDrawer>
 				{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
 				<Hidden smUp implementation="css">
 					<DrawerPaper
