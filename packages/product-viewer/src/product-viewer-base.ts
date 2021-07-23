@@ -19,20 +19,20 @@ export default class ProductViewerElementBase extends LitElement {
 
     // Lit element styles that get applied to the template in the render() function
     static styles = css`
+        :host {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
         .renderCanvas {
             width: 100%;
             height: 100%;
             touch-action: none;
             outline: none;
         }
-        .viewerWrapper {
-            width: 100%;
-            height: 100%;
-        }
     `;
 
     initBabylon() {
-        this.viewerWrapper = this.shadowRoot.querySelector(".viewerWrapper");
         this.renderCanvas = this.shadowRoot.querySelector(".renderCanvas");
 
         // initialize babylon scene and engine
@@ -80,9 +80,7 @@ export default class ProductViewerElementBase extends LitElement {
     
     render() {
         return html`
-            <div class="viewerWrapper">
-                <canvas class="renderCanvas" touch-action="none" />
-            </div>
+            <canvas class="renderCanvas" touch-action="none" />
         `;
     }
 
