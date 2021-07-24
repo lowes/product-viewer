@@ -23,7 +23,7 @@
   "include": [
     "./src/**/*.ts"
   ],
-  "awesomeTypescriptLoaderOptions": {
-    "useTranspileModule": true
-  },
+  "exclude": [
+    "node_modules"
+  ]
 }

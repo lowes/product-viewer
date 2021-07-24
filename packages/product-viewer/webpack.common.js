@@ -1,8 +1,10 @@
 const path = require("path");
 const fs = require("fs");
 const appDirectory = fs.realpathSync(process.cwd());
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
+    context: __dirname,
     entry: path.resolve(appDirectory, "lib/product-viewer.js"),
     output: {
         filename: "product-viewer.js",
@@ -17,8 +19,11 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                loader: 'ts-loader',
                 exclude: /node_modules/,
+                options: {
+                    transpileOnly: true
+                }
             },
             {
                 test: /\.js$/,
@@ -33,5 +38,6 @@ module.exports = {
                 }
             }
         ],
-    }
+    },
+    plugins: [new ForkTsCheckerWebpackPlugin()]
 };

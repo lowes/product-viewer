@@ -2,6 +2,9 @@
     "name": "@lowesinnovationlab/product-viewer",
     "repository": "git://github.com/lowesinnovationlab/product-viewer.git",
     "version": "0.0.2",
+    "engines": {
+		"node": ">=10.0.0"
+	},
     "main": "dist/product-viewer.js",
     "module": "dist/product-viewer.js",
     "types": "lib/product-viewer.d.ts",
@@ -16,6 +19,7 @@
     "scripts": {
         "build": "npm run build:tsc && webpack --config webpack.prod.js",
         "build:tsc": "tsc",
+        "build:dev": "npm run build:tsc && webpack --config webpack.dev.js",
         "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
         "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js"
     },
@@ -31,6 +35,7 @@
         "clean-webpack-plugin": "^4.0.0-alpha.0",
         "copy-webpack-plugin": "^9.0.0",
         "file-loader": "^6.2.0",
+        "fork-ts-checker-webpack-plugin": "^6.2.13",
         "html-webpack-plugin": "^5.3.1",
         "lit": "^2.0.0-rc.2",
         "source-map-loader": "^3.0.0",
