@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import "@lowesinnovationlab/product-viewer";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
@@ -15,6 +14,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components/macro";
+import SimpleViewer from "../pages/SimpleViewer";
 
 const drawerWidth = 240;
 
@@ -76,11 +76,11 @@ function Home(): ReactElement {
 			<SizedToolbar />
 			<Divider />
 			<List>
-				<ListItem button key="Basic Viewer">
+				<ListItem button key="Simple Viewer">
 					<ListItemIcon>
 						<ThreeDIcon />
 					</ListItemIcon>
-					<ListItemText primary="Basic Viewer" />
+					<ListItemText primary="Simple Viewer" />
 				</ListItem>
 			</List>
 		</div>
@@ -125,11 +125,7 @@ function Home(): ReactElement {
 			</NavDrawer>
 			<Content>
 				<SizedToolbar />
-				<product-viewer
-					style={{ height: "70vh" }}
-					model-url="./common-assets/models/WaterBottle.glb"
-					environment="./common-assets/environments/neutral.env"
-				/>
+				<SimpleViewer />
 			</Content>
 		</RootDiv>
 	);

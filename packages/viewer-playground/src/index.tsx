@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import { reduxStore } from "./store/reduxStore";
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import "./styles/prism/prism";
 
 //THEME
 import { MuiThemeProvider } from "@material-ui/core/styles";
@@ -14,6 +15,7 @@ import Theme from "./styles/theme/Theme";
 //CSS
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./styles/index.scss";
+import "./styles/prism/prism.css";
 
 ReactDOM.render(
 	<React.StrictMode>
