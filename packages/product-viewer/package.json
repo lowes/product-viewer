@@ -3,8 +3,8 @@
     "repository": "git://github.com/lowesinnovationlab/product-viewer.git",
     "version": "0.0.2",
     "engines": {
-		"node": ">=10.0.0"
-	},
+        "node": ">=10.0.0"
+    },
     "main": "dist/product-viewer.js",
     "module": "dist/product-viewer.js",
     "types": "lib/product-viewer.d.ts",
@@ -22,6 +22,9 @@
         "build:dev": "npm run build:tsc && webpack --config webpack.dev.js",
         "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
         "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js"
+    },
+    "dependencies": {
+        "@juggle/resize-observer": "^3.3.1"
     },
     "devDependencies": {
         "@babylonjs/core": "^4.2.0",

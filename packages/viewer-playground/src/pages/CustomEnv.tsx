@@ -5,7 +5,7 @@ import HTMLSnippet from "../components/HTMLSnippet";
 
 const defaultSize = 500; // Set default viewer canvas height
 
-function SimpleViewer(): ReactElement {
+function CustomEnv(): ReactElement {
 	const [panelSize, setPanelSize] = React.useState(defaultSize);
 
 	const handlePanelDrag = (newSize: number) => {
@@ -20,11 +20,16 @@ function SimpleViewer(): ReactElement {
 			minSize={200}
 			onChange={handlePanelDrag}
 		>
-			<product-viewer style={{ height: panelSize }} model-url="./common-assets/models/WaterBottle.glb" />
+			<product-viewer
+				style={{ height: panelSize }}
+				model-url="./common-assets/models/WaterBottle.glb"
+				environment="./common-assets/environments/neutral.env"
+			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
 				&lt;product-viewer
 				model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
+				environment=&quot;./common-assets/environments/neutral.env&quot;
 				/&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
@@ -32,4 +37,4 @@ function SimpleViewer(): ReactElement {
 	);
 }
 
-export default SimpleViewer;
+export default CustomEnv;

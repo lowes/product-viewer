@@ -11,7 +11,7 @@ const CodeSnip = styled.pre`
 `;
 
 interface SnippetProps {
-	children: JSX.Element[] | JSX.Element | string;
+	children?: JSX.Element[] | JSX.Element | string;
 }
 
 function HTMLSnippet(props: SnippetProps): ReactElement {
