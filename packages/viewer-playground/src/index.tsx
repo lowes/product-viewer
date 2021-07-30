@@ -5,7 +5,6 @@ import * as serviceWorker from "./serviceWorker";
 import { reduxStore } from "./store/reduxStore";
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import "./styles/prism/prism";
 
 //THEME
 import { MuiThemeProvider } from "@material-ui/core/styles";

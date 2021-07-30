@@ -24,12 +24,14 @@ function CustomEnv(): ReactElement {
 				style={{ height: panelSize }}
 				model-url="./common-assets/models/WaterBottle.glb"
 				environment="./common-assets/environments/neutral.env"
+				create-ground
 			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
 				&lt;product-viewer
 				model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
 				environment=&quot;./common-assets/environments/neutral.env&quot;
+				create-ground
 				/&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}

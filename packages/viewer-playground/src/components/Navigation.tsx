@@ -1,12 +1,11 @@
 import React, { ReactElement } from "react";
+import { useLocation } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 import MuiDrawer, { DrawerProps } from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ThreeDIcon from "@material-ui/icons/ThreeDRotation";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
+import ThreeDRotation from "@material-ui/icons/ThreeDRotation";
+import NavButton from "./NavButton";
 import styled from "styled-components/macro";
 
 interface DrawerWidthProps {
@@ -56,17 +55,27 @@ interface NavProps {
 }
 
 function Navigation(props: NavProps): ReactElement {
+	const location = useLocation();
+
+	const nav = [
+		{ name: "Simple Viewer", id: "simple", icon: <ThreeDRotation /> },
+		{ name: "Custom Environment", id: "environment", icon: <ThreeDRotation /> },
+	];
+
 	const drawer = (
 		<div>
 			<SizedToolbar />
 			<Divider />
 			<List>
-				<ListItem button key="Simple Viewer">
-					<ListItemIcon>
-						<ThreeDIcon />
-					</ListItemIcon>
-					<ListItemText primary="Simple Viewer" />
-				</ListItem>
+				{nav.map((item) => (
+					<NavButton
+						key={item.id}
+						label={item.name}
+						icon={item.icon}
+						pageId={item.id}
+						selected={location.pathname === `/${item.id}`}
+					/>
+				))}
 			</List>
 		</div>
 	);

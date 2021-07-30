@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -7,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import styled from "styled-components/macro";
 import Navigation from "./Navigation";
 import SimpleViewer from "../pages/SimpleViewer";
+import CustomEnv from "../pages/CustomEnv";
 
 const drawerWidth = 240;
 
@@ -64,7 +66,13 @@ function Home(): ReactElement {
 			<Navigation onClose={handleDrawerToggle} mobileOpen={mobileOpen} drawerWidth={drawerWidth} />
 			<Content>
 				<SizedToolbar />
-				<SimpleViewer />
+				<Switch>
+					<Route exact path="/">
+						<Redirect to="/simple" />
+					</Route>
+					<Route path="/environment" component={CustomEnv} />
+					<Route path="/simple" component={SimpleViewer} />
+				</Switch>
 			</Content>
 		</RootDiv>
 	);
