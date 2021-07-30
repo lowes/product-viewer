@@ -3,7 +3,11 @@ import "@babylonjs/inspector";
 import "@babylonjs/loaders";
 import { Engine, Scene, Camera, AbstractMesh } from "@babylonjs/core";
 import { LitElement, html, css } from "lit";
-import { property } from "lit/decorators.js";
+import { ResizeObserver as Polyfill } from '@juggle/resize-observer';
+//import { property } from "lit/decorators.js";
+
+// Use native resize observer for better perf if available
+const ResizeObserver = window.ResizeObserver || Polyfill;
 
 export default class ProductViewerElementBase extends LitElement {
     viewerWrapper: HTMLDivElement;
@@ -54,10 +58,16 @@ export default class ProductViewerElementBase extends LitElement {
                 }
             }
         });
-        
+
         window.addEventListener("resize", (ev) => {
             this.engine.resize();
         });
+
+        const resizeObserver = new ResizeObserver((entries, observer) => {
+            this.engine.resize();
+            this.scene.render(); // Render the scene after resizing to prevent white flicker
+        });
+        resizeObserver.observe(this);
         
         // run the main render loop
         this.engine.runRenderLoop(() => {
@@ -66,7 +76,7 @@ export default class ProductViewerElementBase extends LitElement {
     }
 
     modelLoaded(meshes: AbstractMesh[]): void {
-
+        
     }
 
     // Fired on each property update. changedProperties includes the previous values

@@ -14,6 +14,7 @@ import Theme from "./styles/theme/Theme";
 //CSS
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./styles/index.scss";
+import "./styles/prism/prism.css";
 
 ReactDOM.render(
 	<React.StrictMode>
