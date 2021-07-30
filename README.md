@@ -30,7 +30,7 @@ import "@lowesinnovationlab/product-viewer";
 ### product-viewer
 A 3D viewer custom web component powered by BabylonJS
 
-### viewer-playground
+### viewer-demos
 A react web app demonstrating the features of product-viewer and sample implementations
 
 ### viewer-assets
@@ -43,7 +43,7 @@ This project uses lerna to syncronize multiple sub projects. Once the "root" pro
 2. `npm run bootstrap`
 3. `npm run start`
 
-The `start` command in the root directory will build the product-viewer, and then launch the viewer-playground react app in a dev hot-reload mode.
+The `start` command in the root directory will build the product-viewer, and then launch the viewer-demos react app in a dev hot-reload mode.
 
 To run the product-viewer project by itself for faster development iteration:
 1. `npm run bootstrap`

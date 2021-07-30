@@ -8,7 +8,7 @@
     "build": "lerna run build --stream",
     "build:dev": "lerna run build:dev --stream",
     "publish-packages": "lerna publish",
-    "start": "lerna bootstrap && npm run build:dev --stream && cd packages/viewer-playground && npm run start",
+    "start": "lerna bootstrap && npm run build:dev --stream && cd packages/viewer-demos && npm run start",
     "serve-viewer": "cd packages/product-viewer && npm run start"
   },
   "devDependencies": {
