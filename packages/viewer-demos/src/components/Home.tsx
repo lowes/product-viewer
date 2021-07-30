@@ -59,7 +59,7 @@ function Home(): ReactElement {
 						<MenuIcon />
 					</MenuButton>
 					<Typography variant="h6" noWrap>
-						Product Viewer Playground
+						Product Viewer
 					</Typography>
 				</Toolbar>
 			</StyledAppBar>
