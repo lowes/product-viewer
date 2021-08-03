@@ -1,40 +1,12 @@
-# product-viewer
-This is a monorepo containing packages related to 3D product rendering and web based mixed reality.
+# Product Viewer
+This is a monorepo containing projects related to 3D product rendering and web-based mixed reality. All of the projects can be found under the `packages/` directory, each have their own readme.
 
-## Usage
-1. To use the product-viewer package you will need to authenticate with GitHub as it is currently a private package. More details on [GitHub docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
-```
-npm login --scope=@lowesinnovationlab --registry=https://npm.pkg.github.com
-```
-3. Once you are authenticated, add `@lowesinnovationlab:registry=https://npm.pkg.github.com` to a new or existing .npmrc file in the same directory as your package.json.
-4. Push the .npmrc file to your repository
-5. Add product viewer as a dependency in your package.json
-```
-"dependencies": {
-  "@lowesinnovationlab/product-viewer": "0.0.2"
-}
-```
-4. Run the install command 
-```
-npm install
-```
-5. Import the product-viewer and add it to the page
-```
-import "@lowesinnovationlab/product-viewer";
-```
-```
-<product-viewer model-url="path/to/filename.glb" />
-```
+## Packages
+- product-viewer: A web component used to view 3D product assets. Currently a private npm package on the GitHub registry.
 
-## Projects
-### product-viewer
-A 3D viewer custom web component powered by BabylonJS
+- viewer-demos: A react web app demonstrating the features of product-viewer and sample implementations. It is hosted at [3dviewer.3dmanager.app](https://3dviewer.3dmanager.app/)
 
-### viewer-demos
-A react web app demonstrating the features of product-viewer and sample implementations
-
-### viewer-assets
-Package containing shared assets for use across all product-viewer repos
+- viewer-assets: contains shared assets for use across all product-viewer projects
 
 ## Development
 This project uses lerna to syncronize multiple sub projects. Once the "root" project is installed, it will manage cross-project dependencies, assets, and npm packages.
@@ -53,6 +25,36 @@ To run the product-viewer project by itself for faster development iteration:
 This will launch a dev server with a basic html page containing just a viewer component. 
 
 NOTE: You need to run the root `bootstrap` script before launching the viewer by itself as it installs cross-dependencies and shared assets.
+
+## Available Scripts
+
+### `npm run bootstrap`
+
+Performs the following in each project package: 
+1. `npm install`
+2. symlinks the lerna packages that are dependencies of each other
+3. `npm run prepublish`
+4. `npm run prepare`
+
+### `npm run clean`
+
+Removes the `node_modules` directory from all packages.
+
+### `npm run build`
+
+Builds the build script for each package, if present.
+
+### `npm run publish-packages`
+
+Publishes all packages which are marked as `public` in their `package.json`. During publish, package versions are incremented.
+
+### `npm run start`
+
+Bootstraps the projects, creates a dev build, and then starts the viewer-demo site dev server.
+
+### `npm run serve-viewer`
+
+Starts a dev server for testing the `<product-viewer>` component in isolation.
 
 ## Publishing
 To publish the packages in the repository to github package repository, first make sure that you are authenticated to GitHub. We recommend using a GitHub personal access token (PAT) stored within your per-user .npmrc file. More details can be found on the [GitHub docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
