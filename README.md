@@ -1,5 +1,5 @@
 # Product Viewer
-This is a monorepo containing projects related to 3D product rendering and web-based mixed reality.
+This is a monorepo containing projects related to 3D product rendering and web-based mixed reality. All of the projects can be found under the `packages/` directory, each have their own readme.
 
 ## Packages
 - product-viewer: A web component used to view 3D product assets. Currently a private npm package on the GitHub registry.
@@ -38,11 +38,11 @@ Performs the following in each project package:
 
 ### `npm run clean`
 
-Removes the `node_modules` directory from all packages
+Removes the `node_modules` directory from all packages.
 
 ### `npm run build`
 
-Builds the build script for each package, if present
+Builds the build script for each package, if present.
 
 ### `npm run publish-packages`
 
@@ -54,7 +54,7 @@ Bootstraps the projects, creates a dev build, and then starts the viewer-demo si
 
 ### `npm run serve-viewer`
 
-Starts a dev server for the `<product-viewer>` component
+Starts a dev server for testing the `<product-viewer>` component in isolation.
 
 ## Publishing
 To publish the packages in the repository to github package repository, first make sure that you are authenticated to GitHub. We recommend using a GitHub personal access token (PAT) stored within your per-user .npmrc file. More details can be found on the [GitHub docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
