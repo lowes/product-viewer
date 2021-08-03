@@ -1,4 +1,6 @@
-This project is a create-react-app typescript template that utilizes Redux, MaterialUI, Styled Components, eslint, prettier, and pre-commit.
+# Viewer Demos
+
+The viewer demos project is a collection of product-viewer examples showcasing each of it's features and sample code with documentation.
 
 ## Prerequisites
 
@@ -39,6 +41,10 @@ Runs eslint and prettier checks on the source files and prints out any styling i
 Uses eslint and prettier on the source files to fix any styling inconsistencies that it can.
 `npm run fix:eslint` only runs the eslint fixes.
 `npm run fix:prettier` only runs the prettier fixes.
+
+### `npm run prepare`
+
+Symlinks the viewer-assets files into this project's directory under `./common-assets`<br />
 
 ### `npm run build`
 
