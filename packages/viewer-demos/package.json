@@ -13,7 +13,7 @@
 		"fix": "npm run fix:eslint && npm run fix:prettier",
 		"fix:eslint": "eslint --fix --ext .ts .",
 		"fix:prettier": "prettier --write .",
-		"precommit": "lint-staged",
+		"precommit": "npx lint-staged",
 		"lint": "npm run lint:eslint",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
@@ -50,6 +50,10 @@
 	},
 	"eslintConfig": {
 		"extends": "react-app"
+	},
+	"lint-staged": {
+		"*.{js,ts,jsx,tsx}": ["npx eslint"],
+		"*.ts": "npx eslint --cache"
 	},
 	"browserslist": {
 		"production": [

@@ -23,7 +23,7 @@
         "build:dev": "npm run build:tsc && webpack --config webpack.dev.js",
         "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
         "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js",
-        "precommit": "lint-staged",
+        "precommit": "npx lint-staged",
         "lint": "eslint . --ext .js,.ts",
         "lint:fix": "npm run lint -- --fix",
         "lint:prettier": "prettier --check ."
@@ -62,6 +62,10 @@
         "webpack-dev-server": "^3.11.2",
         "webpack-merge": "^5.8.0"
     },
+	"lint-staged": {
+		"*.{js,ts}": ["npx eslint"],
+		"*.ts": "npx eslint --cache"
+	},
     "targets": {
         "main": {
             "isLibrary": true
