@@ -13,8 +13,9 @@
 		"fix": "npm run fix:eslint && npm run fix:prettier",
 		"fix:eslint": "eslint --fix --ext .ts .",
 		"fix:prettier": "prettier --write .",
-		"lint": "npm run lint:eslint && npm run lint:prettier",
-		"lint:eslint": "eslint --ext .ts .",
+		"precommit": "lint-staged",
+		"lint": "npm run lint:eslint",
+		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
 		"prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./public/common-assets"
 	},
@@ -62,25 +63,14 @@
 			"last 1 safari version"
 		]
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,ts,tsx}": [
-			"eslint --fix"
-		],
-		"*.ts": "eslint --cache --fix"
-	},
 	"devDependencies": {
 		"@lowesinnovationlab/viewer-assets": "^0.0.2",
 		"@typescript-eslint/eslint-plugin": "^4.26.1",
 		"@typescript-eslint/parser": "^4.26.1",
+		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^6.13.0",
 		"eslint-plugin-prettier": "^3.4.0",
 		"fast-sass-loader": "^1.5.0",
-		"husky": "^4.3.8",
 		"is-svg": "^4.3.1",
 		"lint-staged": "^10.5.4",
 		"prettier": "^2.3.1",

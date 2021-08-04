@@ -1,0 +1,70 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  DOMAIN: "3dviewer.3dmanager.app"
+  SERVICE_NAME: 3dviewer
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.SERVICE_NAME }}-${{ env.cache-name }}-
+            ${{ runner.os }}-${{ env.SERVICE_NAME }}-
+
+      - name: Bootstrap projects
+        run: |
+          npm run bootstrap
+
+      - name: Get short SHA
+        id: slug
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-7)"
+
+      - name: Prep Build
+        env:
+          REACT_APP_ENV: production
+          PUBLIC_URL: https://${{ env.DOMAIN }}
+          REACT_APP_BUILD: ${{ steps.slug.outputs.sha8 }}
+        run: |
+          npm run build --if-present
+
+      - name: Deploy to GCS
+        env:
+          GCLOUD_KEY: ${{ secrets.GCP_LIL_CORGIS_NPE_SA }}
+        run: |
+          echo "$GCLOUD_KEY" | base64 -d > ${HOME}/gcloud.json
+          gcloud auth activate-service-account --key-file=${HOME}/gcloud.json
+          gsutil -m rsync -r ./packages/viewer-demos/build "gs://${{ env.DOMAIN }}"
+
+      - name: Purge CloudFlare cache
+        uses: jakejarvis/cloudflare-purge-action@v0.3.0
+        env:
+          PURGE_URLS: '["https://${{ env.DOMAIN }}/*"]'
+          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_3DMANAGER_ZONE_ID }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_CACHE_PURGE_TOKEN }}
+
+      - name: Clean up
+        run: |
+          rm -rf ${HOME}/gcloud.json
