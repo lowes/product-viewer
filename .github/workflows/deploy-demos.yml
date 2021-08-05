@@ -26,13 +26,21 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: actions/cache@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        id: cache-node-modules
+        env:
+          cache-name: cache-node-modules
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.SERVICE_NAME }}-${{ env.cache-name }}-
             ${{ runner.os }}-${{ env.SERVICE_NAME }}-
+
+      - name: Installing dependencies
+        run: |
+          npm install --prefer-offline --no-audit
 
       - name: Bootstrap projects
         run: |
