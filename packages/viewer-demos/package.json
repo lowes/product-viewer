@@ -13,8 +13,8 @@
 		"fix": "npm run fix:eslint && npm run fix:prettier",
 		"fix:eslint": "eslint --fix --ext .ts .",
 		"fix:prettier": "prettier --write .",
-		"precommit": "npx lint-staged",
-		"lint": "npm run lint:eslint",
+		"precommit": "lint-staged",
+		"lint": "npm run lint:eslint && lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
 		"prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./public/common-assets"
@@ -52,8 +52,10 @@
 		"extends": "react-app"
 	},
 	"lint-staged": {
-		"*.{js,ts,jsx,tsx}": ["npx eslint"],
-		"*.ts": "npx eslint --cache"
+		"*.{js,ts,jsx,tsx}": [
+			"eslint",
+			"prettier --check"
+		]
 	},
 	"browserslist": {
 		"production": [

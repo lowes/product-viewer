@@ -16,7 +16,7 @@
 import "@babylonjs/core/Debug/debugLayer";
 import "@babylonjs/inspector";
 import "@babylonjs/loaders";
-import { Engine, Scene, Camera } from "@babylonjs/core";
+import { Engine, Scene, Camera, AbstractMesh } from "@babylonjs/core";
 import { LitElement, html, css, TemplateResult } from "lit";
 import { ResizeObserver as Polyfill } from "@juggle/resize-observer";
 //import { property } from "lit/decorators.js";
@@ -90,7 +90,9 @@ export default class ProductViewerElementBase extends LitElement {
 		});
 	}
 
-	//modelLoaded(meshes: AbstractMesh[]): void {}
+	modelLoaded(meshes: AbstractMesh[]): void {
+		console.log(`${meshes.length} meshe(s) loaded`);
+	}
 
 	// Fired on each property update. changedProperties includes the previous values
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
