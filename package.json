@@ -10,7 +10,8 @@
     "publish-packages": "lerna publish",
     "start": "lerna bootstrap && npm run build:dev --stream && cd packages/viewer-demos && npm run start",
     "serve-viewer": "cd packages/product-viewer && npm run start",
-    "lint": "lerna run lint --parallel"
+    "lint": "lerna run lint --parallel",
+	"test": "lerna run test"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
