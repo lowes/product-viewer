@@ -3,14 +3,16 @@
   "private": true,
   "description": "Repository containing <product-viewer> packages",
   "scripts": {
-    "setup": "npm install && lerna bootstrap",
+	"setup": "npm install && npm run bootstrap",
+    "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
     "build": "lerna run build --stream",
     "build:dev": "lerna run build:dev --stream",
     "publish-packages": "lerna publish",
-    "start": "lerna bootstrap && npm run build:dev --stream && cd packages/viewer-demos && npm run start",
+    "start": "npm run bootstrap && npm run build:dev --stream && cd packages/viewer-demos && npm run start",
     "serve-viewer": "cd packages/product-viewer && npm run start",
     "lint": "lerna run lint --parallel",
+	"fix": "lerna run fix --parallel",
 	"test": "lerna run test"
   },
   "devDependencies": {
