@@ -11,15 +11,9 @@ npm login --scope=@lowesinnovationlab --registry=https://npm.pkg.github.com
 ```
 3. Once you are authenticated, add `@lowesinnovationlab:registry=https://npm.pkg.github.com` to a new or existing .npmrc file in the same directory as your package.json.
 4. Push the .npmrc file to your repository
-5. Add product viewer as a dependency in your package.json
-```json
-"dependencies": {
-  "@lowesinnovationlab/product-viewer": "0.0.2"
-}
+5. Install product viewer using npm
 ```
-4. Run the install command 
-```
-npm install
+npm install @lowesinnovationlab/product-viewer
 ```
 5. Import the product-viewer and add it to the page
 ```javascript
@@ -32,19 +26,9 @@ More examples and customization options can be found at the [viewer-demos](https
 
 ## Available Scripts
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
-
-The page will reload if you make edits.<br />
-
-### `npm run prepare`
-
-Symlinks the viewer-assets files into this project's directory under `./common-assets`<br />
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-
-The build is minified and the filenames include the hashes.
+Command                        | Description
+------------------------------ | -----------
+`npm run start`                | Creates a dev build, and then starts the dev server
+`npm run build`                | Builds a minified production version of product-viewer
+`npm run lint`                 | Runs eslint and prettier tests
+`npm run fix`                  | Attempts to fix all eslint and prettier problems
