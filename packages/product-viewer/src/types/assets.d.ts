@@ -13,5 +13,5 @@
  * limitations under the License.
  */
 
-declare module '*.env';
-declare module '*.glb';
+declare module "*.env";
+declare module "*.glb";

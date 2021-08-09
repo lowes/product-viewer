@@ -16,23 +16,31 @@
 import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor } from "../tools/Utils";
 import { property } from "lit/decorators.js";
-import { AbstractMesh, BoundingBox } from "@babylonjs/core";
+import { AbstractMesh } from "@babylonjs/core";
 
 export declare interface LayoutInterface {
+	y: number;
+	x: number;
+	z: number;
 }
 
-export const LayoutMixin = <T extends Constructor<ProductViewerElementBase>>(BaseViewerElement: T): Constructor<LayoutInterface> & T => {
-    class LayoutModelViewerElement extends BaseViewerElement {
+export const LayoutMixin = <T extends Constructor<ProductViewerElementBase>>(
+	BaseViewerElement: T,
+): Constructor<LayoutInterface> & T => {
+	class LayoutModelViewerElement extends BaseViewerElement {
+		@property({ type: Number, attribute: "x" }) x = 0;
+		@property({ type: Number, attribute: "y" }) y = 0;
+		@property({ type: Number, attribute: "z" }) z = 0;
 
-        modelLoaded(meshes: AbstractMesh[]) {
-            super.modelLoaded(meshes);
+		modelLoaded(meshes: AbstractMesh[]) {
+			super.modelLoaded(meshes);
 
-            for (let mesh of meshes) {
-                const bounds = mesh.getHierarchyBoundingVectors();
-                const boundingBox = new BoundingBox(bounds.min, bounds.max);
-                mesh.position.y = boundingBox.extendSizeWorld.y - boundingBox.centerWorld.y;
-            }
-        }
-    }
-    return LayoutModelViewerElement as Constructor<LayoutInterface> & T;
+			for (const mesh of meshes) {
+				mesh.position.x += this.x;
+				mesh.position.y += this.y;
+				mesh.position.z += this.z;
+			}
+		}
+	}
+	return LayoutModelViewerElement as Constructor<LayoutInterface> & T;
 };

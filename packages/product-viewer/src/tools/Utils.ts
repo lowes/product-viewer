@@ -13,4 +13,15 @@
  * limitations under the License.
  */
 
-export type Constructor<T = {}> = new (...args: any[]) => T;
+import { Node } from "@babylonjs/core";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Constructor<T> = new (...args: any[]) => T;
+
+export const GetRootNode = (node: Node): Node => {
+	if (!node.parent) {
+		return node;
+	} else {
+		GetRootNode(node.parent);
+	}
+};

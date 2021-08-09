@@ -38,9 +38,7 @@ function SimpleViewer(): ReactElement {
 			<product-viewer style={{ height: panelSize }} model-url="./common-assets/models/WaterBottle.glb" />
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
-				&lt;product-viewer
-				model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-				/&gt;
+				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot; /&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
 		</SplitPane>

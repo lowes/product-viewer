@@ -27,7 +27,7 @@
 		"fix": "npm run fix:eslint && npm run fix:prettier",
 		"fix:eslint": "eslint --fix --ext .ts .",
 		"fix:prettier": "prettier --write .",
-        "lint": "npm run lint:eslint && lint:prettier",
+        "lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "lint:prettier": "prettier --check ."
     },

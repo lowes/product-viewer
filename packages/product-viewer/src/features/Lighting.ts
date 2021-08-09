@@ -14,53 +14,74 @@
  */
 
 import ProductViewerElementBase from "../product-viewer-base";
-import { Constructor } from "../tools/Utils";
+import { Constructor, GetRootNode } from "../tools/Utils";
 import { property } from "lit/decorators.js";
-import { Vector3, HemisphericLight, CubeTexture, ImageProcessingConfiguration, Color3, IEnvironmentHelperOptions } from "@babylonjs/core";
+import {
+	Vector3,
+	HemisphericLight,
+	CubeTexture,
+	ImageProcessingConfiguration,
+	Color3,
+	IEnvironmentHelperOptions,
+	AbstractMesh,
+	EnvironmentHelper,
+	BoundingBox,
+} from "@babylonjs/core";
 
 export declare interface LightingInterface {
-    lightIntensity: Number;
-    environment: string;
-    createGround: boolean;
-    createSkybox: boolean;
+	lightIntensity: number;
+	environment: string;
+	createGround: boolean;
+	createSkybox: boolean;
 }
 
-export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(BaseViewerElement: T): Constructor<LightingInterface> & T => {
-    class LightingModelViewerElement extends BaseViewerElement {
-        hemisphericLight: HemisphericLight;
-        @property({type: Number, attribute: 'light-intensity'}) lightIntensity = 2.0;
-        @property({type: String, attribute: 'environment'}) environment = "";
-        @property({type: Boolean, attribute: 'create-ground'}) createGround = false;
-        @property({type: Boolean, attribute: 'create-skybox'}) createSkybox = true;
+export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
+	BaseViewerElement: T,
+): Constructor<LightingInterface> & T => {
+	class LightingModelViewerElement extends BaseViewerElement {
+		hemisphericLight: HemisphericLight;
+		envHelper: EnvironmentHelper;
+		@property({ type: Number, attribute: "light-intensity" }) lightIntensity = 2.0;
+		@property({ type: String, attribute: "environment" }) environment = "";
+		@property({ type: Boolean, attribute: "create-ground" }) createGround = false;
+		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = true;
 
-        updated(changedProperties: Map<string, any>): void {
-            super.updated?.(changedProperties);
-        
-            this.updateLighting();
-        }
+		updated(changedProperties: Map<string, any>): void {
+			super.updated?.(changedProperties);
+			this.updateLighting();
+		}
 
-        updateLighting(): void {
-            // Lights
-            this.hemisphericLight = new HemisphericLight("HemisphericLight", new Vector3(0, 1, 0), this.scene);
-            this.hemisphericLight.intensity = this.lightIntensity;
+		modelLoaded(meshes: AbstractMesh[]): void {
+			super.modelLoaded?.(meshes);
 
-            
-            const envOptions: Partial<IEnvironmentHelperOptions> = {
-                createGround: this.createGround,
-                groundColor: new Color3(1, 1, 1),
-                createSkybox: this.createSkybox,
-                skyboxColor: new Color3(1, 1, 1),
-            }
-            if (this.environment) {
-                const hdrTexture = CubeTexture.CreateFromPrefilteredData(this.environment, this.scene);
-                envOptions.environmentTexture = hdrTexture;
-            }
-            this.scene.createDefaultEnvironment(envOptions);
+			// Get the root node of the first mesh to calculate total bounds
+			// Since all glbs import with under __root__ node, it doesn't matter which mesh index we use
+			const bounds = GetRootNode(meshes[0]).getHierarchyBoundingVectors();
+			const boundingBox = new BoundingBox(bounds.min, bounds.max);
+			this.envHelper.ground.position.y -= boundingBox.extendSizeWorld.y - boundingBox.centerWorld.y;
+		}
 
-            // Enable tonemapping to prevent white blowout
-            this.scene.imageProcessingConfiguration.toneMappingEnabled = true;
-            this.scene.imageProcessingConfiguration.toneMappingType = ImageProcessingConfiguration.TONEMAPPING_ACES;
-        }
-    }
-    return LightingModelViewerElement as Constructor<LightingInterface> & T;
+		updateLighting(): void {
+			// Lights
+			this.hemisphericLight = new HemisphericLight("HemisphericLight", new Vector3(0, 1, 0), this.scene);
+			this.hemisphericLight.intensity = this.lightIntensity;
+
+			const envOptions: Partial<IEnvironmentHelperOptions> = {
+				createGround: this.createGround,
+				groundColor: new Color3(1, 1, 1),
+				createSkybox: this.createSkybox,
+				skyboxColor: new Color3(1, 1, 1),
+			};
+			if (this.environment) {
+				const hdrTexture = CubeTexture.CreateFromPrefilteredData(this.environment, this.scene);
+				envOptions.environmentTexture = hdrTexture;
+			}
+			this.envHelper = this.scene.createDefaultEnvironment(envOptions);
+
+			// Enable tonemapping to prevent white blowout
+			this.scene.imageProcessingConfiguration.toneMappingEnabled = true;
+			this.scene.imageProcessingConfiguration.toneMappingType = ImageProcessingConfiguration.TONEMAPPING_ACES;
+		}
+	}
+	return LightingModelViewerElement as Constructor<LightingInterface> & T;
 };

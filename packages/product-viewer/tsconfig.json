@@ -1,29 +1,22 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "moduleResolution": "Node",
-    "noResolve": false,
-    "noImplicitAny": false,
-    "sourceMap": true,
-    "inlineSources": true,
-    "preserveConstEnums":true,
-    "declaration": true,
-    "isolatedModules": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "lib": [
-        "es2017",
-        "dom"
-    ],
-    "outDir": "./lib",
-    "incremental": true,
-    "typeRoots" : ["node_modules/@types", "src/types"]
-  },
-  "include": [
-    "./src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"target": "es6",
+		"module": "esnext",
+		"moduleResolution": "Node",
+		"noResolve": false,
+		"noImplicitAny": false,
+		"sourceMap": true,
+		"inlineSources": true,
+		"preserveConstEnums": true,
+		"declaration": true,
+		"isolatedModules": true,
+		"experimentalDecorators": true,
+		"jsx": "react",
+		"lib": ["es2017", "dom"],
+		"outDir": "./lib",
+		"incremental": true,
+		"typeRoots": ["node_modules/@types", "src/types"]
+	},
+	"include": ["./src/**/*.ts"],
+	"exclude": ["node_modules"]
 }

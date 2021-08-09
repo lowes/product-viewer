@@ -43,11 +43,8 @@ function CustomEnv(): ReactElement {
 			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
-				&lt;product-viewer
-				model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-				environment=&quot;./common-assets/environments/neutral.env&quot;
-				create-ground
-				/&gt;
+				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
+				environment=&quot;./common-assets/environments/neutral.env&quot; create-ground /&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
 		</SplitPane>

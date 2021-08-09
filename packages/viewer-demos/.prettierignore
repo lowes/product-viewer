@@ -1,3 +1,6 @@
 # Ignore artifacts:
 build
 coverage
+
+package.json
+package-lock.json

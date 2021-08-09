@@ -15,7 +15,7 @@
 		"fix:eslint": "eslint --fix --ext .ts .",
 		"fix:prettier": "prettier --write .",
 		"precommit": "lint-staged",
-		"lint": "npm run lint:eslint && lint:prettier",
+		"lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
 		"prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./public/common-assets"

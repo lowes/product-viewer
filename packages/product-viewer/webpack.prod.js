@@ -18,11 +18,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
-    mode: "production",
-    optimization: {
-        minimize: true,
-    },
-    plugins: [
-        new CleanWebpackPlugin()
-    ]
+	mode: "production",
+	optimization: {
+		minimize: true,
+	},
+	plugins: [new CleanWebpackPlugin()],
 });
