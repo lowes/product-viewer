@@ -28,6 +28,10 @@ module.exports = merge(common, {
 		publicPath: "/",
 		contentBase: path.join(__dirname, "dist"),
 	},
+	watchOptions: {
+		ignored: "**/node_modules",
+		aggregateTimeout: 1000,
+	},
 	plugins: [
 		new CopyWebpackPlugin({
 			patterns: [

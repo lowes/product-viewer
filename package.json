@@ -5,9 +5,8 @@
   "scripts": {
     "setup": "npm install && npm run bootstrap",
     "bootstrap": "lerna bootstrap",
-    "start": "npm run bootstrap && npm run build:dev --stream && cd packages/viewer-demos && npm run start",
+    "start": "npm run bootstrap && lerna run build:watch --stream --parallel",
     "build": "lerna run build --stream",
-    "build:dev": "lerna run build:dev --stream",
     "clean": "lerna clean",
     "serve-viewer": "cd packages/product-viewer && npm run start",
     "lint": "lerna run lint --parallel",
@@ -20,7 +19,7 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@commitlint/config-lerna-scopes": "^13.1.0",
     "husky": "^4.3.8",
-    "lerna": "^4.0.0",
+    "lerna": "3.22.1",
     "rimraf": "^3.0.2",
     "symlink-dir": "^5.0.1"
   }
