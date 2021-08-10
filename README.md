@@ -46,7 +46,7 @@ Command                        | Description
 ------------------------------ | -----------
 `npm run setup`                | Installs root dependencies and bootstraps the projects
 `npm run bootstrap`            | Runs `install`, `prepublish`, and `prepare` commands in each project, and symlinks sibling dependencies
-`npm run start`                | Bootstraps the projects, creates a dev build, and then starts the viewer-demo dev server
+`npm run start`                | Bootstraps the projects, creates a dev build, and then starts the viewer-demos dev server
 `npm run build`                | Runs the build script for each package, if present
 `npm run clean`                | Removes `node_modules` directory from all packages
 `npm run lint`                 | Checks for lint issues in each package

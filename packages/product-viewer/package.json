@@ -20,7 +20,7 @@
     "scripts": {
         "build": "npm run build:tsc && webpack --config webpack.prod.js",
         "build:tsc": "tsc",
-        "build:dev": "npm run build:tsc && webpack --config webpack.dev.js",
+		"build:watch": "webpack --watch --config webpack.dev.js",
         "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
         "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js",
         "precommit": "lint-staged",
