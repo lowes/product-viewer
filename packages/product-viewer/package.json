@@ -20,15 +20,15 @@
     "scripts": {
         "build": "npm run build:tsc && webpack --config webpack.prod.js",
         "build:tsc": "tsc",
-        "build:dev": "npm run build:tsc && webpack --config webpack.dev.js",
+        "build:watch": "concurrently \"tsc --watch\" \"webpack --watch --config webpack.dev.js\" ",
         "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
         "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js",
         "precommit": "lint-staged",
-		"fix": "npm run fix:eslint && npm run fix:prettier",
-		"fix:eslint": "eslint --fix --ext .ts .",
-		"fix:prettier": "prettier --write .",
+        "fix": "npm run fix:eslint && npm run fix:prettier",
+        "fix:eslint": "eslint --fix --ext .ts .",
+        "fix:prettier": "prettier --write .",
         "lint": "npm run lint:eslint && npm run lint:prettier",
-		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "lint:prettier": "prettier --check ."
     },
     "dependencies": {
@@ -46,6 +46,7 @@
         "@typescript-eslint/parser": "^4.26.1",
         "chokidar": "^3.5.1",
         "clean-webpack-plugin": "^4.0.0-alpha.0",
+        "concurrently": "^6.2.1",
         "copy-webpack-plugin": "^9.0.0",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^6.13.0",
@@ -65,12 +66,12 @@
         "webpack-dev-server": "^3.11.2",
         "webpack-merge": "^5.8.0"
     },
-	"lint-staged": {
-		"*.{js,ts}": [
-			"eslint",
-			"prettier --check"
-		]
-	},
+    "lint-staged": {
+        "*.{js,ts}": [
+            "eslint",
+            "prettier --check"
+        ]
+    },
     "targets": {
         "main": {
             "isLibrary": true

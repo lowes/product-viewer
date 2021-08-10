@@ -54,11 +54,13 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 		modelLoaded(meshes: AbstractMesh[]): void {
 			super.modelLoaded?.(meshes);
 
-			// Get the root node of the first mesh to calculate total bounds
+			// Get the root node of the first mesh to calculate total bounds for correct floor placement
 			// Since all glbs import with under __root__ node, it doesn't matter which mesh index we use
-			const bounds = GetRootNode(meshes[0]).getHierarchyBoundingVectors();
-			const boundingBox = new BoundingBox(bounds.min, bounds.max);
-			this.envHelper.ground.position.y -= boundingBox.extendSizeWorld.y - boundingBox.centerWorld.y;
+			if (this.envHelper.ground) {
+				const bounds = GetRootNode(meshes[0]).getHierarchyBoundingVectors();
+				const boundingBox = new BoundingBox(bounds.min, bounds.max);
+				this.envHelper.ground.position.y -= boundingBox.extendSizeWorld.y - boundingBox.centerWorld.y;
+			}
 		}
 
 		updateLighting(): void {
