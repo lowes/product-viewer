@@ -35,7 +35,11 @@ function AugmentedReality(): ReactElement {
 			minSize={200}
 			onChange={handlePanelDrag}
 		>
-			<product-viewer ar style={{ height: panelSize }} model-url="./common-assets/models/WaterBottle.glb" />
+			<product-viewer
+				ar
+				style={{ height: panelSize, width: "100%" }}
+				model-url="./common-assets/models/WaterBottle.glb"
+			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
 				&lt;product-viewer ar model-url=&quot;./common-assets/models/WaterBottle.glb&quot; /&gt;

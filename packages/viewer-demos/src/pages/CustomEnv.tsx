@@ -36,7 +36,7 @@ function CustomEnv(): ReactElement {
 			onChange={handlePanelDrag}
 		>
 			<product-viewer
-				style={{ height: panelSize }}
+				style={{ height: panelSize, width: "100%" }}
 				model-url="./common-assets/models/WaterBottle.glb"
 				environment="./common-assets/environments/neutral.env"
 				create-ground
