@@ -44,7 +44,7 @@ export const ARMixin = <T extends Constructor<ProductViewerElementBase>>(
 			this.ARButtonElement = this.shadowRoot?.querySelector(".ar-button");
 			this.ARButtonElement.onclick = this.ARButtonClickEvent;
 
-			if (!this.ar || (!isAndroid() && !isIOS()) || (isIOS() && !this.isIOSQuickLookCandidate())) {
+			if (!this.ar || (!isAndroid() && !isIOS()) || (isIOS() && !this.supportsIOSQuickLook())) {
 				this.ARButtonElement.classList.remove("enabled");
 			}
 		}
@@ -131,10 +131,12 @@ export const ARMixin = <T extends Constructor<ProductViewerElementBase>>(
 			return intent;
 		}
 
-		isIOSQuickLookCandidate() {
+		supportsIOSQuickLook() {
 			const tempAnchor = document.createElement("a");
 
-			return Boolean(tempAnchor.relList && tempAnchor.relList.supports && tempAnchor.relList.supports("ar"));
+			return Boolean(
+				tempAnchor.relList && tempAnchor.relList.supports && tempAnchor.relList.supports("ar") && this.usdz,
+			);
 		}
 	}
 	return ARModelViewerElement as Constructor<ARInterface> & T;

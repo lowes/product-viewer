@@ -39,10 +39,12 @@ function AugmentedReality(): ReactElement {
 				ar
 				style={{ height: panelSize, width: "100%" }}
 				model-url="./common-assets/models/WaterBottle.glb"
+				usdz="./common-assets/models/WaterBottle.usdz"
 			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
-				&lt;product-viewer ar model-url=&quot;./common-assets/models/WaterBottle.glb&quot; /&gt;
+				&lt;product-viewer ar model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
+				usdz=&quot;./common-assets/models/WaterBottle.usdz&quot; /&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
 		</SplitPane>
