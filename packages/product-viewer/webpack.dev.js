@@ -25,8 +25,11 @@ module.exports = merge(common, {
 	entry: path.resolve(appDirectory, "src/product-viewer.ts"),
 	devtool: "inline-source-map",
 	devServer: {
+		public: "localhost:8080",
 		publicPath: "/",
 		contentBase: path.join(__dirname, "dist"),
+		host: "0.0.0.0",
+		port: 8080,
 	},
 	watchOptions: {
 		ignored: "**/node_modules",

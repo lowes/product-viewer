@@ -17,8 +17,9 @@ import "@babylonjs/core/Debug/debugLayer";
 import "@babylonjs/inspector";
 import "@babylonjs/loaders";
 import { Engine, Scene, Camera, AbstractMesh } from "@babylonjs/core";
-import { LitElement, html, css, TemplateResult } from "lit";
-import { ResizeObserver as Polyfill } from "@juggle/resize-observer";
+import { LitElement, TemplateResult, CSSResultGroup } from "lit";
+import { ResizeObserver as Polyfill, ResizeObserverEntry } from "@juggle/resize-observer";
+import { style, template } from "./template";
 //import { property } from "lit/decorators.js";
 
 // Use native resize observer for better perf if available
@@ -37,22 +38,13 @@ export default class ProductViewerElementBase extends LitElement {
 	}
 
 	// Lit element styles that get applied to the template in the render() function
-	static styles = css`
-		:host {
-			display: block;
-			height: 100%;
-			width: 100%;
-		}
-		.renderCanvas {
-			width: 100%;
-			height: 100%;
-			touch-action: none;
-			outline: none;
-		}
-	`;
+	static get styles(): CSSResultGroup {
+		return [style];
+	}
 
 	initBabylon(): void {
 		this.renderCanvas = this.shadowRoot.querySelector(".renderCanvas");
+		this.viewerWrapper = this.shadowRoot.querySelector(".viewerWrapper");
 
 		// initialize babylon scene and engine
 		this.engine = new Engine(this.renderCanvas, true, { preserveDrawingBuffer: true, stencil: true }, true);
@@ -74,11 +66,16 @@ export default class ProductViewerElementBase extends LitElement {
 			}
 		});
 
-		window.addEventListener("resize", () => {
-			this.engine.resize();
-		});
-
-		const resizeObserver = new ResizeObserver(() => {
+		const resizeObserver = new ResizeObserver((entries: Array<ResizeObserverEntry>) => {
+			// Set the new size of resized elements
+			for (const entry of entries) {
+				if (entry.target === this) {
+					this.renderCanvas.height = entry.contentRect.height;
+					this.renderCanvas.width = entry.contentRect.width;
+					this.viewerWrapper.style.height = `${entry.contentRect.height}px`;
+					this.viewerWrapper.style.width = `${entry.contentRect.width}px`;
+				}
+			}
 			this.engine.resize();
 			this.scene.render(); // Render the scene after resizing to prevent white flicker
 		});
@@ -91,7 +88,7 @@ export default class ProductViewerElementBase extends LitElement {
 	}
 
 	modelLoaded(meshes: AbstractMesh[]): void {
-		console.log(`${meshes.length} meshe(s) loaded`);
+		console.log(`${meshes.length} mesh(es) loaded`);
 	}
 
 	// Fired on each property update. changedProperties includes the previous values
@@ -105,7 +102,7 @@ export default class ProductViewerElementBase extends LitElement {
 	}
 
 	render(): TemplateResult {
-		return html` <canvas class="renderCanvas" touch-action="none" /> `;
+		return template(this);
 	}
 
 	updateRenderer(): void {

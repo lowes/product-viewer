@@ -24,6 +24,7 @@ import styled from "styled-components/macro";
 import Navigation from "./Navigation";
 import SimpleViewer from "../pages/SimpleViewer";
 import CustomEnv from "../pages/CustomEnv";
+import AugmentedReality from "../pages/AugmentedReality";
 
 const drawerWidth = 240;
 
@@ -85,8 +86,9 @@ function Home(): ReactElement {
 					<Route exact path="/">
 						<Redirect to="/simple" />
 					</Route>
-					<Route path="/environment" component={CustomEnv} />
 					<Route path="/simple" component={SimpleViewer} />
+					<Route path="/environment" component={CustomEnv} />
+					<Route path="/ar" component={AugmentedReality} />
 				</Switch>
 			</Content>
 		</RootDiv>
