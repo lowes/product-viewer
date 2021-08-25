@@ -35,7 +35,10 @@ function SimpleViewer(): ReactElement {
 			minSize={200}
 			onChange={handlePanelDrag}
 		>
-			<product-viewer style={{ height: panelSize }} model-url="./common-assets/models/WaterBottle.glb" />
+			<product-viewer
+				style={{ height: panelSize, width: "100%" }}
+				model-url="./common-assets/models/WaterBottle.glb"
+			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
 				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot; /&gt;

@@ -75,6 +75,7 @@ function Navigation(props: NavProps): ReactElement {
 	const nav = [
 		{ name: "Simple Viewer", id: "simple", icon: <ThreeDRotation /> },
 		{ name: "Custom Environment", id: "environment", icon: <ThreeDRotation /> },
+		{ name: "Augmented Reality", id: "ar", icon: <ThreeDRotation /> },
 	];
 
 	const drawer = (

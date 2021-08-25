@@ -20,7 +20,7 @@ import HTMLSnippet from "../components/HTMLSnippet";
 
 const defaultSize = 500; // Set default viewer canvas height
 
-function CustomEnv(): ReactElement {
+function AugmentedReality(): ReactElement {
 	const [panelSize, setPanelSize] = React.useState(defaultSize);
 
 	const handlePanelDrag = (newSize: number) => {
@@ -36,19 +36,19 @@ function CustomEnv(): ReactElement {
 			onChange={handlePanelDrag}
 		>
 			<product-viewer
+				ar
 				style={{ height: panelSize, width: "100%" }}
 				model-url="./common-assets/models/WaterBottle.glb"
-				environment="./common-assets/environments/neutral.env"
-				create-ground
+				usdz="./common-assets/models/WaterBottle.usdz"
 			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
-				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-				environment=&quot;./common-assets/environments/neutral.env&quot; create-ground /&gt;
+				&lt;product-viewer ar model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
+				usdz=&quot;./common-assets/models/WaterBottle.usdz&quot; /&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
 		</SplitPane>
 	);
 }
 
-export default CustomEnv;
+export default AugmentedReality;

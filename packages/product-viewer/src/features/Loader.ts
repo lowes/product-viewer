@@ -20,7 +20,6 @@ import { SceneLoader } from "@babylonjs/core";
 
 export declare interface LoaderInterface {
 	modelUrl: string;
-	usdz: string;
 }
 
 export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
@@ -28,7 +27,6 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 ): Constructor<LoaderInterface> & T => {
 	class LoaderModelViewerElement extends BaseViewerElement {
 		@property({ type: String, attribute: "model-url" }) modelUrl: string;
-		@property({ type: String, attribute: "usdz" }) usdz: string;
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);

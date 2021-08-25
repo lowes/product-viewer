@@ -22,7 +22,7 @@
         "build:tsc": "tsc",
         "build:watch": "concurrently \"tsc --watch\" \"webpack --watch --config webpack.dev.js\" ",
         "prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
-        "start": "npm run prepare && webpack serve --port 8080 --open --config webpack.dev.js",
+        "start": "npm run prepare && webpack serve --open --config webpack.dev.js",
         "precommit": "lint-staged",
         "fix": "npm run fix:eslint && npm run fix:prettier",
         "fix:eslint": "eslint --fix --ext .ts .",
