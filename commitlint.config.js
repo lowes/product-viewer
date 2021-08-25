@@ -9,6 +9,7 @@ module.exports = {
 				"viewer-assets",
 				"viewer-demos",
 				"eslint",
+				"release",
 				"*",
 			],
 		],
