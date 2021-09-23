@@ -34,10 +34,10 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		updated(changedProperties: Map<string, any>) {
 			super.updated?.(changedProperties);
 
-			this.updateCamera();
+			if (!this.camera) this.createCamera();
 		}
 
-		updateCamera(): void {
+		createCamera(): void {
 			this.scene.clearColor = new Color4(1, 1, 1, 1);
 
 			// Set initial camera angle

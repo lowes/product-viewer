@@ -16,7 +16,7 @@
 import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor } from "../tools/Utils";
 import { property } from "lit/decorators.js";
-import { SceneLoader } from "@babylonjs/core";
+import { AbstractMesh, SceneLoader } from "@babylonjs/core";
 
 export declare interface LoaderInterface {
 	modelUrl: string;
@@ -27,6 +27,7 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 ): Constructor<LoaderInterface> & T => {
 	class LoaderModelViewerElement extends BaseViewerElement {
 		@property({ type: String, attribute: "model-url" }) modelUrl: string;
+		loadedModels: AbstractMesh[];
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
@@ -35,12 +36,21 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 		}
 
 		updateLoader(): void {
+			// Remove all existing models before loading a new one
+			if (this.loadedModels) {
+				for (const model of this.loadedModels) {
+					model.dispose();
+				}
+				this.loadedModels = [];
+			}
+
 			SceneLoader.ImportMesh(
 				"",
 				this.modelUrl,
 				"",
 				this.scene,
 				(meshes) => {
+					this.loadedModels = meshes;
 					this.modelLoaded(meshes);
 				},
 				null,
