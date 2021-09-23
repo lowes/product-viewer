@@ -65,7 +65,9 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 
 		updateLighting(): void {
 			// Lights
-			this.hemisphericLight = new HemisphericLight("HemisphericLight", new Vector3(0, 1, 0), this.scene);
+			if (!this.hemisphericLight)
+				this.hemisphericLight = new HemisphericLight("HemisphericLight", new Vector3(0, 1, 0), this.scene);
+
 			this.hemisphericLight.intensity = this.lightIntensity;
 
 			const envOptions: Partial<IEnvironmentHelperOptions> = {

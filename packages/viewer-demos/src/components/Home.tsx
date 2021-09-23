@@ -23,6 +23,7 @@ import Typography from "@material-ui/core/Typography";
 import styled from "styled-components/macro";
 import Navigation from "./Navigation";
 import SimpleViewer from "../pages/SimpleViewer";
+import ModelLoading from "../pages/ModelLoading";
 import CustomEnv from "../pages/CustomEnv";
 import AugmentedReality from "../pages/AugmentedReality";
 
@@ -87,6 +88,7 @@ function Home(): ReactElement {
 						<Redirect to="/simple" />
 					</Route>
 					<Route path="/simple" component={SimpleViewer} />
+					<Route path="/loading" component={ModelLoading} />
 					<Route path="/environment" component={CustomEnv} />
 					<Route path="/ar" component={AugmentedReality} />
 				</Switch>

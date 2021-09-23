@@ -25,17 +25,24 @@ const CodeSnip = styled.pre`
 `;
 
 interface SnippetProps {
-	children: string;
+	children: string | string[];
 }
 
 function HTMLSnippet(props: SnippetProps): ReactElement {
+	const [snippet, setSnippet] = React.useState("");
+
 	useEffect(() => {
+		if (Array.isArray(props.children)) {
+			setSnippet(props.children.join(""));
+		} else {
+			setSnippet(props.children);
+		}
 		Prism.highlightAll();
 	});
 
 	return (
 		<CodeSnip>
-			<code className="language-html">{props.children}</code>
+			<code className="language-html">{snippet}</code>
 		</CodeSnip>
 	);
 }
