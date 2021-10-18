@@ -44,6 +44,11 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 				this.loadedModels = [];
 			}
 
+			if (!this.modelUrl) {
+				console.warn("No `model-url` provided");
+				return;
+			}
+
 			SceneLoader.ImportMesh(
 				"",
 				this.modelUrl,

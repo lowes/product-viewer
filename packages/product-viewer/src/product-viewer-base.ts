@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-import "@babylonjs/core/Debug/debugLayer";
-import "@babylonjs/inspector";
 import "@babylonjs/loaders";
 import { Engine, Scene, Camera, AbstractMesh } from "@babylonjs/core";
 import { LitElement, TemplateResult, CSSResultGroup } from "lit";
@@ -53,18 +51,6 @@ export default class ProductViewerElementBase extends LitElement {
 		// Update the pixel density to look sharp on high DPI screens (mobile devices)
 		const scaleLevel = 1 / window.devicePixelRatio;
 		this.engine.setHardwareScalingLevel(scaleLevel);
-
-		// hide/show the Inspector
-		this.renderCanvas.addEventListener("keydown", (ev) => {
-			// Shift+Ctrl+Alt+I
-			if (ev.shiftKey && ev.ctrlKey && ev.altKey && ev.code === "KeyI") {
-				if (this.scene.debugLayer.isVisible()) {
-					this.scene.debugLayer.hide();
-				} else {
-					this.scene.debugLayer.show({ embedMode: true });
-				}
-			}
-		});
 
 		const resizeObserver = new ResizeObserver((entries: Array<ResizeObserverEntry>) => {
 			// Set the new size of resized elements

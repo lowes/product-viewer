@@ -59,6 +59,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 			this.framingBehavior.elevationReturnTime = -1; // disable returning to elevation
 			ArcRotateCamera.ForceAttachControlToAlwaysPreventDefault = true;
 			camera.attachControl(this.renderCanvas, true);
+			camera.storeState();
 
 			this.scene.onBeforeRenderObservable.add(() => {
 				const w = this.engine.getRenderWidth(),
@@ -72,6 +73,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 
 		modelLoaded(meshes: AbstractMesh[]) {
 			super.modelLoaded(meshes);
+			this.camera.restoreState();
 			this.framingBehavior.zoomOnMeshesHierarchy(meshes, true);
 		}
 	}
