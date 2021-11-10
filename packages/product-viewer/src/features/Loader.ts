@@ -20,13 +20,16 @@ import { AbstractMesh, SceneLoader } from "@babylonjs/core";
 
 export declare interface LoaderInterface {
 	modelUrl: string;
+	isLoading: boolean;
 }
 
 export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 	BaseViewerElement: T,
 ): Constructor<LoaderInterface> & T => {
 	class LoaderModelViewerElement extends BaseViewerElement {
-		@property({ type: String, attribute: "model-url" }) modelUrl: string;
+		@property({ type: String, attribute: "model-url", reflect: true }) modelUrl: string;
+
+		isLoading = false;
 		loadedModels: AbstractMesh[];
 
 		updated(changedProperties: Map<string, any>): void {
@@ -49,6 +52,8 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 				return;
 			}
 
+			this.isLoading = true;
+
 			SceneLoader.ImportMesh(
 				"",
 				this.modelUrl,
@@ -57,6 +62,7 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 				(meshes) => {
 					this.loadedModels = meshes;
 					this.modelLoaded(meshes);
+					this.isLoading = false;
 				},
 				null,
 				null,
