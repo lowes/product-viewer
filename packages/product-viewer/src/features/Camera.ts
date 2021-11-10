@@ -21,6 +21,7 @@ import { Vector3, ArcRotateCamera, FramingBehavior, AbstractMesh, Color4 } from 
 export declare interface CameraInterface {
 	alpha: number;
 	beta: number;
+	zoomDuration: number;
 }
 
 export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
@@ -29,6 +30,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 	class CameraModelViewerElement extends BaseViewerElement {
 		@property({ type: Number, attribute: "alpha" }) alpha = 0;
 		@property({ type: Number, attribute: "beta" }) beta = 0;
+		@property({ type: Number, attribute: "zoom-duration" }) zoomDuration = 500;
 		framingBehavior: FramingBehavior;
 
 		updated(changedProperties: Map<string, any>) {
@@ -53,7 +55,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 			camera.checkCollisions = true;
 			camera.useFramingBehavior = true;
 			this.framingBehavior = camera.getBehaviorByName("Framing") as FramingBehavior;
-			this.framingBehavior.framingTime = 500;
+			this.framingBehavior.framingTime = this.zoomDuration;
 			this.framingBehavior.autoCorrectCameraLimitsAndSensibility = true;
 			this.framingBehavior.zoomStopsAnimation = true;
 			this.framingBehavior.elevationReturnTime = -1; // disable returning to elevation
