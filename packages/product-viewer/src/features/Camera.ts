@@ -22,6 +22,7 @@ export declare interface CameraInterface {
 	alpha: number;
 	beta: number;
 	zoomDuration: number;
+	isZooming: boolean;
 }
 
 export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
@@ -31,6 +32,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		@property({ type: Number, attribute: "alpha" }) alpha = 0;
 		@property({ type: Number, attribute: "beta" }) beta = 0;
 		@property({ type: Number, attribute: "zoom-duration" }) zoomDuration = 500;
+		isZooming = false;
 		framingBehavior: FramingBehavior;
 
 		updated(changedProperties: Map<string, any>) {
@@ -76,7 +78,10 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		modelLoaded(meshes: AbstractMesh[]) {
 			super.modelLoaded(meshes);
 			this.camera.restoreState();
-			this.framingBehavior.zoomOnMeshesHierarchy(meshes, true);
+			this.isZooming = true;
+			this.framingBehavior.zoomOnMeshesHierarchy(meshes, true, () => {
+				this.isZooming = false;
+			});
 		}
 	}
 	return CameraModelViewerElement as Constructor<CameraInterface> & T;
