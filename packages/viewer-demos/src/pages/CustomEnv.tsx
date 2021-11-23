@@ -13,18 +13,28 @@
  * limitations under the License.
  */
 
-import React, { ReactElement } from "react";
 import "@lowesinnovationlab/product-viewer";
+import FormControl from "@material-ui/core/FormControl";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
+import React, { ReactElement } from "react";
 import SplitPane from "react-split-pane";
 import HTMLSnippet from "../components/HTMLSnippet";
 
 const defaultSize = 500; // Set default viewer canvas height
 
 function CustomEnv(): ReactElement {
+	const envNames = ["neutral", "office"];
+
 	const [panelSize, setPanelSize] = React.useState(defaultSize);
+	const [loadedEnv, setLoadedEnv] = React.useState("neutral");
 
 	const handlePanelDrag = (newSize: number) => {
 		setPanelSize(newSize);
+	};
+
+	const handleChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+		setLoadedEnv(event.target.value as string);
 	};
 
 	return (
@@ -38,15 +48,26 @@ function CustomEnv(): ReactElement {
 			<product-viewer
 				style={{ height: panelSize, width: "100%" }}
 				model-url="./common-assets/models/WaterBottle.glb"
-				environment="./common-assets/environments/neutral.env"
+				environment={`./common-assets/environments/${loadedEnv}.env`}
 				create-ground
+				create-skybox
 			/>
-			{/* eslint-disable prettier/prettier */}
-			<HTMLSnippet>
-				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-				environment=&quot;./common-assets/environments/neutral.env&quot; create-ground /&gt;
-			</HTMLSnippet>
-			{/* eslint-enable prettier/prettier */}
+			<FormControl fullWidth>
+				<Select id="model-select" value={loadedEnv} onChange={handleChange}>
+					{envNames.map((name) => (
+						<MenuItem key={name} value={name}>
+							{name}
+						</MenuItem>
+					))}
+				</Select>
+				{/* eslint-disable prettier/prettier */}
+				<HTMLSnippet>
+					&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
+					environment=&quot;./common-assets/environments/{loadedEnv}.env&quot; create-ground create-skybox
+					/&gt;
+				</HTMLSnippet>
+				{/* eslint-enable prettier/prettier */}
+			</FormControl>
 		</SplitPane>
 	);
 }
