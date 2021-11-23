@@ -40,7 +40,7 @@ module.exports = merge(common, {
 			patterns: [
 				{ from: "public" },
 				{ from: "common-assets/models/", to: "assets" },
-				{ from: "common-assets/environments/neutral.env", to: "assets" },
+				{ from: "common-assets/environments/", to: "assets" },
 			],
 		}),
 	],
