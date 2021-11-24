@@ -35,7 +35,9 @@ export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
 
-			this.updateLoader();
+			if (changedProperties.has("modelUrl")) {
+				this.updateLoader();
+			}
 		}
 
 		updateLoader(): void {

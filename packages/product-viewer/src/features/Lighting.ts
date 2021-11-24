@@ -44,7 +44,7 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 		@property({ type: Number, attribute: "light-intensity" }) lightIntensity = 2.0;
 		@property({ type: String, attribute: "environment" }) environment = "";
 		@property({ type: Boolean, attribute: "create-ground" }) createGround = false;
-		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = true;
+		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = false;
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
@@ -79,8 +79,23 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 			if (this.environment) {
 				const hdrTexture = CubeTexture.CreateFromPrefilteredData(this.environment, this.scene);
 				envOptions.environmentTexture = hdrTexture;
+
+				// NOTE: due to a bug in Babylon.js, when a new environmentTexture is passed to
+				// envHelper.updateOptions(), the old object is disposed, but not set to null.
+				// https://github.com/BabylonJS/Babylon.js/blob/40f0ba2cc8a7acbd9dbdc81492a305fa781a41bc/src/Helpers/environmentHelper.ts#L406
+				// This prevents the update from completing due to a check in _setupEnvironmentTexture():
+				// https://github.com/BabylonJS/Babylon.js/blob/40f0ba2cc8a7acbd9dbdc81492a305fa781a41bc/src/Helpers/environmentHelper.ts#L450
+				if (this.scene.environmentTexture) {
+					this.scene.environmentTexture.dispose();
+					this.scene.environmentTexture = null;
+				}
 			}
-			this.envHelper = this.scene.createDefaultEnvironment(envOptions);
+
+			if (!this.envHelper) {
+				this.envHelper = this.scene.createDefaultEnvironment(envOptions);
+			} else {
+				this.envHelper.updateOptions(envOptions);
+			}
 
 			// Enable tonemapping to prevent white blowout
 			this.scene.imageProcessingConfiguration.toneMappingEnabled = true;
