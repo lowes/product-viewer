@@ -102,6 +102,7 @@ export default class ProductViewerElementBase extends LitElement {
 			const screenshotSize = size ?? { width, height };
 			return Tools.CreateScreenshotAsync(this.engine, null, screenshotSize);
 		} else {
+			console.warn("Unable to take screenshot because engine does not exist");
 			return null;
 		}
 	}
