@@ -44,7 +44,7 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 		@property({ type: Number, attribute: "light-intensity" }) lightIntensity = 2.0;
 		@property({ type: String, attribute: "environment" }) environment = "";
 		@property({ type: Boolean, attribute: "create-ground" }) createGround = false;
-		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = false;
+		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = true;
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
@@ -91,11 +91,7 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 				}
 			}
 
-			if (!this.envHelper) {
-				this.envHelper = this.scene.createDefaultEnvironment(envOptions);
-			} else {
-				this.envHelper.updateOptions(envOptions);
-			}
+			this.envHelper = this.scene.createDefaultEnvironment(envOptions);
 
 			// Enable tonemapping to prevent white blowout
 			this.scene.imageProcessingConfiguration.toneMappingEnabled = true;
