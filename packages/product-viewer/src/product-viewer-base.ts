@@ -14,7 +14,7 @@
  */
 
 import "@babylonjs/loaders";
-import { Engine, Scene, Camera, AbstractMesh } from "@babylonjs/core";
+import { Engine, Scene, Camera, AbstractMesh, Tools, IScreenshotSize } from "@babylonjs/core";
 import { LitElement, TemplateResult, CSSResultGroup } from "lit";
 import { ResizeObserver as Polyfill, ResizeObserverEntry } from "@juggle/resize-observer";
 import { style, template } from "./template";
@@ -94,5 +94,16 @@ export default class ProductViewerElementBase extends LitElement {
 	updateRenderer(): void {
 		if (this.engine) this.engine.resize();
 		else this.initBabylon();
+	}
+
+	takeScreenshot(size?: IScreenshotSize): Promise<string | null> {
+		if (this.engine) {
+			const { width, height } = this.renderCanvas;
+			const screenshotSize = size ?? { width, height };
+			return Tools.CreateScreenshotAsync(this.engine, null, screenshotSize);
+		} else {
+			console.warn("Unable to take screenshot because engine does not exist");
+			return null;
+		}
 	}
 }
