@@ -54,3 +54,6 @@ VS Code Plugins:
 | `npm run lint`      | Checks for lint issues in each package                                                                  |
 | `npm run lint:fix`  | Fixes lint issues in each package                                                                       |
 | `npm run test`      | Runs tests in each package                                                                              |
+
+## Demo:
+https://3dviewer.3dmanager.app/
