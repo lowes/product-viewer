@@ -14,7 +14,7 @@
  */
 
 import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "@lowesinnovationlab/product-viewer";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -28,10 +28,10 @@ interface NavButtonProps {
 }
 
 function NavButton(props: NavButtonProps): ReactElement {
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const handleClick = () => {
-		history.push("/" + props.pageId);
+		navigate("/" + props.pageId);
 	};
 
 	return (

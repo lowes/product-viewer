@@ -14,7 +14,7 @@
  */
 
 import React, { ReactElement } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -83,15 +83,13 @@ function Home(): ReactElement {
 			<Navigation onClose={handleDrawerToggle} mobileOpen={mobileOpen} drawerWidth={drawerWidth} />
 			<Content>
 				<SizedToolbar />
-				<Switch>
-					<Route exact path="/">
-						<Redirect to="/simple" />
-					</Route>
-					<Route path="/simple" component={SimpleViewer} />
-					<Route path="/loading" component={ModelLoading} />
-					<Route path="/environment" component={CustomEnv} />
-					<Route path="/ar" component={AugmentedReality} />
-				</Switch>
+				<Routes>
+					<Route path="/simple" element={<SimpleViewer />} />
+					<Route path="/loading" element={<ModelLoading />} />
+					<Route path="/environment" element={<CustomEnv />} />
+					<Route path="/ar" element={<AugmentedReality />} />
+					<Route index element={<Navigate to="/simple" />} />
+				</Routes>
 			</Content>
 		</RootDiv>
 	);
