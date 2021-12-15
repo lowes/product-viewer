@@ -1,7 +1,7 @@
 import { assert, expect, fixture, html, waitUntil } from "@open-wc/testing";
 import { ProductViewerElement } from "./product-viewer";
 
-const LOADING_TIMEOUT = 2000;
+const LOADING_TIMEOUT = 5000;
 const FRAMING_TIMEOUT = 1000;
 
 describe("ProductViewerElement", () => {
