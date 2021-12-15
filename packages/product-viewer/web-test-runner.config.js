@@ -6,7 +6,7 @@ module.exports = {
 	plugins: [esbuildPlugin({ ts: true })],
 	testFramework: {
 		config: {
-			timeout: "5000",
+			timeout: "10000",
 		},
 	},
 };
