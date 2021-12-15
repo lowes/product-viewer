@@ -1,6 +1,8 @@
 import { assert, expect, fixture, html, waitUntil } from "@open-wc/testing";
 import { ProductViewerElement } from "./product-viewer";
 
+const WAIT_OPTIONS = { interval: 200, timeout: 5000 };
+
 describe("ProductViewerElement", () => {
 	it("registers a custom element", () => {
 		const viewer = document.createElement("product-viewer");
@@ -24,10 +26,10 @@ describe("ProductViewerElement", () => {
 		const numInitialMeshes = viewer.scene.meshes.length;
 
 		expect(viewer.isLoading).to.be.true;
-		await waitUntil(() => !viewer.isLoading);
+		await waitUntil(() => !viewer.isLoading, "Viewer should finish loading", WAIT_OPTIONS);
 
 		expect(viewer.isFraming).to.be.true;
-		await waitUntil(() => !viewer.isFraming);
+		await waitUntil(() => !viewer.isFraming, "Viewer should finish framing", WAIT_OPTIONS);
 
 		// this particular model contains two meshes
 		expect(viewer.scene.meshes.length).to.equal(numInitialMeshes + 2);
