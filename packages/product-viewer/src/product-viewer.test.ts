@@ -1,7 +1,8 @@
 import { assert, expect, fixture, html, waitUntil } from "@open-wc/testing";
 import { ProductViewerElement } from "./product-viewer";
 
-const WAIT_OPTIONS = { interval: 200, timeout: 5000 };
+const TIMEOUT = 5000;
+const WAIT_OPTIONS = { timeout: TIMEOUT };
 
 describe("ProductViewerElement", () => {
 	it("registers a custom element", () => {

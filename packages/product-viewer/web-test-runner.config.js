@@ -5,6 +5,8 @@ module.exports = {
 	nodeResolve: true,
 	plugins: [esbuildPlugin({ ts: true })],
 	testFramework: {
-		timeout: "5000",
+		config: {
+			timeout: "5000",
+		},
 	},
 };
