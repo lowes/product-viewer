@@ -1,26 +1,27 @@
 {
-  "name": "root",
-  "private": true,
-  "description": "Repository containing <product-viewer> related projects",
-  "scripts": {
-    "setup": "npm install && npm run bootstrap",
-    "bootstrap": "lerna bootstrap",
-    "start": "npm run bootstrap && lerna run build:watch --stream --parallel",
-    "build": "lerna run build --stream",
-    "clean": "lerna clean",
-    "serve-viewer": "cd packages/product-viewer && npm run start",
-    "lint": "lerna run lint --parallel",
-    "lint:fix": "lerna run fix --parallel",
-    "test": "lerna run test"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@commitlint/config-lerna-scopes": "^13.1.0",
-    "husky": "^4.3.8",
-    "lerna": "3.22.1",
-    "rimraf": "^3.0.2",
-    "symlink-dir": "^5.0.1"
-  }
+	"name": "root",
+	"private": true,
+	"description": "Repository containing <product-viewer> related projects",
+	"scripts": {
+		"setup": "npm install && npm run bootstrap",
+		"bootstrap": "lerna bootstrap",
+		"start": "npm run bootstrap && lerna run build:watch --stream --parallel",
+		"build": "lerna run build --stream",
+		"clean": "lerna clean",
+		"serve-viewer": "cd packages/product-viewer && npm run start",
+		"lint": "lerna run lint --parallel",
+		"lint:fix": "lerna run fix --parallel",
+		"test": "lerna run test",
+		"prepare": "husky install"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.0",
+		"@commitlint/cli": "^15.0.0",
+		"@commitlint/config-conventional": "^15.0.0",
+		"@commitlint/config-lerna-scopes": "^15.0.0",
+		"husky": "^7.0.4",
+		"lerna": "4.0.0",
+		"rimraf": "^3.0.2",
+		"symlink-dir": "^5.0.1"
+	}
 }
