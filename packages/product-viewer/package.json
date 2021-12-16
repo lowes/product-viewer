@@ -29,7 +29,8 @@
 		"fix:prettier": "prettier --write .",
 		"lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
-		"lint:prettier": "prettier --check ."
+		"lint:prettier": "prettier --check .",
+		"test": "web-test-runner"
 	},
 	"dependencies": {
 		"@juggle/resize-observer": "^3.3.1"
@@ -39,10 +40,13 @@
 		"@babylonjs/gui": "^4.2.0",
 		"@babylonjs/loaders": "^4.2.0",
 		"@lowesinnovationlab/viewer-assets": "^0.0.4",
+		"@open-wc/testing": "^3.0.3",
 		"@types/react": "17.0.37",
 		"@types/react-dom": "17.0.11",
 		"@typescript-eslint/eslint-plugin": "^5.6.0",
 		"@typescript-eslint/parser": "^5.6.0",
+		"@web/dev-server-esbuild": "^0.2.16",
+		"@web/test-runner": "^0.13.22",
 		"chokidar": "^3.5.2",
 		"clean-webpack-plugin": "^4.0.0",
 		"concurrently": "^6.4.0",
