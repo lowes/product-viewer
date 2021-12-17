@@ -77,6 +77,7 @@ function Navigation(props: NavProps): ReactElement {
 		{ name: "Model Loading", id: "loading", icon: <ThreeDRotation /> },
 		{ name: "Custom Environment", id: "environment", icon: <ThreeDRotation /> },
 		{ name: "Augmented Reality", id: "ar", icon: <ThreeDRotation /> },
+		{ name: "Editor", id: "editor", icon: <ThreeDRotation /> },
 	];
 
 	const drawer = (

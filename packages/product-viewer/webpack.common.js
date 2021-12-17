@@ -20,9 +20,12 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
 	context: __dirname,
-	entry: path.resolve(appDirectory, "lib/product-viewer.js"),
+	entry: {
+		"product-viewer": path.resolve(appDirectory, "lib/product-viewer.js"),
+		"product-editor": path.resolve(appDirectory, "lib/product-editor.js"),
+	},
 	output: {
-		filename: "product-viewer.js",
+		filename: "[name].js",
 		path: path.resolve(appDirectory, "dist"),
 		library: "productViewer",
 		libraryTarget: "umd",

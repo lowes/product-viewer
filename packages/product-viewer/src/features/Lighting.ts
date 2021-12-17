@@ -91,6 +91,11 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 				}
 			}
 
+			// NOTE: We need to remove the old envHelper before creating a new one when the `model-url` is updated.
+			// It seems like we should be able to use `this.envHelper.updateOptions(envOptions)`,
+			// however this causes the skybox & ground to disappear (or turn completely white).
+			if (this.envHelper) this.envHelper.dispose();
+
 			this.envHelper = this.scene.createDefaultEnvironment(envOptions);
 
 			// Enable tonemapping to prevent white blowout

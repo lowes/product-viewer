@@ -45,7 +45,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 			this.scene.clearColor = new Color4(1, 1, 1, 1);
 
 			// Set initial camera angle
-			this.camera = new ArcRotateCamera("MainCamera", 0, 1, 5, Vector3.Zero(), this.scene);
+			this.camera = new ArcRotateCamera("MainCamera", Math.PI / 4, 1, 5, Vector3.Zero(), this.scene);
 			const camera = this.camera as ArcRotateCamera;
 
 			camera.wheelPrecision = 25;
