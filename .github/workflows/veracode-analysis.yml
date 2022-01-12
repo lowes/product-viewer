@@ -60,9 +60,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: lowesinnovationlab/download-veracode-results-action
-          ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: false
           path: ./.github/actions/download-veracode-results-action
 
       - name: Get Veracode Scan Results file
