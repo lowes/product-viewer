@@ -59,7 +59,7 @@ jobs:
       - name: Checkout lowesinnovationlab/download-veracode-results-action
         uses: actions/checkout@v2
         with:
-          repository: lowesinnovationlab/download-veracode-results-actionn
+          repository: lowesinnovationlab/download-veracode-results-action
           ref: refs/heads/master
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false
