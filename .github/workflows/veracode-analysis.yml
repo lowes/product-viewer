@@ -1,0 +1,76 @@
+name: Veracode Analysis
+on: 
+  push:
+    branches: 
+      - develop
+    paths-ignore:
+      - README.md
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  veracode-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Zip up the source
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r source.zip .
+
+      - name: Veracode setup java
+        uses: actions/setup-java@v1 # Make java accessible on path so the uploadandscan action can run.
+        with: 
+          java-version: '8'
+
+      - name: Veracode copy files
+        uses: actions/upload-artifact@v2 # Copy files from repository to docker container so the next uploadandscan action can access them.
+        with:
+          name: source-artifact
+          path: source.zip   # Wildcards can be used to filter the files copied into the container. See: https://github.com/actions/upload-artifact
+
+      - name: Set date
+        run: echo "CURRENT_DATE=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+
+      - name: Set sandbox name
+        run: echo "SANDBOX_NAME=productviewer" >> $GITHUB_ENV
+
+      - name: Veracode Upload And Scan
+        continue-on-error: true
+        uses: veracode/veracode-uploadandscan-action@master # Run the uploadandscan action. Inputs are described above.
+        with:
+          version: '${{ env.CURRENT_DATE }}'
+          filepath: 'source.zip'
+          vid: '${{ secrets.VERACODE_API_ID }}'
+          vkey: '${{ secrets.VERACODE_API_KEY }}'
+          createsandbox: 'true'
+          sandboxname: '${{ env.SANDBOX_NAME }}'
+          scantimeout: 15
+          include: '*.zip'
+          criticality: 'VeryHigh'
+
+      - name: Install xmllint
+        run: sudo apt-get install libxml2-utils
+
+      - name: Set output filename
+        run: echo "OUTPUT_FILENAME=veracodeScanResults-${{ env.SANDBOX_NAME }}-${{ github.event.number }}.pdf" >> $GITHUB_ENV
+
+      - name: Get Veracode Scan Results file
+        id: results
+        uses: ./.github/actions/download-veracode-results-action
+        with:
+          sandboxname: '${{ env.SANDBOX_NAME }}'
+          version: '${{ env.CURRENT_DATE }}'
+          format: 'PDF'
+          outputfilepath: '${{ env.OUTPUT_FILENAME }}'
+          vid: '${{ secrets.VERACODE_API_ID }}'
+          vkey: '${{ secrets.VERACODE_API_KEY }}'
+
+      - name: Copy scan results file to artifact
+        if: steps.results.conclusion == 'success'
+        uses: actions/upload-artifact@v2
+        with:
+          name: scan-results-artifact
+          path: '${{ env.OUTPUT_FILENAME }}'
