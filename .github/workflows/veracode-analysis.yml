@@ -56,9 +56,18 @@ jobs:
       - name: Set output filename
         run: echo "OUTPUT_FILENAME=veracodeScanResults-${{ env.SANDBOX_NAME }}-${{ github.event.number }}.pdf" >> $GITHUB_ENV
 
+      - name: Checkout lowesinnovationlab/download-veracode-results-action
+        uses: actions/checkout@v2
+        with:
+          repository: lowesinnovationlab/download-veracode-results-actionn
+          ref: refs/heads/master
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+          path: ./.github/actions/download-veracode-results-action
+
       - name: Get Veracode Scan Results file
         id: results
-        uses: lowesinnovationlab/download-veracode-results-action@master
+        uses: ./.github/actions/download-veracode-results-action
         with:
           sandboxname: '${{ env.SANDBOX_NAME }}'
           version: '${{ env.CURRENT_DATE }}'
