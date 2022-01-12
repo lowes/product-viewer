@@ -49,7 +49,6 @@ jobs:
           sandboxname: '${{ env.SANDBOX_NAME }}'
           scantimeout: 15
           include: '*.zip'
-          criticality: 'VeryHigh'
 
       - name: Install xmllint
         run: sudo apt-get install libxml2-utils
@@ -59,7 +58,7 @@ jobs:
 
       - name: Get Veracode Scan Results file
         id: results
-        uses: ./.github/actions/download-veracode-results-action
+        uses: lowesinnovationlab/download-veracode-results-action@master
         with:
           sandboxname: '${{ env.SANDBOX_NAME }}'
           version: '${{ env.CURRENT_DATE }}'
