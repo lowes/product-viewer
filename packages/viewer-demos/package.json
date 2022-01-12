@@ -42,7 +42,7 @@
 		"react-dom": "^17.0.2",
 		"react-redux": "^7.2.6",
 		"react-router-dom": "^6.1.0",
-		"react-scripts": "^4.0.3",
+		"react-scripts": "^5.0.0",
 		"react-split-pane": "^0.1.92",
 		"redux": "^4.1.2",
 		"redux-devtools-extension": "^2.13.9",
@@ -89,8 +89,13 @@
 		"ansi-html": "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
 		"ansi-regex": "5.0.1",
 		"browserslist": "4.18.1",
+		"cache-base": "^4.0.0",
+		"ejs": "^3.1.6",
 		"glob-parent": "6.0.2",
 		"immer": "9.0.6",
-		"nth-check": "2.0.1"
+		"mixin-deep": "^2.0.1",
+		"node-forge": "^1.2.0",
+		"nth-check": "2.0.1",
+		"shell-quote": "^1.7.3"
 	}
 }
