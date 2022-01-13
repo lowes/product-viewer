@@ -2,7 +2,6 @@
 	"name": "@lowesinnovationlab/product-viewer",
 	"repository": "git://github.com/lowesinnovationlab/product-viewer.git",
 	"version": "0.0.5",
-	"license": "Apache-2.0",
 	"engines": {
 		"node": ">=10.0.0"
 	},
@@ -15,6 +14,7 @@
 		"dist/product-viewer.js.map",
 		"dist/product-viewer.min",
 		"dist/product-viewer.min.js.map",
+		"dist/product-editor.js",
 		"lib"
 	],
 	"scripts": {
@@ -36,9 +36,10 @@
 		"@juggle/resize-observer": "^3.3.1"
 	},
 	"devDependencies": {
-		"@babylonjs/core": "^4.2.0",
-		"@babylonjs/gui": "^4.2.0",
-		"@babylonjs/loaders": "^4.2.0",
+		"@babylonjs/core": "^4.2.1",
+		"@babylonjs/gui": "^4.2.1",
+		"@babylonjs/inspector": "^4.2.1",
+		"@babylonjs/loaders": "^4.2.1",
 		"@lowesinnovationlab/viewer-assets": "^0.0.4",
 		"@open-wc/testing": "^3.0.3",
 		"@types/estree": "0.0.50",

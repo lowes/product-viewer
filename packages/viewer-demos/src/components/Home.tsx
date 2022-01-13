@@ -26,6 +26,7 @@ import SimpleViewer from "../pages/SimpleViewer";
 import ModelLoading from "../pages/ModelLoading";
 import CustomEnv from "../pages/CustomEnv";
 import AugmentedReality from "../pages/AugmentedReality";
+import Editor from "../pages/Editor";
 
 const drawerWidth = 240;
 
@@ -88,6 +89,7 @@ function Home(): ReactElement {
 					<Route path="/loading" element={<ModelLoading />} />
 					<Route path="/environment" element={<CustomEnv />} />
 					<Route path="/ar" element={<AugmentedReality />} />
+					<Route path="/editor" element={<Editor />} />
 					<Route index element={<Navigate to="/simple" />} />
 				</Routes>
 			</Content>

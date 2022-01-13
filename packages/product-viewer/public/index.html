@@ -18,6 +18,7 @@
 <html lang="en">
 	<head>
 		<script type="module" src="./product-viewer.js"></script>
+		<script type="module" src="./product-editor.js"></script>
 	</head>
 	<body>
 		<product-viewer
@@ -28,5 +29,12 @@
 		>
 			<!-- <button slot="ar-button">Custom Launch AR</button> -->
 		</product-viewer>
+		<product-editor
+			model-url="./assets/WaterBottle.glb"
+			create-ground
+			scale-ref-url="./assets/6ft_man.glb"
+			inspector="true"
+		>
+		</product-editor>
 	</body>
 </html>

@@ -1,23 +1,23 @@
 {
 	"folders": [
-	  {
-		"name": "root",
-		"path": "."
-	  },
-	  {
-		"path": "packages/product-viewer"
-	  },
-	  {
-		"path": "packages/viewer-assets"
-	  },
-	  {
-		"path": "packages/viewer-demos"
-	  }
+		{
+			"name": "root",
+			"path": "."
+		},
+		{
+			"path": "packages/product-viewer"
+		},
+		{
+			"path": "packages/viewer-assets"
+		},
+		{
+			"path": "packages/viewer-demos"
+		}
 	],
 	"settings": {
-	  "files.exclude": {
-		"**/node_modules/**": true,
-		"packages/*/*": true
-	  }
+		"files.exclude": {
+			"**/node_modules/**": true,
+			"packages/*/*": true
+		}
 	}
 }

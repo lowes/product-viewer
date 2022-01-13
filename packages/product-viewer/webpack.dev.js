@@ -22,7 +22,10 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
 	mode: "development",
-	entry: path.resolve(appDirectory, "src/product-viewer.ts"),
+	entry: {
+		"product-viewer": path.resolve(appDirectory, "src/product-viewer.ts"),
+		"product-editor": path.resolve(appDirectory, "src/product-editor.ts"),
+	},
 	devtool: "inline-source-map",
 	devServer: {
 		static: "./",
