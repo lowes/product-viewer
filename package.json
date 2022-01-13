@@ -16,7 +16,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.16.0",
-		"@commitlint/cli": "^15.0.0",
+		"@commitlint/cli": "^16.0.2",
 		"@commitlint/config-conventional": "^16.0.0",
 		"@commitlint/config-lerna-scopes": "^15.0.0",
 		"husky": "^7.0.4",
