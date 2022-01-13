@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Node } from "@babylonjs/core";
+import { AbstractMesh, BoundingBox, Node } from "@babylonjs/core";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Constructor<T> = new (...args: any[]) => T;
@@ -64,4 +64,9 @@ export const isMobile = (): boolean => {
 		check = true;
 	}
 	return check;
+};
+
+export const getBoundingBox = (mesh: AbstractMesh): BoundingBox => {
+	const bounds = GetRootNode(mesh).getHierarchyBoundingVectors();
+	return new BoundingBox(bounds.min, bounds.max);
 };

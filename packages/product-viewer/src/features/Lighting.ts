@@ -13,20 +13,19 @@
  * limitations under the License.
  */
 
-import ProductViewerElementBase from "../product-viewer-base";
-import { Constructor, GetRootNode } from "../tools/Utils";
-import { property } from "lit/decorators.js";
 import {
-	Vector3,
-	HemisphericLight,
-	CubeTexture,
-	ImageProcessingConfiguration,
-	Color3,
-	IEnvironmentHelperOptions,
 	AbstractMesh,
+	Color3,
+	CubeTexture,
 	EnvironmentHelper,
-	BoundingBox,
+	HemisphericLight,
+	IEnvironmentHelperOptions,
+	ImageProcessingConfiguration,
+	Vector3,
 } from "@babylonjs/core";
+import { property } from "lit/decorators.js";
+import ProductViewerElementBase from "../product-viewer-base";
+import { Constructor, getBoundingBox } from "../tools/Utils";
 
 export declare interface LightingInterface {
 	lightIntensity: number;
@@ -57,8 +56,7 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 			// Get the root node of the first mesh to calculate total bounds for correct floor placement
 			// Since all glbs import with under __root__ node, it doesn't matter which mesh index we use
 			if (this.envHelper.ground) {
-				const bounds = GetRootNode(meshes[0]).getHierarchyBoundingVectors();
-				const boundingBox = new BoundingBox(bounds.min, bounds.max);
+				const boundingBox = getBoundingBox(meshes[0]);
 				this.envHelper.ground.position.y -= boundingBox.extendSizeWorld.y - boundingBox.centerWorld.y;
 			}
 		}
