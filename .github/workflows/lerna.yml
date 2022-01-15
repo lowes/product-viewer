@@ -26,9 +26,6 @@ jobs:
         run: |
           npm run setup
 
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-
       - name: Publish lerna
         run: |
           lerna publish from-git
