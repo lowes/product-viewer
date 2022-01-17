@@ -7,13 +7,10 @@
 	},
 	"main": "dist/product-viewer.js",
 	"module": "dist/product-viewer.js",
-	"types": "lib/product-viewer.d.ts",
+	"types": "lib/index.d.ts",
 	"files": [
 		"src",
 		"dist/product-viewer.js",
-		"dist/product-viewer.js.map",
-		"dist/product-viewer.min",
-		"dist/product-viewer.min.js.map",
 		"dist/product-editor.js",
 		"lib"
 	],
