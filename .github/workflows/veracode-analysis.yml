@@ -12,6 +12,7 @@ on:
 jobs:
   veracode-analysis:
     runs-on: ubuntu-latest
+    concurrency: veracode_analysis
     steps:
       - uses: actions/checkout@v2
       
@@ -38,7 +39,6 @@ jobs:
         run: echo "SANDBOX_NAME=productviewer" >> $GITHUB_ENV
 
       - name: Veracode Upload And Scan
-        continue-on-error: true
         uses: veracode/veracode-uploadandscan-action@master # Run the uploadandscan action. Inputs are described above.
         with:
           version: '${{ env.CURRENT_DATE }}'
