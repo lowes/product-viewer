@@ -1,6 +1,6 @@
 {
 	"name": "@lowesinnovationlab/viewer-demos",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"private": true,
 	"engines": {
 		"node": ">=10.0.0"
@@ -23,7 +23,7 @@
 		"prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./public/common-assets"
 	},
 	"dependencies": {
-		"@lowesinnovationlab/product-viewer": "^0.0.6",
+		"@lowesinnovationlab/product-viewer": "^0.0.7",
 		"@material-ui/core": "^4.12.3",
 		"@material-ui/icons": "^4.11.2",
 		"@testing-library/jest-dom": "^5.16.1",
@@ -73,7 +73,7 @@
 		]
 	},
 	"devDependencies": {
-		"@lowesinnovationlab/viewer-assets": "^0.0.5",
+		"@lowesinnovationlab/viewer-assets": "^0.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.6.0",
 		"@typescript-eslint/parser": "^5.6.0",
 		"eslint": "^7.32.0",
