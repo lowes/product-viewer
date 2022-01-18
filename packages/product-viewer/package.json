@@ -1,7 +1,7 @@
 {
 	"name": "@lowesinnovationlab/product-viewer",
 	"repository": "git://github.com/lowesinnovationlab/product-viewer.git",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"engines": {
 		"node": ">=10.0.0"
 	},
@@ -37,7 +37,7 @@
 		"@babylonjs/gui": "^4.2.1",
 		"@babylonjs/inspector": "^4.2.1",
 		"@babylonjs/loaders": "^4.2.1",
-		"@lowesinnovationlab/viewer-assets": "^0.0.5",
+		"@lowesinnovationlab/viewer-assets": "^0.0.6",
 		"@open-wc/testing": "^3.0.3",
 		"@types/estree": "0.0.50",
 		"@types/react": "17.0.37",
