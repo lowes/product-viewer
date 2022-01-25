@@ -11,6 +11,9 @@ jobs:
       matrix:
         node-version: [12.x]
 
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
         with:
