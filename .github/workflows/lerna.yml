@@ -27,4 +27,4 @@ jobs:
 
       - name: Publish lerna
         run: |
-          lerna publish from-git
+          lerna publish from-package
