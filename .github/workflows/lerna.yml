@@ -27,4 +27,4 @@ jobs:
 
       - name: Publish lerna
         run: |
-          lerna publish from-package
+          lerna publish from-package --yes
