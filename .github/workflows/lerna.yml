@@ -11,9 +11,6 @@ jobs:
       matrix:
         node-version: [12.x]
 
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -23,14 +20,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+          scope: '@lowesinnovationlab'
 
       - name: Installing dependencies
         run: |
           npm run setup
 
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-
       - name: Publish lerna
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           lerna publish from-package --yes
