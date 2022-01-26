@@ -40,3 +40,4 @@ More examples and customization options can be found at the [viewer-demos](https
 | `npm run build` | Builds a minified production version of product-viewer |
 | `npm run lint`  | Runs eslint and prettier tests                         |
 | `npm run fix`   | Attempts to fix all eslint and prettier problems       |
+| `npm run test`  | Runs test suite using web-test-runner                  |
