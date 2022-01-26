@@ -20,11 +20,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+          scope: '@lowesinnovationlab'
 
       - name: Installing dependencies
         run: |
           npm run setup
 
       - name: Publish lerna
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          lerna publish from-git
+          lerna publish from-package --yes
