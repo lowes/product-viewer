@@ -32,7 +32,6 @@ const ResizeObserver = window.ResizeObserver || Polyfill;
 export default class ProductViewerElementBase extends LitElement {
 	viewerWrapper: HTMLDivElement;
 	renderCanvas: HTMLCanvasElement;
-	inspector: HTMLDivElement;
 	engine: Engine;
 	scene: Scene;
 	camera: Camera;
