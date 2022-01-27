@@ -9,6 +9,9 @@ on:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
+env:
+  SANDBOX_NAME: Github-Sandbox
+
 jobs:
   veracode-analysis:
     runs-on: ubuntu-latest
@@ -35,9 +38,6 @@ jobs:
       - name: Set date
         run: echo "CURRENT_DATE=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
 
-      - name: Set sandbox name
-        run: echo "SANDBOX_NAME=productviewer" >> $GITHUB_ENV
-
       - name: Veracode Upload And Scan
         uses: veracode/veracode-uploadandscan-action@master # Run the uploadandscan action. Inputs are described above.
         with:
@@ -56,10 +56,10 @@ jobs:
       - name: Set output filename
         run: echo "OUTPUT_FILENAME=veracodeScanResults-${{ env.SANDBOX_NAME }}-${{ github.event.number }}.pdf" >> $GITHUB_ENV
 
-      - name: Checkout lowesinnovationlab/download-veracode-results-action
+      - name: Checkout lowes/download-veracode-results-action
         uses: actions/checkout@v2
         with:
-          repository: lowesinnovationlab/download-veracode-results-action
+          repository: lowes/download-veracode-results-action
           token: ${{ secrets.GH_TOKEN }}
           path: ./.github/actions/download-veracode-results-action
           ref: master

@@ -22,7 +22,7 @@
 
 import React, { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import "@lowesinnovationlab/product-viewer";
+import "@lowes/product-viewer";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
