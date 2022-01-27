@@ -33,7 +33,7 @@ describe("ProductViewerElement", () => {
 		expect(viewer.isFraming).to.be.false;
 		expect(viewer.modelUrl).to.be.undefined;
 		expect(viewer.createGround).to.be.false;
-		expect(viewer.createSkybox).to.be.true;
+		expect(viewer.createSkybox).to.be.false;
 	});
 
 	it("is able to load a model", async () => {
