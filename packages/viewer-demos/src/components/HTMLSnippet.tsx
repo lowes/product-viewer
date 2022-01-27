@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 import React, { ReactElement, useEffect } from "react";
-import "@lowesinnovationlab/product-viewer";
+import "@lowes/product-viewer";
 import styled from "styled-components/macro";
 import Prism from "prismjs";
 

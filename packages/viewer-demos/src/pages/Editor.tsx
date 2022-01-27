@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 import React, { ReactElement } from "react";
-import "@lowesinnovationlab/product-viewer/lib/product-editor";
+import "@lowes/product-viewer/lib/product-editor";
 import SplitPane from "react-split-pane";
 import HTMLSnippet from "../components/HTMLSnippet";
 

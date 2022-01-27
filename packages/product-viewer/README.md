@@ -6,24 +6,24 @@ In this viewer, many additional features can be toggled and customized, such as 
 
 ## Usage
 
-1. To use the product-viewer package you will need to authenticate with GitHub as it is currently a private package. Your GitHub account will need to have access to the lowesinnovationlab organization's packages. More details on [GitHub docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+1. To use the product-viewer package you will need to authenticate with GitHub as it is currently a private package. Your GitHub account will need to have access to the lowes organization's packages. More details on [GitHub docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
 
 ```
-npm login --scope=@lowesinnovationlab --registry=https://npm.pkg.github.com
+npm login --scope=@lowes --registry=https://npm.pkg.github.com
 ```
 
-3. Once you are authenticated, add `@lowesinnovationlab:registry=https://npm.pkg.github.com` to a new or existing .npmrc file in the same directory as your package.json.
+3. Once you are authenticated, add `@lowes:registry=https://npm.pkg.github.com` to a new or existing .npmrc file in the same directory as your package.json.
 4. Push the .npmrc file to your repository
 5. Install product viewer using npm
 
 ```
-npm install @lowesinnovationlab/product-viewer
+npm install @lowes/product-viewer
 ```
 
 5. Import the product-viewer and add it to the page
 
 ```javascript
-import "@lowesinnovationlab/product-viewer";
+import "@lowes/product-viewer";
 ```
 
 ```html
