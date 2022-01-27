@@ -1,7 +1,8 @@
 {
-	"name": "@lowesinnovationlab/product-viewer",
-	"repository": "git://github.com/lowesinnovationlab/product-viewer.git",
+	"name": "@lowes/product-viewer",
+	"repository": "git://github.com/lowes/product-viewer.git",
 	"version": "0.0.8",
+	"license": "MIT",
 	"engines": {
 		"node": ">=10.0.0"
 	},
@@ -18,7 +19,7 @@
 		"build": "npm run build:tsc && webpack --config webpack.prod.js",
 		"build:tsc": "tsc",
 		"build:watch": "concurrently \"tsc --watch\" \"webpack --watch --config webpack.dev.js\" ",
-		"prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./common-assets",
+		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./common-assets",
 		"start": "npm run prepare && webpack serve --open --config webpack.dev.js",
 		"precommit": "lint-staged",
 		"fix": "npm run fix:eslint && npm run fix:prettier",
@@ -37,7 +38,7 @@
 		"@babylonjs/gui": "^4.2.1",
 		"@babylonjs/inspector": "^4.2.1",
 		"@babylonjs/loaders": "^4.2.1",
-		"@lowesinnovationlab/viewer-assets": "^0.0.6",
+		"@lowes/viewer-assets": "^0.0.6",
 		"@open-wc/testing": "^3.0.3",
 		"@types/estree": "0.0.50",
 		"@types/react": "17.0.37",

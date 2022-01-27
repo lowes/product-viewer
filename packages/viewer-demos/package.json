@@ -1,5 +1,5 @@
 {
-	"name": "@lowesinnovationlab/viewer-demos",
+	"name": "@lowes/viewer-demos",
 	"version": "0.0.8",
 	"private": true,
 	"engines": {
@@ -20,10 +20,10 @@
 		"lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
-		"prepare": "symlink-dir ./node_modules/@lowesinnovationlab/viewer-assets/assets ./public/common-assets"
+		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets"
 	},
 	"dependencies": {
-		"@lowesinnovationlab/product-viewer": "^0.0.8",
+		"@lowes/product-viewer": "^0.0.8",
 		"@material-ui/core": "^4.12.3",
 		"@material-ui/icons": "^4.11.2",
 		"@testing-library/jest-dom": "^5.16.1",
@@ -73,7 +73,7 @@
 		]
 	},
 	"devDependencies": {
-		"@lowesinnovationlab/viewer-assets": "^0.0.6",
+		"@lowes/viewer-assets": "^0.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.6.0",
 		"@typescript-eslint/parser": "^5.6.0",
 		"eslint": "^7.32.0",
