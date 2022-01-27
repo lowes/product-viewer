@@ -53,6 +53,7 @@ function Editor(): ReactElement {
 				scale-ref-url="./common-assets/models/6ft_man.glb"
 				inspector={showingInspector || undefined}
 				create-ground
+				create-skybox
 			/>
 			<div>
 				<FormControl>
@@ -67,7 +68,7 @@ function Editor(): ReactElement {
 				<HTMLSnippet>
 					&lt;product-editor model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
 					scale-ref-url=&quot;./common-assets/models/6ft_man.glb&quot;{showingInspector ? " inspector " : " "}
-					create-ground /&gt;
+					create-ground create-skybox /&gt;
 				</HTMLSnippet>
 				{/* eslint-enable prettier/prettier */}
 			</div>

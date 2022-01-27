@@ -43,7 +43,7 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 		@property({ type: Number, attribute: "light-intensity" }) lightIntensity = 2.0;
 		@property({ type: String, attribute: "environment" }) environment = "";
 		@property({ type: Boolean, attribute: "create-ground" }) createGround = false;
-		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = true;
+		@property({ type: Boolean, attribute: "create-skybox" }) createSkybox = false;
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
