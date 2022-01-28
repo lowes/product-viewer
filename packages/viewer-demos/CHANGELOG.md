@@ -1,9 +1,17 @@
 # Changelog
 
-All notable changes to the react-template application will be included in this file
+This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 00-0-2020
+The following changes have been implemented but not released yet:
+
+## [Unreleased] - 2020-07-30
+
+### New features
+
+- React demos site is now hosted on GitHub Pages
+
+## [0.0.1] - 2020-07-30
 
 ### Added
 
--   Initial template commit
+-   Added Initial template commit
