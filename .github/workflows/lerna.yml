@@ -27,7 +27,8 @@ jobs:
         run: |
           npm run setup
 
-      - name: Build packages
+      - name: Build package
+        working-directory: ./packages/product-viewer
         run: |
           npm run build
 
