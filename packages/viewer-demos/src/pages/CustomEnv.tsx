@@ -56,6 +56,7 @@ function CustomEnv(): ReactElement {
 				model-url="./common-assets/models/WaterBottle.glb"
 				environment={`./common-assets/environments/${loadedEnv}.env`}
 				create-ground
+				create-skybox
 			/>
 			<FormControl fullWidth>
 				<Select id="model-select" value={loadedEnv} onChange={handleChange}>
@@ -68,7 +69,8 @@ function CustomEnv(): ReactElement {
 				{/* eslint-disable prettier/prettier */}
 				<HTMLSnippet>
 					&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-					environment=&quot;./common-assets/environments/{loadedEnv}.env&quot; create-ground /&gt;
+					environment=&quot;./common-assets/environments/{loadedEnv}.env&quot; create-ground create-skybox
+					/&gt;
 				</HTMLSnippet>
 				{/* eslint-enable prettier/prettier */}
 			</FormControl>

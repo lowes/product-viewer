@@ -53,6 +53,7 @@ function ModelLoading(): ReactElement {
 			<product-viewer
 				style={{ height: panelSize, width: "100%" }}
 				model-url={`./common-assets/models/${loadedModel}.glb`}
+				create-skybox
 			/>
 			<FormControl fullWidth>
 				<Select id="model-select" value={loadedModel} onChange={handleChange}>
@@ -64,7 +65,8 @@ function ModelLoading(): ReactElement {
 				</Select>
 				{/* eslint-disable prettier/prettier */}
 				<HTMLSnippet>
-					&lt;product-viewer model-url=&quot;./common-assets/models/{loadedModel}.glb&quot;/&gt;
+					&lt;product-viewer model-url=&quot;./common-assets/models/{loadedModel}.glb&quot; create-skybox
+					/&gt;
 				</HTMLSnippet>
 				{/* eslint-enable prettier/prettier */}
 			</FormControl>

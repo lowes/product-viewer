@@ -44,10 +44,11 @@ function SimpleViewer(): ReactElement {
 			<product-viewer
 				style={{ height: panelSize, width: "100%" }}
 				model-url="./common-assets/models/WaterBottle.glb"
+				create-skybox
 			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
-				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot; /&gt;
+				&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot; create-skybox /&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
 		</SplitPane>
