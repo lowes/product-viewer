@@ -1,5 +1,6 @@
 {
 	"name": "@lowes/viewer-demos",
+	"homepage": "https://3dviewer.3dmanager.app",
 	"version": "0.0.8",
 	"private": true,
 	"engines": {
@@ -20,9 +21,7 @@
 		"lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
-		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets",
-		"deploy": "npm run gh-pages",
-		"gh-pages": "gh-pages -d build -b gh-pages"
+		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets"
 	},
 	"dependencies": {
 		"@lowes/product-viewer": "^0.0.8",
@@ -82,7 +81,6 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"fast-sass-loader": "^2.0.1",
-		"gh-pages": "^3.2.3",
 		"is-svg": "^4.3.2",
 		"lint-staged": "^12.1.2",
 		"prettier": "^2.5.1",

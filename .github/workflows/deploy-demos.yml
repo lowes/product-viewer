@@ -59,6 +59,7 @@ jobs:
           npm run build
 
       - name: Upload to GitHub Pages
-        working-directory: ./packages/viewer-demos
-        run: |
-          npm run deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages
+          folder: packages/viewer-demos/build
