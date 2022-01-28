@@ -46,11 +46,12 @@ function AugmentedReality(): ReactElement {
 				style={{ height: panelSize, width: "100%" }}
 				model-url="./common-assets/models/WaterBottle.glb"
 				usdz="./common-assets/models/WaterBottle.usdz"
+				create-skybox
 			/>
 			{/* eslint-disable prettier/prettier */}
 			<HTMLSnippet>
 				&lt;product-viewer ar model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-				usdz=&quot;./common-assets/models/WaterBottle.usdz&quot; /&gt;
+				usdz=&quot;./common-assets/models/WaterBottle.usdz&quot; create-skybox /&gt;
 			</HTMLSnippet>
 			{/* eslint-enable prettier/prettier */}
 		</SplitPane>
