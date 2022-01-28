@@ -61,4 +61,4 @@ jobs:
       - name: Upload to GitHub Pages
         working-directory: ./packages/viewer-demos
         run: |
-          gh-pages -d build -b gh-pages
+          npm run deploy

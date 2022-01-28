@@ -20,7 +20,9 @@
 		"lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
-		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets"
+		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets",
+		"deploy": "npm run gh-pages",
+		"gh-pages": "gh-pages -d build -b gh-pages"
 	},
 	"dependencies": {
 		"@lowes/product-viewer": "^0.0.8",
