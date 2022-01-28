@@ -4,11 +4,17 @@ This is a monorepo containing projects related to 3D product rendering and web-b
 
 ## Packages
 
--   product-viewer: A web component used to view 3D product assets. Currently a private npm package on the GitHub registry.
+-   product-viewer: A web component used to view 3D product assets. Currently an npm package on the GitHub registry.
 
 -   viewer-demos: A react web app demonstrating the features of product-viewer and sample implementations. It is hosted at [3dviewer.3dmanager.app](https://3dviewer.3dmanager.app/)
 
 -   viewer-assets: contains shared assets for use across all product-viewer projects
+
+## Using `product-viewer`
+
+The product viewer is available as an npm package for import into a JavaScript or TypeScript project.
+
+See the `product-viewer` package [readme](packages/product-viewer/README.md) for details.
 
 ## Development
 
