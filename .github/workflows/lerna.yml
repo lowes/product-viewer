@@ -27,6 +27,11 @@ jobs:
         run: |
           npm run setup
 
+      - name: Build package
+        working-directory: ./packages/product-viewer
+        run: |
+          npm run build
+
       - name: Publish lerna
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
