@@ -2,7 +2,7 @@ name: Veracode Analysis
 on: 
   push:
     branches: 
-      - develop
+      - main
     paths-ignore:
       - README.md
   pull_request:
