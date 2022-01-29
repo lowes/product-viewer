@@ -3,7 +3,7 @@ name: Deploy Viewer Demos
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 env:
