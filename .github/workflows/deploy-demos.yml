@@ -1,4 +1,4 @@
-name: Deploy to Dev
+name: Deploy Viewer Demos
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
   SERVICE_NAME: 3dviewer
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -50,29 +50,16 @@ jobs:
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-7)"
 
-      - name: Prep Build
+      - name: Build Project
         env:
           REACT_APP_ENV: production
           PUBLIC_URL: https://${{ env.DOMAIN }}
           REACT_APP_BUILD: ${{ steps.slug.outputs.sha8 }}
         run: |
-          npm run build --if-present
+          npm run build
 
-      - name: Deploy to GCS
-        env:
-          GCLOUD_KEY: ${{ secrets.GCP_LIL_CORGIS_NPE_SA }}
-        run: |
-          echo "$GCLOUD_KEY" | base64 -d > ${HOME}/gcloud.json
-          gcloud auth activate-service-account --key-file=${HOME}/gcloud.json
-          gsutil -m rsync -r ./packages/viewer-demos/build "gs://${{ env.DOMAIN }}"
-
-      - name: Purge CloudFlare cache
-        uses: jakejarvis/cloudflare-purge-action@v0.3.0
-        env:
-          PURGE_URLS: '["https://${{ env.DOMAIN }}/*"]'
-          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_3DMANAGER_ZONE_ID }}
-          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_CACHE_PURGE_TOKEN }}
-
-      - name: Clean up
-        run: |
-          rm -rf ${HOME}/gcloud.json
+      - name: Upload to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages
+          folder: packages/viewer-demos/build

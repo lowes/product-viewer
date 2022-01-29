@@ -1,5 +1,6 @@
 {
 	"name": "@lowes/viewer-demos",
+	"homepage": "https://3dviewer.3dmanager.app",
 	"version": "0.0.8",
 	"private": true,
 	"engines": {
