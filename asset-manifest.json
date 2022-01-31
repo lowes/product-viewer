@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "https://3dviewer.3dmanager.app/static/css/main.ab247481.css",
+    "main.js": "https://3dviewer.3dmanager.app/static/js/main.f9660f24.js",
+    "index.html": "https://3dviewer.3dmanager.app/index.html",
+    "main.ab247481.css.map": "https://3dviewer.3dmanager.app/static/css/main.ab247481.css.map",
+    "main.f9660f24.js.map": "https://3dviewer.3dmanager.app/static/js/main.f9660f24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab247481.css",
+    "static/js/main.f9660f24.js"
+  ]
+}
