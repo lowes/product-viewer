@@ -23,9 +23,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-
       - name: Installing dependencies
         run: |
           npm run setup
