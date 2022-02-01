@@ -50,6 +50,9 @@ jobs:
         id: slug
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-7)"
 
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+
       - name: Build Project
         env:
           REACT_APP_ENV: production
