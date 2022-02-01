@@ -26,5 +26,8 @@
 		"rimraf": "^3.0.2",
 		"symlink-dir": "^5.0.1",
 		"ts-node": "^10.4.0"
+	},
+	"dependencies": {
+		"postcss": "^8.4.5"
 	}
 }
