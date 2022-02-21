@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "https://3dviewer.3dmanager.app/static/css/main.ab247481.css",
-    "main.js": "https://3dviewer.3dmanager.app/static/js/main.e1dede4b.js",
+    "main.js": "https://3dviewer.3dmanager.app/static/js/main.0945964b.js",
     "index.html": "https://3dviewer.3dmanager.app/index.html",
     "main.ab247481.css.map": "https://3dviewer.3dmanager.app/static/css/main.ab247481.css.map",
-    "main.e1dede4b.js.map": "https://3dviewer.3dmanager.app/static/js/main.e1dede4b.js.map"
+    "main.0945964b.js.map": "https://3dviewer.3dmanager.app/static/js/main.0945964b.js.map"
   },
   "entrypoints": [
     "static/css/main.ab247481.css",
-    "static/js/main.e1dede4b.js"
+    "static/js/main.0945964b.js"
   ]
 }
