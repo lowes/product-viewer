@@ -30,13 +30,10 @@ const defaultSize = 500; // Set default viewer canvas height
 function Editor(): ReactElement {
 	const [panelSize, setPanelSize] = React.useState(defaultSize);
 	const [showingInspector, setShowingInspector] = React.useState(true);
+	const [displayWireframe, setDisplayWireframe] = React.useState(false);
 
 	const handlePanelDrag = (newSize: number) => {
 		setPanelSize(newSize);
-	};
-
-	const handleChange = (event: React.ChangeEvent<{ checked: boolean }>) => {
-		setShowingInspector(event.target.checked);
 	};
 
 	return (
@@ -52,15 +49,33 @@ function Editor(): ReactElement {
 				model-url="./common-assets/models/WaterBottle.glb"
 				scale-ref-url="./common-assets/models/6ft_man.glb"
 				inspector={showingInspector || undefined}
+				wireframe={displayWireframe || undefined}
 				create-ground
 				create-skybox
 			/>
-			<div>
+			<div style={{ display: "flex", flexDirection: "column", paddingInline: 12 }}>
 				<FormControl>
 					<FormControlLabel
 						label="Show Inspector"
-						labelPlacement="start"
-						control={<Checkbox id="show-inspector" checked={showingInspector} onChange={handleChange} />}
+						control={
+							<Checkbox
+								id="show-inspector"
+								checked={showingInspector}
+								onChange={(e) => setShowingInspector(e.target.checked)}
+							/>
+						}
+					></FormControlLabel>
+				</FormControl>
+				<FormControl>
+					<FormControlLabel
+						label="Display Wireframe"
+						control={
+							<Checkbox
+								id="display-wireframe"
+								checked={displayWireframe}
+								onChange={(e) => setDisplayWireframe(e.target.checked)}
+							/>
+						}
 					></FormControlLabel>
 				</FormControl>
 
@@ -68,6 +83,7 @@ function Editor(): ReactElement {
 				<HTMLSnippet>
 					&lt;product-editor model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
 					scale-ref-url=&quot;./common-assets/models/6ft_man.glb&quot;{showingInspector ? " inspector " : " "}
+					{displayWireframe ? " wireframe " : " "}
 					create-ground create-skybox /&gt;
 				</HTMLSnippet>
 				{/* eslint-enable prettier/prettier */}
