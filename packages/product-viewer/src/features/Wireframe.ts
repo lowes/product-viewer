@@ -19,35 +19,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { ARMixin } from "./features/AR";
-import { CameraMixin } from "./features/Camera";
-import { InspectorMixin } from "./features/Inspector";
-import { LayoutMixin } from "./features/Layout";
-import { LightingMixin } from "./features/Lighting";
-import { LoaderMixin } from "./features/Loader";
-import { ScaleReferenceMixin } from "./features/ScaleReference";
-import { WireframeMixin } from "./features/Wireframe";
-import ProductViewerElementBase from "./product-viewer-base";
+import "@babylonjs/inspector";
+import ProductViewerElementBase from "../product-viewer-base";
+import { property } from "lit/decorators.js";
+import { Constructor } from "../tools/Utils";
 
-export const ProductEditorElement = InspectorMixin(
-	WireframeMixin(
-		ScaleReferenceMixin(LightingMixin(LoaderMixin(CameraMixin(LayoutMixin(ARMixin(ProductViewerElementBase)))))),
-	),
-);
+export declare interface WireframeInterface {
+	wireframe: boolean;
+}
 
-export type ProductEditorElement = InstanceType<typeof ProductEditorElement>;
+export const WireframeMixin = <T extends Constructor<ProductViewerElementBase>>(
+	BaseViewerElement: T,
+): Constructor<WireframeInterface> & T => {
+	class WireframeViewerElement extends BaseViewerElement {
+		@property({ type: Boolean, attribute: "wireframe", reflect: true }) wireframe = false;
 
-customElements.define("product-editor", ProductEditorElement);
+		updated(changedProperties: Map<string, any>): void {
+			super.updated?.(changedProperties);
+			if (changedProperties.has("wireframe")) {
+				this.updateWireframe();
+			}
+		}
 
-declare global {
-	interface HTMLElementTagNameMap {
-		"product-editor": ProductEditorElement;
-	}
-	// eslint-disable-next-line @typescript-eslint/no-namespace
-	namespace JSX {
-		interface IntrinsicElements {
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			"product-editor": any;
+		updateWireframe() {
+			this.scene.forceWireframe = this.wireframe;
 		}
 	}
-}
+
+	return WireframeViewerElement as Constructor<WireframeInterface> & T;
+};
