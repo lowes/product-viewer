@@ -6,6 +6,8 @@ The following changes have been implemented but not released yet:
 
 ## [Unreleased]
 
+-   Add new `WireframeMixin` that exposes `wireframe` attribute in `product-editor`, allowing consumers to toggle the wireframe view of scene without using the Inspector.
+
 ### Bug Fixes
 
 -   Update `create-skybox` attribute to default to `false` so it can be toggled via HTML attributes.
