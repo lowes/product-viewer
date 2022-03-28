@@ -64,7 +64,7 @@ function Editor(): ReactElement {
 								onChange={(e) => setShowingInspector(e.target.checked)}
 							/>
 						}
-					></FormControlLabel>
+					/>
 				</FormControl>
 				<FormControl>
 					<FormControlLabel
@@ -76,7 +76,7 @@ function Editor(): ReactElement {
 								onChange={(e) => setDisplayWireframe(e.target.checked)}
 							/>
 						}
-					></FormControlLabel>
+					/>
 				</FormControl>
 
 				{/* eslint-disable prettier/prettier */}
