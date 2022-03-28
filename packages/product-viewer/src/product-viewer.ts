@@ -27,9 +27,15 @@ import { LoaderMixin } from "./features/Loader";
 import { LayoutMixin } from "./features/Layout";
 
 // Load feature mixins - the order is significant, outer mixing load later
-export const ProductViewerElement = LightingMixin(
-	LoaderMixin(CameraMixin(LayoutMixin(ARMixin(ProductViewerElementBase)))),
-);
+// prettier-ignore
+export const ProductViewerElement = 
+	LightingMixin(
+	LoaderMixin(
+	CameraMixin(
+	LayoutMixin(
+	ARMixin(
+		ProductViewerElementBase
+	)))));
 
 export type ProductViewerElement = InstanceType<typeof ProductViewerElement>;
 

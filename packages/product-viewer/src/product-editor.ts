@@ -29,11 +29,18 @@ import { ScaleReferenceMixin } from "./features/ScaleReference";
 import { WireframeMixin } from "./features/Wireframe";
 import ProductViewerElementBase from "./product-viewer-base";
 
-export const ProductEditorElement = InspectorMixin(
+// prettier-ignore
+export const ProductEditorElement = 
+	InspectorMixin(
 	WireframeMixin(
-		ScaleReferenceMixin(LightingMixin(LoaderMixin(CameraMixin(LayoutMixin(ARMixin(ProductViewerElementBase)))))),
-	),
-);
+	ScaleReferenceMixin(
+	LightingMixin(
+	LoaderMixin(
+	CameraMixin(
+	LayoutMixin(
+	ARMixin(
+		ProductViewerElementBase
+	))))))));
 
 export type ProductEditorElement = InstanceType<typeof ProductEditorElement>;
 
