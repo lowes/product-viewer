@@ -20,7 +20,6 @@
  * THE SOFTWARE.
  */
 import { Color3 } from "@babylonjs/core";
-import "@babylonjs/inspector";
 import { property } from "lit/decorators.js";
 import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor } from "../tools/Utils";

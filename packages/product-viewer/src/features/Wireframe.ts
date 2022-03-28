@@ -19,7 +19,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import "@babylonjs/inspector";
 import ProductViewerElementBase from "../product-viewer-base";
 import { property } from "lit/decorators.js";
 import { Constructor } from "../tools/Utils";
