@@ -64,8 +64,10 @@ function CustomEnv(): ReactElement {
 				{/* eslint-disable prettier/prettier */}
 				<HTMLSnippet>
 					&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-					environment=&quot;./common-assets/environments/{loadedEnv}.env&quot; create-ground
-					{showSkybox ? " create-skybox " : " "} background-color=&quot;{backgroundColor}&quot; /&gt;
+					environment=&quot;./common-assets/environments/{loadedEnv}.env&quot;{" "}
+					{showGround ? "create-ground " : ""}
+					{showSkybox ? "create-skybox " : ""}
+					background-color=&quot;{backgroundColor}&quot; /&gt;
 				</HTMLSnippet>
 				{/* eslint-enable prettier/prettier */}
 
