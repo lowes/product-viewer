@@ -19,39 +19,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { ARMixin } from "./features/AR";
-import { BackgroundColorMixin } from "./features/BackgroundColor";
-import { CameraMixin } from "./features/Camera";
-import { LayoutMixin } from "./features/Layout";
-import { LightingMixin } from "./features/Lighting";
-import { LoaderMixin } from "./features/Loader";
-import ProductViewerElementBase from "./product-viewer-base";
+import { Color3 } from "@babylonjs/core";
+import "@babylonjs/inspector";
+import { property } from "lit/decorators.js";
+import ProductViewerElementBase from "../product-viewer-base";
+import { Constructor } from "../tools/Utils";
 
-// Load feature mixins - the order is significant, outer mixing load later
-// prettier-ignore
-export const ProductViewerElement = 
-	LightingMixin(
-	LoaderMixin(
-	BackgroundColorMixin(
-	CameraMixin(
-	LayoutMixin(
-	ARMixin(
-		ProductViewerElementBase
-	))))));
+const DEFAULT_COLOR_HEX = Color3.White().toHexString();
 
-export type ProductViewerElement = InstanceType<typeof ProductViewerElement>;
+export declare interface BackgroundColorInterface {
+	backgroundColor?: string;
+}
 
-customElements.define("product-viewer", ProductViewerElement);
+export const BackgroundColorMixin = <T extends Constructor<ProductViewerElementBase>>(
+	BaseViewerElement: T,
+): Constructor<BackgroundColorInterface> & T => {
+	class BackgroundColorViewerElement extends BaseViewerElement {
+		@property({ type: String, attribute: "background-color", reflect: true }) backgroundColor = DEFAULT_COLOR_HEX;
 
-declare global {
-	interface HTMLElementTagNameMap {
-		"product-viewer": ProductViewerElement;
-	}
-	// eslint-disable-next-line @typescript-eslint/no-namespace
-	namespace JSX {
-		interface IntrinsicElements {
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			"product-viewer": any;
+		updated(changedProperties: Map<string, any>): void {
+			super.updated?.(changedProperties);
+			if (changedProperties.has("backgroundColor")) {
+				this.updateBackgroundColor();
+			}
+		}
+
+		updateBackgroundColor() {
+			this.scene.clearColor = Color3.FromHexString(this.backgroundColor).toColor4();
 		}
 	}
-}
+
+	return BackgroundColorViewerElement as Constructor<BackgroundColorInterface> & T;
+};

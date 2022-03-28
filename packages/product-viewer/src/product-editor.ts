@@ -20,6 +20,7 @@
  * THE SOFTWARE.
  */
 import { ARMixin } from "./features/AR";
+import { BackgroundColorMixin } from "./features/BackgroundColor";
 import { CameraMixin } from "./features/Camera";
 import { InspectorMixin } from "./features/Inspector";
 import { LayoutMixin } from "./features/Layout";
@@ -36,11 +37,12 @@ export const ProductEditorElement =
 	ScaleReferenceMixin(
 	LightingMixin(
 	LoaderMixin(
+	BackgroundColorMixin(
 	CameraMixin(
 	LayoutMixin(
 	ARMixin(
 		ProductViewerElementBase
-	))))))));
+	)))))))));
 
 export type ProductEditorElement = InstanceType<typeof ProductEditorElement>;
 
