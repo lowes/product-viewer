@@ -26,10 +26,13 @@ import { LayoutMixin } from "./features/Layout";
 import { LightingMixin } from "./features/Lighting";
 import { LoaderMixin } from "./features/Loader";
 import { ScaleReferenceMixin } from "./features/ScaleReference";
+import { WireframeMixin } from "./features/Wireframe";
 import ProductViewerElementBase from "./product-viewer-base";
 
 export const ProductEditorElement = InspectorMixin(
-	ScaleReferenceMixin(LightingMixin(LoaderMixin(CameraMixin(LayoutMixin(ARMixin(ProductViewerElementBase)))))),
+	WireframeMixin(
+		ScaleReferenceMixin(LightingMixin(LoaderMixin(CameraMixin(LayoutMixin(ARMixin(ProductViewerElementBase)))))),
+	),
 );
 
 export type ProductEditorElement = InstanceType<typeof ProductEditorElement>;

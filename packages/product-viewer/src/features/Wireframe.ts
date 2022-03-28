@@ -19,64 +19,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import "@babylonjs/inspector";
 import ProductViewerElementBase from "../product-viewer-base";
-import { Constructor } from "../tools/Utils";
 import { property } from "lit/decorators.js";
-import { AbstractMesh, SceneLoader } from "@babylonjs/core";
+import { Constructor } from "../tools/Utils";
 
-export declare interface LoaderInterface {
-	modelUrl: string;
-	isLoading: boolean;
+export declare interface WireframeInterface {
+	wireframe: boolean;
 }
 
-export const LoaderMixin = <T extends Constructor<ProductViewerElementBase>>(
+export const WireframeMixin = <T extends Constructor<ProductViewerElementBase>>(
 	BaseViewerElement: T,
-): Constructor<LoaderInterface> & T => {
-	class LoaderModelViewerElement extends BaseViewerElement {
-		@property({ type: String, attribute: "model-url", reflect: true }) modelUrl: string;
-
-		isLoading = false;
-		loadedModels: AbstractMesh[];
+): Constructor<WireframeInterface> & T => {
+	class WireframeViewerElement extends BaseViewerElement {
+		@property({ type: Boolean, attribute: "wireframe", reflect: true }) wireframe = false;
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
-
-			if (changedProperties.has("modelUrl")) {
-				this.updateLoader();
+			if (changedProperties.has("wireframe")) {
+				this.updateWireframe();
 			}
 		}
 
-		updateLoader(): void {
-			// Remove all existing models before loading a new one
-			if (this.loadedModels) {
-				for (const model of this.loadedModels) {
-					model.dispose();
-				}
-				this.loadedModels = [];
-			}
-
-			if (!this.modelUrl) {
-				console.warn("No `model-url` provided");
-				return;
-			}
-
-			this.isLoading = true;
-
-			SceneLoader.ImportMesh(
-				"",
-				this.modelUrl,
-				"",
-				this.scene,
-				(meshes) => {
-					this.loadedModels = meshes;
-					this.modelLoaded(meshes);
-					this.isLoading = false;
-				},
-				null,
-				null,
-				".glb",
-			);
+		updateWireframe() {
+			this.scene.forceWireframe = this.wireframe;
 		}
 	}
-	return LoaderModelViewerElement as Constructor<LoaderInterface> & T;
+
+	return WireframeViewerElement as Constructor<WireframeInterface> & T;
 };
