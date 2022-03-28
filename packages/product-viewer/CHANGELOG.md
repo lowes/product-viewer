@@ -7,10 +7,12 @@ The following changes have been implemented but not released yet:
 ## [Unreleased]
 
 -   Add new `WireframeMixin` that exposes `wireframe` attribute in `product-editor`, allowing consumers to toggle the wireframe view of scene without using the Inspector.
+-   Add new `BackgroundColorMixin` that exposes `background-color` attribute in both `product-viewer` and `product-editor`.
 
 ### Bug Fixes
 
 -   Update `create-skybox` attribute to default to `false` so it can be toggled via HTML attributes.
+-   Upgrade packages to patch vulnerability relating to `node-forge`.
 
 ## [0.0.8] - 2022-01-25
 
