@@ -44,6 +44,13 @@ function CustomEnv(): ReactElement {
 		setPanelSize(newSize);
 	};
 
+	const exampleHtml =
+		`<product-viewer model-url="./common-assets/models/WaterBottle.glb" ` +
+		`environment="./common-assets/environments/${loadedEnv}.env" ` +
+		`${showGround ? "create-ground " : ""}` +
+		`${showSkybox ? "create-skybox " : ""}` +
+		`background-color="${backgroundColor}" />`;
+
 	return (
 		<SplitPane
 			split="horizontal"
@@ -61,15 +68,7 @@ function CustomEnv(): ReactElement {
 				background-color={backgroundColor}
 			/>
 			<div style={{ display: "flex", flexDirection: "column", padding: 12, alignItems: "stretch", gap: 12 }}>
-				{/* eslint-disable prettier/prettier */}
-				<HTMLSnippet>
-					&lt;product-viewer model-url=&quot;./common-assets/models/WaterBottle.glb&quot;
-					environment=&quot;./common-assets/environments/{loadedEnv}.env&quot;{" "}
-					{showGround ? "create-ground " : ""}
-					{showSkybox ? "create-skybox " : ""}
-					background-color=&quot;{backgroundColor}&quot; /&gt;
-				</HTMLSnippet>
-				{/* eslint-enable prettier/prettier */}
+				<HTMLSnippet>{exampleHtml}</HTMLSnippet>
 
 				<div style={{ display: "flex" }}>
 					<FormControl>
