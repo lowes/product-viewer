@@ -19,10 +19,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import { AbstractMesh, ArcRotateCamera, FramingBehavior, Vector3 } from "@babylonjs/core";
+import { property } from "lit/decorators.js";
 import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor } from "../tools/Utils";
-import { property } from "lit/decorators.js";
-import { Vector3, ArcRotateCamera, FramingBehavior, AbstractMesh, Color4 } from "@babylonjs/core";
 
 export declare interface CameraInterface {
 	alpha: number;
@@ -48,8 +48,6 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		}
 
 		createCamera(): void {
-			this.scene.clearColor = new Color4(1, 1, 1, 1);
-
 			// Set initial camera angle
 			this.camera = new ArcRotateCamera("MainCamera", Math.PI / 4, 1, 5, Vector3.Zero(), this.scene);
 			const camera = this.camera as ArcRotateCamera;

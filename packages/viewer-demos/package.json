@@ -42,6 +42,7 @@
 		"postcss": "^8.4.6",
 		"prismjs": "^1.25.0",
 		"react": "^17.0.2",
+		"react-color": "^2.19.3",
 		"react-dom": "^17.0.2",
 		"react-redux": "^7.2.6",
 		"react-router-dom": "^6.1.0",
@@ -77,6 +78,7 @@
 	},
 	"devDependencies": {
 		"@lowes/viewer-assets": "^0.0.6",
+		"@types/react-color": "^3.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.6.0",
 		"@typescript-eslint/parser": "^5.6.0",
 		"eslint": "^7.32.0",

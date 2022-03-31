@@ -19,31 +19,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import ProductViewerElementBase from "../product-viewer-base";
+import { Color3 } from "@babylonjs/core";
 import { property } from "lit/decorators.js";
+import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor } from "../tools/Utils";
 
-export declare interface WireframeInterface {
-	wireframe: boolean;
+const DEFAULT_COLOR_HEX = Color3.White().toHexString();
+
+export declare interface BackgroundColorInterface {
+	backgroundColor?: string;
 }
 
-export const WireframeMixin = <T extends Constructor<ProductViewerElementBase>>(
+export const BackgroundColorMixin = <T extends Constructor<ProductViewerElementBase>>(
 	BaseViewerElement: T,
-): Constructor<WireframeInterface> & T => {
-	class WireframeViewerElement extends BaseViewerElement {
-		@property({ type: Boolean, attribute: "wireframe", reflect: true }) wireframe = false;
+): Constructor<BackgroundColorInterface> & T => {
+	class BackgroundColorViewerElement extends BaseViewerElement {
+		@property({ type: String, attribute: "background-color", reflect: true }) backgroundColor = DEFAULT_COLOR_HEX;
 
 		updated(changedProperties: Map<string, any>): void {
 			super.updated?.(changedProperties);
-			if (changedProperties.has("wireframe")) {
-				this.updateWireframe();
+			if (changedProperties.has("backgroundColor")) {
+				this.updateBackgroundColor();
 			}
 		}
 
-		updateWireframe() {
-			this.scene.forceWireframe = this.wireframe;
+		updateBackgroundColor() {
+			this.scene.clearColor = Color3.FromHexString(this.backgroundColor).toColor4();
 		}
 	}
 
-	return WireframeViewerElement as Constructor<WireframeInterface> & T;
+	return BackgroundColorViewerElement as Constructor<BackgroundColorInterface> & T;
 };

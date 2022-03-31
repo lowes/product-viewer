@@ -19,17 +19,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import ProductViewerElementBase from "./product-viewer-base";
 import { ARMixin } from "./features/AR";
+import { BackgroundColorMixin } from "./features/BackgroundColor";
 import { CameraMixin } from "./features/Camera";
+import { LayoutMixin } from "./features/Layout";
 import { LightingMixin } from "./features/Lighting";
 import { LoaderMixin } from "./features/Loader";
-import { LayoutMixin } from "./features/Layout";
+import ProductViewerElementBase from "./product-viewer-base";
 
 // Load feature mixins - the order is significant, outer mixing load later
-export const ProductViewerElement = LightingMixin(
-	LoaderMixin(CameraMixin(LayoutMixin(ARMixin(ProductViewerElementBase)))),
-);
+// prettier-ignore
+export const ProductViewerElement = 
+	LightingMixin(
+	LoaderMixin(
+	BackgroundColorMixin(
+	CameraMixin(
+	LayoutMixin(
+	ARMixin(
+		ProductViewerElementBase
+	))))));
 
 export type ProductViewerElement = InstanceType<typeof ProductViewerElement>;
 
