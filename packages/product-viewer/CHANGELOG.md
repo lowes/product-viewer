@@ -2,9 +2,12 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+<!--
 The following changes have been implemented but not released yet:
 
-## [Unreleased]
+## [Unreleased] -->
+
+## [0.0.9] - 2022-03-31
 
 -   Add new `WireframeMixin` that exposes `wireframe` attribute in `product-editor`, allowing consumers to toggle the wireframe view of scene without using the Inspector.
 -   Add new `BackgroundColorMixin` that exposes `background-color` attribute in both `product-viewer` and `product-editor`.
