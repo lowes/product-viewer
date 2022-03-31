@@ -1,7 +1,7 @@
 {
 	"name": "@lowes/viewer-demos",
 	"homepage": "https://3dviewer.3dmanager.app",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"private": true,
 	"engines": {
 		"node": ">=10.0.0"
@@ -24,7 +24,7 @@
 		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets"
 	},
 	"dependencies": {
-		"@lowes/product-viewer": "^0.0.8",
+		"@lowes/product-viewer": "^0.0.9",
 		"@material-ui/core": "^4.12.3",
 		"@material-ui/icons": "^4.11.2",
 		"@testing-library/jest-dom": "^5.16.1",
@@ -77,7 +77,7 @@
 		]
 	},
 	"devDependencies": {
-		"@lowes/viewer-assets": "^0.0.6",
+		"@lowes/viewer-assets": "^0.0.7",
 		"@types/react-color": "^3.0.6",
 		"@typescript-eslint/eslint-plugin": "^5.6.0",
 		"@typescript-eslint/parser": "^5.6.0",
