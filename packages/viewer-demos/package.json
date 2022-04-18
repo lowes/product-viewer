@@ -52,8 +52,7 @@
 		"redux-devtools-extension": "^2.13.9",
 		"redux-thunk": "^2.4.1",
 		"sass": "^1.45.0",
-		"styled-components": "^5.3.3",
-		"typescript": "^4.0.2"
+		"styled-components": "^5.3.3"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -88,7 +87,8 @@
 		"is-svg": "^4.3.2",
 		"lint-staged": "^12.1.2",
 		"prettier": "^2.5.1",
-		"symlink-dir": "^5.0.1"
+		"symlink-dir": "^5.0.1",
+		"typescript": "^4.6.3"
 	},
 	"resolutions": {
 		"ansi-html": "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
