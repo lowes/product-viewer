@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { AbstractMesh, ArcRotateCamera, FramingBehavior, Vector3 } from "@babylonjs/core";
+import { AbstractMesh, ArcRotateCamera, FramingBehavior, Vector2, Vector3 } from "@babylonjs/core";
 import { property } from "lit/decorators.js";
 import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor } from "../tools/Utils";
@@ -40,6 +40,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		@property({ type: Number, attribute: "frame-duration" }) frameDuration = 500;
 		isFraming = false;
 		framingBehavior: FramingBehavior;
+		pivotPoint = Vector3.Zero();
 
 		updated(changedProperties: Map<string, any>) {
 			super.updated?.(changedProperties);
@@ -48,10 +49,10 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		}
 
 		createCamera(): void {
-			// Set initial camera angle
-			this.camera = new ArcRotateCamera("MainCamera", Math.PI / 4, 1, 5, Vector3.Zero(), this.scene);
-			const camera = this.camera as ArcRotateCamera;
+			// Set initial camera angle (defaults to targeting thie origin, but zooms to mesh once one loads)
+			const camera = new ArcRotateCamera("MainCamera", Math.PI / 4, 1, 5, this.pivotPoint, this.scene);
 
+			camera.zoomToMouseLocation = true;
 			camera.wheelPrecision = 25;
 			camera.pinchPrecision = 100;
 			camera.panningDistanceLimit = 3;
@@ -77,6 +78,10 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 				camera.orthoRight = (-5 * w) / h;
 				camera.orthoBottom = -5;
 			});
+
+			this.enableOrbitAroundModel(camera);
+
+			this.camera = camera;
 		}
 
 		modelLoaded(meshes: AbstractMesh[]) {
@@ -84,8 +89,47 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 			this.camera.restoreState();
 			this.isFraming = true;
 			this.framingBehavior.zoomOnMeshesHierarchy(meshes, true, () => {
+				this.pivotPoint.copyFrom((this.camera as ArcRotateCamera).target);
 				this.isFraming = false;
 			});
+		}
+
+		// This method ensures that the camera target remains locked to the pivotPoint (center of model),
+		// even after the user moves the camera (by right click & drag, or by zooming into the mouse with wheel).
+		// Heavily based on the example by Dave Solares: https://playground.babylonjs.com/#3B5W22#29
+		enableOrbitAroundModel(camera: ArcRotateCamera) {
+			this.scene.onBeforeRenderObservable.add(() => {
+				const { alpha, beta } = camera;
+				const { x, y, z } = Vector3.TransformCoordinates(this.pivotPoint, camera.getViewMatrix());
+				camera.target.copyFrom(this.pivotPoint);
+				camera.targetScreenOffset.set(x, y);
+				camera.alpha = alpha;
+				camera.beta = beta;
+				camera.radius = z;
+			});
+
+			// The current behavior enabled by `camera.zoomToMouseLocation` assumes that
+			// targetScreenOffset is set to (0, 0). Here we monkeypatch ArcRotateCameraMouseWheelInput._getPosition
+			// with a wrapper to temporarily reset the offset back to the origin.
+			// https://github.com/BabylonJS/Babylon.js/blob/master/packages/dev/core/src/Cameras/Inputs/arcRotateCameraMouseWheelInput.ts#L208
+			const mouseWheelInput = camera.inputs.attached.mousewheel as any;
+			if (mouseWheelInput) {
+				const tmpOffset = Vector2.Zero();
+				const _getPositionOriginal = mouseWheelInput._getPosition;
+				mouseWheelInput._getPosition = () => {
+					// save the current target offset to tmp variable
+					tmpOffset.copyFrom(camera.targetScreenOffset);
+
+					// move the camera target offset to zero & run the original function
+					camera.targetScreenOffset.set(0, 0);
+					const position: Vector3 = _getPositionOriginal.call(mouseWheelInput);
+
+					// restore the target offset
+					camera.targetScreenOffset.copyFrom(tmpOffset);
+
+					return position;
+				};
+			}
 		}
 	}
 	return CameraModelViewerElement as Constructor<CameraInterface> & T;
