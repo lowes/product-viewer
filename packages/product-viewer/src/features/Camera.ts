@@ -57,7 +57,7 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 			camera.pinchPrecision = 100;
 			camera.panningDistanceLimit = 3;
 			camera.angularSensibilityY = 900;
-			camera.minZ = 0.1;
+			camera.minZ = 0.01;
 			camera.maxZ = 15000;
 			camera.checkCollisions = true;
 			camera.useFramingBehavior = true;
@@ -99,6 +99,8 @@ export const CameraMixin = <T extends Constructor<ProductViewerElementBase>>(
 		// Heavily based on the example by Dave Solares: https://playground.babylonjs.com/#3B5W22#29
 		enableOrbitAroundModel(camera: ArcRotateCamera) {
 			this.scene.onBeforeRenderObservable.add(() => {
+				if (this.isFraming) return;
+
 				const { alpha, beta } = camera;
 				const { x, y, z } = Vector3.TransformCoordinates(this.pivotPoint, camera.getViewMatrix());
 				camera.target.copyFrom(this.pivotPoint);
