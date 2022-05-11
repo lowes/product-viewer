@@ -2,9 +2,11 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-The following changes have been implemented but not released yet:
+<!-- The following changes have been implemented but not released yet:
 
-## [Unreleased]
+## [Unreleased] -->
+
+## [0.0.10] - 2022-05-11
 
 -   Upgrade Babylon.js to 5.2.0 and TypeScript to 4.6.3.
 -   Enable `zoomToMouseLocation` on the Camera.
