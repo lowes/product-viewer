@@ -1,7 +1,7 @@
 {
 	"name": "@lowes/viewer-demos",
 	"homepage": "https://3dviewer.3dmanager.app",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"private": true,
 	"engines": {
 		"node": ">=10.0.0"
@@ -24,7 +24,7 @@
 		"prepare": "symlink-dir ./node_modules/@lowes/viewer-assets/assets ./public/common-assets"
 	},
 	"dependencies": {
-		"@lowes/product-viewer": "^0.0.9",
+		"@lowes/product-viewer": "^0.0.10",
 		"@material-ui/core": "^4.12.3",
 		"@material-ui/icons": "^4.11.2",
 		"@testing-library/jest-dom": "^5.16.1",
