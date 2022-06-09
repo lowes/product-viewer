@@ -29,7 +29,7 @@
 		"lint": "npm run lint:eslint && npm run lint:prettier",
 		"lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"lint:prettier": "prettier --check .",
-		"test": "web-test-runner"
+		"test": ""
 	},
 	"dependencies": {
 		"@juggle/resize-observer": "^3.3.1"
