@@ -33,6 +33,11 @@ import { property } from "lit/decorators.js";
 import ProductViewerElementBase from "../product-viewer-base";
 import { Constructor, getBoundingBox } from "../tools/Utils";
 
+// we include these files to avoid relying on the Babylon.js CDN
+import groundTexture from "../../static/backgroundGround.png";
+import skyboxTexture from "../../static/backgroundSkybox.dds";
+import environmentTexture from "../../static/environmentSpecular.env";
+
 export declare interface LightingInterface {
 	lightIntensity: number;
 	environment: string;
@@ -76,9 +81,12 @@ export const LightingMixin = <T extends Constructor<ProductViewerElementBase>>(
 
 			const envOptions: Partial<IEnvironmentHelperOptions> = {
 				createGround: this.createGround,
+				environmentTexture,
 				groundColor: new Color3(1, 1, 1),
 				createSkybox: this.createSkybox,
+				groundTexture,
 				skyboxColor: new Color3(1, 1, 1),
+				skyboxTexture,
 			};
 			if (this.environment) {
 				const hdrTexture = CubeTexture.CreateFromPrefilteredData(this.environment, this.scene);

@@ -61,6 +61,13 @@ module.exports = {
 					filename: "assets/[name][ext][query]",
 				},
 			},
+			{
+				test: /\.(png|dds|env)/,
+				type: "asset/resource",
+				generator: {
+					filename: "static/[name][ext][query]",
+				},
+			},
 		],
 	},
 	plugins: [new ForkTsCheckerWebpackPlugin()],

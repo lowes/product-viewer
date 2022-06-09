@@ -13,7 +13,8 @@
 		"src",
 		"dist/product-viewer.js",
 		"dist/product-editor.js",
-		"lib"
+		"lib",
+		"static"
 	],
 	"scripts": {
 		"build": "npm run build:tsc && webpack --config webpack.prod.js",

@@ -21,3 +21,6 @@
  */
 declare module "*.env";
 declare module "*.glb";
+declare module "*.png";
+declare module "*.dds";
+declare module "*.env";
