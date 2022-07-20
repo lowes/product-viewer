@@ -1,0 +1,2533 @@
+/*
+          object-assign
+          (c) Sindre Sorhus
+          @license MIT
+          */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/* @license
+ * Copyright 2022 Lowe's Companies, Inc. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+/*!
+           * Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com
+           * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+           * Copyright 2022 Fonticons, Inc.
+           */
+
+/*!
+          Copyright (c) 2018 Jed Watson.
+          Licensed under the MIT License (MIT), see
+          http://jedwatson.github.io/classnames
+          */
+
+/*! !!../../../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./bottomBar.scss */
+
+/*! !!../../../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./canvas.scss */
+
+/*! !!../../../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./curveEditor.scss */
+
+/*! !!../../../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./sideBar.scss */
+
+/*! !!../../../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./topBar.scss */
+
+/*! !!../../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./textureEditor.scss */
+
+/*! !!../../../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./performanceViewer.scss */
+
+/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./actionTabs.scss */
+
+/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./embedHost.scss */
+
+/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./sceneExplorer.scss */
+
+/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./colorPicker.scss */
+
+/*! !../../../../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../../../../../../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../../../../../../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../../../../../../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../../../../../../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../../../../../../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! !../../../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../../../../../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../../../../../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../../../../../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../../../../../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../../../../../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../../../../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! !../../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */
+
+/*! !../../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+/*! ../../../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../../../../../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */
+
+/*! ../../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../../../../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */
+
+/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../../../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */
+
+/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../../../../node_modules/css-loader/dist/runtime/getUrl.js */
+
+/*! ../../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */
+
+/*! ../../../../../../textureHelper */
+
+/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */
+
+/*! ../../../../../popupComponent */
+
+/*! ../../../../../textureHelper */
+
+/*! ../../../../inspector */
+
+/*! ../../../../popupComponent */
+
+/*! ../../../../sceneExplorer/entities/gui/guiTools */
+
+/*! ../../../components/propertyChangedEvent */
+
+/*! ../../../graph/canvasGraphComponent */
+
+/*! ../../../lines/checkBoxLineComponent */
+
+/*! ../../../lines/color3LineComponent */
+
+/*! ../../../lines/floatLineComponent */
+
+/*! ../../../lines/lineContainerComponent */
+
+/*! ../../../lines/meshPickerComponent */
+
+/*! ../../../lines/optionsLineComponent */
+
+/*! ../../../lines/quaternionLineComponent */
+
+/*! ../../../lines/sliderLineComponent */
+
+/*! ../../../lines/targetsProxy */
+
+/*! ../../../lines/textInputLineComponent */
+
+/*! ../../../lines/textLineComponent */
+
+/*! ../../../lines/textureLineComponent */
+
+/*! ../../../lines/textureLinkLineComponent */
+
+/*! ../../../tabs/propertyGrids/gui/commonControlPropertyGridComponent */
+
+/*! ../../../textureHelper */
+
+/*! ../../extensionsComponent */
+
+/*! ../../gradientNodePropertyComponent */
+
+/*! ../../lines/quaternionLineComponent */
+
+/*! ../../lines/textureLinkLineComponent */
+
+/*! ../../tools */
+
+/*! ../../treeItemLabelComponent */
+
+/*! ../actionTabs/actionTabsComponent */
+
+/*! ../animations/animationPropertyGridComponent */
+
+/*! ../assets/addAnimationIcon.svg */
+
+/*! ../assets/animationBulletIcon.svg */
+
+/*! ../assets/animationEndHoverIcon.svg */
+
+/*! ../assets/animationEndIcon.svg */
+
+/*! ../assets/animationLastFrameHoverIcon.svg */
+
+/*! ../assets/animationLastFrameIcon.svg */
+
+/*! ../assets/animationLastKeyHoverIcon.svg */
+
+/*! ../assets/animationLastKeyIcon.svg */
+
+/*! ../assets/animationNextFrameHoverIcon.svg */
+
+/*! ../assets/animationNextFrameIcon.svg */
+
+/*! ../assets/animationNextKeyHoverIcon.svg */
+
+/*! ../assets/animationNextKeyIcon.svg */
+
+/*! ../assets/animationOptionsIcon.svg */
+
+/*! ../assets/animationPlayFwdHoverIcon.svg */
+
+/*! ../assets/animationPlayFwdIcon.svg */
+
+/*! ../assets/animationPlayRevHoverIcon.svg */
+
+/*! ../assets/animationPlayRevIcon.svg */
+
+/*! ../assets/animationStartHoverIcon.svg */
+
+/*! ../assets/animationStartIcon.svg */
+
+/*! ../assets/animationStopHoverIcon.svg */
+
+/*! ../assets/animationStopIcon.svg */
+
+/*! ../assets/animationTriangleIcon.svg */
+
+/*! ../assets/closeWindowIcon.svg */
+
+/*! ../assets/editIcon.svg */
+
+/*! ../assets/keyActiveIcon.svg */
+
+/*! ../assets/keyInactiveIcon.svg */
+
+/*! ../assets/keySelectedIcon.svg */
+
+/*! ../assets/loadIcon.svg */
+
+/*! ../assets/saveIcon.svg */
+
+/*! ../assets/scrollbarHandleIcon.svg */
+
+/*! ../colorPicker/colorPicker */
+
+/*! ../commonPropertyGridComponent */
+
+/*! ../controls/actionButtonComponent */
+
+/*! ../controls/controlButtonComponent */
+
+/*! ../controls/textInputComponent */
+
+/*! ../customPropertyGridComponent */
+
+/*! ../extensionsComponent */
+
+/*! ../graph/keyPoint */
+
+/*! ../headerComponent */
+
+/*! ../imgs/toggleMixedIcon_30px.svg */
+
+/*! ../imgs/toggleOffIcon_30px.svg */
+
+/*! ../imgs/toggleOffIcon_40px.svg */
+
+/*! ../imgs/toggleOnIcon_30px.svg */
+
+/*! ../imgs/toggleOnIcon_40px.svg */
+
+/*! ../index */
+
+/*! ../inspector */
+
+/*! ../lines/copyStep.svg */
+
+/*! ../lines/delete.svg */
+
+/*! ../lines/numericInputComponent */
+
+/*! ../lines/sliderLineComponent */
+
+/*! ../paneComponent */
+
+/*! ../parentPropertyGridComponent */
+
+/*! ../sceneExplorer/sceneExplorerComponent */
+
+/*! ../scss/bottomBar.scss */
+
+/*! ../scss/canvas.scss */
+
+/*! ../scss/sideBar.scss */
+
+/*! ../treeItemLabelComponent */
+
+/*! ../variantsPropertyGridComponent */
+
+/*! ./AbstractMenu */
+
+/*! ./ContextMenu */
+
+/*! ./ContextMenuTrigger */
+
+/*! ./MenuItem */
+
+/*! ./SubMenu */
+
+/*! ./actionTabs.scss */
+
+/*! ./actions */
+
+/*! ./addAnimationComponent */
+
+/*! ./animationEntryComponent */
+
+/*! ./animationListComponent */
+
+/*! ./animationSubEntryComponent */
+
+/*! ./animations/animationPropertyGridComponent */
+
+/*! ./assets/babylonLogo.svg */
+
+/*! ./assets/breakTangentIcon.svg */
+
+/*! ./assets/channelA.svg */
+
+/*! ./assets/channelB.svg */
+
+/*! ./assets/channelD.svg */
+
+/*! ./assets/channelG.svg */
+
+/*! ./assets/channelR.svg */
+
+/*! ./assets/eyeClosed.svg */
+
+/*! ./assets/eyeOpen.svg */
+
+/*! ./assets/flatTangentIcon.svg */
+
+/*! ./assets/frameIcon.svg */
+
+/*! ./assets/linearTangentIcon.svg */
+
+/*! ./assets/mipDown.svg */
+
+/*! ./assets/mipUp.svg */
+
+/*! ./assets/negX.svg */
+
+/*! ./assets/negY.svg */
+
+/*! ./assets/negZ.svg */
+
+/*! ./assets/newKeyIcon.svg */
+
+/*! ./assets/posX.svg */
+
+/*! ./assets/posY.svg */
+
+/*! ./assets/posZ.svg */
+
+/*! ./assets/reset.svg */
+
+/*! ./assets/resizeTool.svg */
+
+/*! ./assets/save.svg */
+
+/*! ./assets/stepTangentIcon.svg */
+
+/*! ./assets/unifyTangentIcon.svg */
+
+/*! ./assets/upload.svg */
+
+/*! ./bottomBar */
+
+/*! ./bottomBar/bottomBarComponent */
+
+/*! ./boxEmitterGridComponent */
+
+/*! ./canvasGraphService */
+
+/*! ./canvasShader */
+
+/*! ./channelsBar */
+
+/*! ./checkPropTypes */
+
+/*! ./cjs/react-dom.development.js */
+
+/*! ./cjs/react-is.development.js */
+
+/*! ./cjs/react-jsx-runtime.development.js */
+
+/*! ./cjs/react.development.js */
+
+/*! ./cjs/scheduler-tracing.development.js */
+
+/*! ./cjs/scheduler.development.js */
+
+/*! ./colorComponentEntry */
+
+/*! ./colorGradientStepGridComponent */
+
+/*! ./colorLineComponent */
+
+/*! ./colorPicker.scss */
+
+/*! ./colorPickerComponent */
+
+/*! ./commonCameraPropertyGridComponent */
+
+/*! ./commonControlPropertyGridComponent */
+
+/*! ./commonLightPropertyGridComponent */
+
+/*! ./commonMaterialPropertyGridComponent */
+
+/*! ./commonPostProcessPropertyGridComponent */
+
+/*! ./commonRenderingPipelinePropertyGridComponent */
+
+/*! ./commonShadowLightPropertyGridComponent */
+
+/*! ./components/actionTabs/actionTabsComponent */
+
+/*! ./components/embedHost/embedHostComponent */
+
+/*! ./components/globalState */
+
+/*! ./components/popupComponent */
+
+/*! ./components/sceneExplorer/entities/gui/guiTools */
+
+/*! ./components/sceneExplorer/sceneExplorerComponent */
+
+/*! ./coneEmitterGridComponent */
+
+/*! ./connectMenu */
+
+/*! ./controls/actionButtonComponent */
+
+/*! ./controls/textInputComponent */
+
+/*! ./copy.svg */
+
+/*! ./curve */
+
+/*! ./curveComponent */
+
+/*! ./curveEditor/animationCurveEditorComponent */
+
+/*! ./curveEditor/context */
+
+/*! ./cylinderEmitterGridComponent */
+
+/*! ./defaultTools/defaultTools */
+
+/*! ./downArrow.svg */
+
+/*! ./editAnimationComponent */
+
+/*! ./embedHost.scss */
+
+/*! ./entities/animationGroupTreeItemComponent */
+
+/*! ./entities/boneTreeItemComponent */
+
+/*! ./entities/cameraTreeItemComponent */
+
+/*! ./entities/effectLayerPipelineTreeItemComponent */
+
+/*! ./entities/gui/advancedDynamicTextureTreeItemComponent */
+
+/*! ./entities/gui/controlTreeItemComponent */
+
+/*! ./entities/lightTreeItemComponent */
+
+/*! ./entities/materialTreeItemComponent */
+
+/*! ./entities/meshTreeItemComponent */
+
+/*! ./entities/particleSystemTreeItemComponent */
+
+/*! ./entities/postProcessTreeItemComponent */
+
+/*! ./entities/renderingPipelineTreeItemComponent */
+
+/*! ./entities/sceneTreeItemComponent */
+
+/*! ./entities/skeletonTreeItemComponent */
+
+/*! ./entities/soundTreeItemComponent */
+
+/*! ./entities/spriteManagerTreeItemComponent */
+
+/*! ./entities/spriteTreeItemComponent */
+
+/*! ./entities/targetedAnimationTreeItemComponent */
+
+/*! ./entities/textureTreeItemComponent */
+
+/*! ./entities/transformNodeTreeItemComponent */
+
+/*! ./eyedropper */
+
+/*! ./factorGradientStepGridComponent */
+
+/*! ./factoryWithTypeCheckers */
+
+/*! ./floatLineComponent */
+
+/*! ./floodfill */
+
+/*! ./fogPropertyGridComponent */
+
+/*! ./frameBarComponent */
+
+/*! ./globalEventListener */
+
+/*! ./gradientStepComponent */
+
+/*! ./graph/canvasComponent */
+
+/*! ./graphComponent */
+
+/*! ./graphSupportingTypes */
+
+/*! ./guiTools */
+
+/*! ./helpers */
+
+/*! ./hemisphericEmitterGridComponent */
+
+/*! ./hexColor */
+
+/*! ./inputArrowsComponent */
+
+/*! ./inspector */
+
+/*! ./keyPoint */
+
+/*! ./lib/ReactPropTypesSecret */
+
+/*! ./lib/has */
+
+/*! ./loadAnimationComponent */
+
+/*! ./lod */
+
+/*! ./lodCube */
+
+/*! ./mediaPlayerComponent */
+
+/*! ./meshEmitterGridComponent */
+
+/*! ./numericInputComponent */
+
+/*! ./paintbrush */
+
+/*! ./performancePlayheadButtonComponent */
+
+/*! ./performanceViewer/performanceViewerComponent */
+
+/*! ./performanceViewerPopupComponent */
+
+/*! ./performanceViewerSidebarComponent */
+
+/*! ./playHeadComponent */
+
+/*! ./pointEmitterGridComponent */
+
+/*! ./propertiesBar */
+
+/*! ./propertyGrids/animations/animationGroupPropertyGridComponent */
+
+/*! ./propertyGrids/animations/targetedAnimationPropertyGridComponent */
+
+/*! ./propertyGrids/cameras/arcRotateCameraPropertyGridComponent */
+
+/*! ./propertyGrids/cameras/followCameraPropertyGridComponent */
+
+/*! ./propertyGrids/cameras/freeCameraPropertyGridComponent */
+
+/*! ./propertyGrids/layers/layerPropertyGridComponent */
+
+/*! ./propertyGrids/lights/directionalLightPropertyGridComponent */
+
+/*! ./propertyGrids/lights/hemisphericLightPropertyGridComponent */
+
+/*! ./propertyGrids/lights/pointLightPropertyGridComponent */
+
+/*! ./propertyGrids/lights/spotLightPropertyGridComponent */
+
+/*! ./propertyGrids/materials/backgroundMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/materialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/multiMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/nodeMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/pbrMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/pbrMetallicRoughnessMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/pbrSpecularGlossinessMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/standardMaterialPropertyGridComponent */
+
+/*! ./propertyGrids/materials/texturePropertyGridComponent */
+
+/*! ./propertyGrids/meshes/bonePropertyGridComponent */
+
+/*! ./propertyGrids/meshes/meshPropertyGridComponent */
+
+/*! ./propertyGrids/meshes/skeletonPropertyGridComponent */
+
+/*! ./propertyGrids/meshes/transformNodePropertyGridComponent */
+
+/*! ./propertyGrids/particleSystems/particleSystemPropertyGridComponent */
+
+/*! ./propertyGrids/postProcesses/defaultRenderingPipelinePropertyGridComponent */
+
+/*! ./propertyGrids/postProcesses/lensRenderingPipelinePropertyGridComponent */
+
+/*! ./propertyGrids/postProcesses/postProcessPropertyGridComponent */
+
+/*! ./propertyGrids/postProcesses/renderingPipelinePropertyGridComponent */
+
+/*! ./propertyGrids/postProcesses/ssao2RenderingPipelinePropertyGridComponent */
+
+/*! ./propertyGrids/postProcesses/ssaoRenderingPipelinePropertyGridComponent */
+
+/*! ./propertyGrids/renderGridPropertyGridComponent */
+
+/*! ./propertyGrids/scenePropertyGridComponent */
+
+/*! ./propertyGrids/sounds/soundPropertyGridComponent */
+
+/*! ./propertyGrids/sprites/spriteManagerPropertyGridComponent */
+
+/*! ./propertyGrids/sprites/spritePropertyGridComponent */
+
+/*! ./rangeFrameBarComponent */
+
+/*! ./rangeSelectorComponent */
+
+/*! ./rectangleSelect */
+
+/*! ./replayRecorder */
+
+/*! ./saveAnimationComponent */
+
+/*! ./sceneExplorer.scss */
+
+/*! ./scss/curveEditor.scss */
+
+/*! ./scss/performanceViewer.scss */
+
+/*! ./scss/topBar.scss */
+
+/*! ./sideBar/sideBarComponent */
+
+/*! ./sliderLineComponent */
+
+/*! ./sphereEmitterGridComponent */
+
+/*! ./tabs/debugTabComponent */
+
+/*! ./tabs/propertyGridTabComponent */
+
+/*! ./tabs/settingsTabComponent */
+
+/*! ./tabs/statisticsTabComponent */
+
+/*! ./tabs/toolsTabComponent */
+
+/*! ./tabsComponent */
+
+/*! ./targetsProxy */
+
+/*! ./textInputLineComponent */
+
+/*! ./textureCanvasComponent */
+
+/*! ./textureCanvasManager */
+
+/*! ./textureEditor.scss */
+
+/*! ./textures/textureEditorComponent */
+
+/*! ./toolBar */
+
+/*! ./toolSettings */
+
+/*! ./tools/gltfComponent */
+
+/*! ./topBarComponent */
+
+/*! ./treeItemComponent */
+
+/*! ./treeItemLabelComponent */
+
+/*! ./treeItemSelectableComponent */
+
+/*! ./treeItemSpecializedComponent */
+
+/*! ./valueDownArrowIcon.svg */
+
+/*! ./valueGradientGridComponent */
+
+/*! ./valueUpArrowIcon.svg */
+
+/*! @fortawesome/fontawesome-svg-core */
+
+/*! @fortawesome/free-regular-svg-icons */
+
+/*! @fortawesome/free-solid-svg-icons */
+
+/*! @fortawesome/react-fontawesome */
+
+/*! classnames */
+
+/*! core/Animations/animation */
+
+/*! core/Animations/animationPropertiesOverride */
+
+/*! core/Cameras/camera */
+
+/*! core/Debug/debugLayer */
+
+/*! core/Debug/directionalLightFrustumViewer */
+
+/*! core/Debug/physicsViewer */
+
+/*! core/Debug/skeletonViewer */
+
+/*! core/Engines/constants */
+
+/*! core/Engines/engine */
+
+/*! core/Events/keyboardEvents */
+
+/*! core/Events/pointerEvents */
+
+/*! core/Lights/directionalLight */
+
+/*! core/Lights/light */
+
+/*! core/Loading/sceneLoader */
+
+/*! core/Materials/Node/Enums/nodeMaterialBlockConnectionPointTypes */
+
+/*! core/Materials/Textures/renderTargetTexture */
+
+/*! core/Materials/effect */
+
+/*! core/Materials/imageProcessingConfiguration */
+
+/*! core/Maths/math */
+
+/*! core/Maths/math.color */
+
+/*! core/Maths/math.scalar */
+
+/*! core/Maths/math.vector */
+
+/*! core/Meshes/Builders/groundBuilder */
+
+/*! core/Misc/PerformanceViewer/performanceViewerCollector */
+
+/*! core/Misc/computePressure */
+
+/*! core/Misc/dataStorage */
+
+/*! core/Misc/iInspectable */
+
+/*! core/Misc/observable */
+
+/*! core/Misc/tools */
+
+/*! core/Particles/particleHelper */
+
+/*! core/Particles/particleSystem */
+
+/*! core/Physics/physicsEngineComponent */
+
+/*! core/PostProcesses/RenderPipeline/postProcessRenderPipelineManagerSceneComponent */
+
+/*! core/Rendering/boundingBoxRenderer */
+
+/*! core/Rendering/subSurfaceSceneComponent */
+
+/*! core/scene */
+
+/*! data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 2 2%27%3E%3Cpath fill=%27rgba%281.0,1.0,1.0,0.3%29%27 fill-rule=%27evenodd%27 d=%27M0 0h1v1H0V0zm1 1h1v1H1V1z%27/%3E%3C/svg%3E */
+
+/*! gif.js.optimized */
+
+/*! gui/2D/advancedDynamicTexture */
+
+/*! gui/2D/controls/control */
+
+/*! gui/2D/controls/image */
+
+/*! inspector/legacy/legacy */
+
+/*! loaders/glTF/index */
+
+/*! materials/grid/gridMaterial */
+
+/*! object-assign */
+
+/*! prop-types */
+
+/*! re-resizable */
+
+/*! react */
+
+/*! react-contextmenu */
+
+/*! react-dom */
+
+/*! react-is */
+
+/*! react/jsx-runtime */
+
+/*! scheduler */
+
+/*! scheduler/tracing */
+
+/*! serializers/glTF/2.0/index */
+
+/*! shared-ui-components/colorPicker/colorPicker */
+
+/*! shared-ui-components/lines/booleanLineComponent */
+
+/*! shared-ui-components/lines/buttonLineComponent */
+
+/*! shared-ui-components/lines/checkBoxLineComponent */
+
+/*! shared-ui-components/lines/color3LineComponent */
+
+/*! shared-ui-components/lines/color4LineComponent */
+
+/*! shared-ui-components/lines/colorPickerComponent */
+
+/*! shared-ui-components/lines/fileButtonLineComponent */
+
+/*! shared-ui-components/lines/fileMultipleButtonLineComponent */
+
+/*! shared-ui-components/lines/floatLineComponent */
+
+/*! shared-ui-components/lines/hexLineComponent */
+
+/*! shared-ui-components/lines/indentedTextLineComponent */
+
+/*! shared-ui-components/lines/lineContainerComponent */
+
+/*! shared-ui-components/lines/linkButtonComponent */
+
+/*! shared-ui-components/lines/messageLineComponent */
+
+/*! shared-ui-components/lines/numericInputComponent */
+
+/*! shared-ui-components/lines/optionsLineComponent */
+
+/*! shared-ui-components/lines/radioLineComponent */
+
+/*! shared-ui-components/lines/sliderLineComponent */
+
+/*! shared-ui-components/lines/textInputLineComponent */
+
+/*! shared-ui-components/lines/textLineComponent */
+
+/*! shared-ui-components/lines/valueLineComponent */
+
+/*! shared-ui-components/lines/vector2LineComponent */
+
+/*! shared-ui-components/lines/vector3LineComponent */
+
+/*! shared-ui-components/lines/vector4LineComponent */
+
+/*! shared-ui-components/stringTools */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/checkboxPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/colorPickerPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/controlPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/ellipsePropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/gridPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/imageBasedSliderPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/imagePropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/inputTextPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/linePropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/radioButtonPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/rectanglePropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/scrollViewerPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/sliderPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/stackPanelPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/gui/textBlockPropertyGridComponent */
+
+/*! shared-ui-components/tabs/propertyGrids/lockObject */
+
+/*! split.js */
+
+/*!**********************!*\
+          !*** ./src/index.ts ***!
+          \**********************/
+
+/*!******************************************!*\
+          !*** ../../../dev/inspector/dist/lod.js ***!
+          \******************************************/
+
+/*!********************************************!*\
+          !*** ../../../dev/inspector/dist/index.js ***!
+          \********************************************/
+
+/*!********************************************!*\
+          !*** ../../../dev/inspector/dist/tools.js ***!
+          \********************************************/
+
+/*!**********************************************!*\
+          !*** ../../../dev/inspector/dist/lodCube.js ***!
+          \**********************************************/
+
+/*!***********************************************!*\
+          !*** ../../../../node_modules/react/index.js ***!
+          \***********************************************/
+
+/*!************************************************!*\
+          !*** ../../../dev/inspector/dist/inspector.js ***!
+          \************************************************/
+
+/*!***************************************************!*\
+          !*** ../../../../node_modules/react-dom/index.js ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ../../../../node_modules/scheduler/index.js ***!
+          \***************************************************/
+
+/*!****************************************************!*\
+          !*** ../../../../node_modules/classnames/index.js ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ../../../../node_modules/prop-types/index.js ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ../../../dev/inspector/dist/legacy/legacy.js ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ../../../dev/inspector/dist/textureHelper.js ***!
+          \****************************************************/
+
+/*!*****************************************************!*\
+          !*** ../../../../node_modules/react/jsx-runtime.js ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ../../../../node_modules/scheduler/tracing.js ***!
+          \*****************************************************/
+
+/*!******************************************************!*\
+          !*** ../../../../node_modules/prop-types/lib/has.js ***!
+          \******************************************************/
+
+/*!*******************************************************!*\
+          !*** ../../../../node_modules/object-assign/index.js ***!
+          \*******************************************************/
+
+/*!**********************************************************!*\
+          !*** ../../../../node_modules/re-resizable/lib/index.js ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ../../../../node_modules/split.js/dist/split.es.js ***!
+          \**********************************************************/
+
+/*!***********************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/copy.svg ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/stringTools.js ***!
+          \***********************************************************/
+
+/*!*************************************************************!*\
+          !*** ../../../../node_modules/gif.js.optimized/dist/gif.js ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ../../../../node_modules/prop-types/checkPropTypes.js ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/globalState.js ***!
+          \*************************************************************/
+
+/*!***************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/runtime/api.js ***!
+          \***************************************************************/
+
+/*!***************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/index.js ***!
+          \***************************************************************/
+
+/*!***************************************************************!*\
+          !*** ../../../../node_modules/react/cjs/react.development.js ***!
+          \***************************************************************/
+
+/*!****************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/popupComponent.js ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/replayRecorder.js ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/downArrow.svg ***!
+          \****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/SubMenu.js ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/actions.js ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/helpers.js ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/headerComponent.js ***!
+          \*****************************************************************/
+
+/*!******************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/runtime/getUrl.js ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/MenuItem.js ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/targetsProxy.js ***!
+          \******************************************************************/
+
+/*!********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/colorPicker/hexColor.js ***!
+          \********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/ContextMenu.js ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/connectMenu.js ***!
+          \*********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ../../../../node_modules/prop-types/factoryWithTypeCheckers.js ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/AbstractMenu.js ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/propertyChangedEvent.js ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/hexLineComponent.js ***!
+          \**********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../../node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../../node_modules/react-dom/cjs/react-dom.development.js ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../../node_modules/scheduler/cjs/scheduler.development.js ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/embedHost/embedHost.scss ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/colorPicker/colorPicker.js ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/imgs/toggleOnIcon_30px.svg ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/imgs/toggleOnIcon_40px.svg ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/textLineComponent.js ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/valueUpArrowIcon.svg ***!
+          \***********************************************************************/
+
+/*!************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/imgs/toggleOffIcon_30px.svg ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/imgs/toggleOffIcon_40px.svg ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/colorLineComponent.js ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/floatLineComponent.js ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/radioLineComponent.js ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/valueLineComponent.js ***!
+          \************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/actionTabs.scss ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/colorPicker/colorPicker.scss ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/buttonLineComponent.js ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/color3LineComponent.js ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/color4LineComponent.js ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/linkButtonComponent.js ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/sliderLineComponent.js ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/valueDownArrowIcon.svg ***!
+          \*************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../../node_modules/prop-types/node_modules/react-is/index.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/lines/delete.svg ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/paneComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabsComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/graph/canvasGraphService.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/imgs/toggleMixedIcon_30px.svg ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/booleanLineComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/colorPickerComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/inputArrowsComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/messageLineComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/optionsLineComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/vector2LineComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/vector3LineComponent.js ***!
+          \**************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/vector4LineComponent.js ***!
+          \**************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ../../../../node_modules/@fortawesome/react-fontawesome/index.es.js ***!
+          \***************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ../../../../node_modules/react/cjs/react-jsx-runtime.development.js ***!
+          \***************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/checkBoxLineComponent.js ***!
+          \***************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/numericInputComponent.js ***!
+          \***************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/ContextMenuTrigger.js ***!
+          \****************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/lines/copyStep.svg ***!
+          \****************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/graph/canvasGraphComponent.js ***!
+          \****************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/graph/graphSupportingTypes.js ***!
+          \****************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/lineContainerComponent.js ***!
+          \****************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/textInputLineComponent.js ***!
+          \****************************************************************************/
+
+/*!*****************************************************************************!*\
+          !*** ../../../../node_modules/react-contextmenu/es6/globalEventListener.js ***!
+          \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/fileButtonLineComponent.js ***!
+          \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/lockObject.js ***!
+          \*****************************************************************************/
+
+/*!******************************************************************************!*\
+          !*** ../../../../node_modules/@fortawesome/fontawesome-svg-core/index.es.js ***!
+          \******************************************************************************/
+
+/*!******************************************************************************!*\
+          !*** ../../../../node_modules/@fortawesome/free-solid-svg-icons/index.es.js ***!
+          \******************************************************************************/
+
+/*!******************************************************************************!*\
+          !*** ../../../../node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+          \******************************************************************************/
+
+/*!******************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/embedHost/embedHostComponent.js ***!
+          \******************************************************************************/
+
+/*!*******************************************************************************!*\
+          !*** ../../../../node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
+          \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+          !*** ../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+          \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/sceneExplorer.scss ***!
+          \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/colorPicker/colorComponentEntry.js ***!
+          \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/indentedTextLineComponent.js ***!
+          \*******************************************************************************/
+
+/*!********************************************************************************!*\
+          !*** ../../../../node_modules/@fortawesome/free-regular-svg-icons/index.es.js ***!
+          \********************************************************************************/
+
+/*!********************************************************************************!*\
+          !*** ../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+          \********************************************************************************/
+
+/*!********************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/actionTabsComponent.js ***!
+          \********************************************************************************/
+
+/*!*********************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/treeItemComponent.js ***!
+          \*********************************************************************************/
+
+/*!***********************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/debugTabComponent.js ***!
+          \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/toolsTabComponent.js ***!
+          \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/extensionsComponent.js ***!
+          \***********************************************************************************/
+
+/*!*************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/tools/gltfComponent.js ***!
+          \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/gui/guiTools.js ***!
+          \*************************************************************************************/
+
+/*!*************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/lines/fileMultipleButtonLineComponent.js ***!
+          \*************************************************************************************/
+
+/*!**************************************************************************************!*\
+          !*** ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+          \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/lines/meshPickerComponent.js ***!
+          \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/settingsTabComponent.js ***!
+          \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/sceneExplorerComponent.js ***!
+          \**************************************************************************************/
+
+/*!**************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/treeItemLabelComponent.js ***!
+          \**************************************************************************************/
+
+/*!***************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/lines/textureLineComponent.js ***!
+          \***************************************************************************************/
+
+/*!***************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/gradientStepComponent.js ***!
+          \***************************************************************************************/
+
+/*!****************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/statisticsTabComponent.js ***!
+          \****************************************************************************************/
+
+/*!******************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/lines/quaternionLineComponent.js ***!
+          \******************************************************************************************/
+
+/*!******************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGridTabComponent.js ***!
+          \******************************************************************************************/
+
+/*!*******************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/lines/textureLinkLineComponent.js ***!
+          \*******************************************************************************************/
+
+/*!*******************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/treeItemSelectableComponent.js ***!
+          \*******************************************************************************************/
+
+/*!********************************************************************************************!*\
+          !*** ../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+          \********************************************************************************************/
+
+/*!********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/treeItemSpecializedComponent.js ***!
+          \********************************************************************************************/
+
+/*!*********************************************************************************************!*\
+          !*** ../../../../node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js ***!
+          \*********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/boneTreeItemComponent.js ***!
+          \**********************************************************************************************/
+
+/*!**********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/meshTreeItemComponent.js ***!
+          \**********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/gradientNodePropertyComponent.js ***!
+          \***********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/lightTreeItemComponent.js ***!
+          \***********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/sceneTreeItemComponent.js ***!
+          \***********************************************************************************************/
+
+/*!***********************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/soundTreeItemComponent.js ***!
+          \***********************************************************************************************/
+
+/*!************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/cameraTreeItemComponent.js ***!
+          \************************************************************************************************/
+
+/*!************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/spriteTreeItemComponent.js ***!
+          \************************************************************************************************/
+
+/*!************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/gridPropertyGridComponent.js ***!
+          \************************************************************************************************/
+
+/*!************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/linePropertyGridComponent.js ***!
+          \************************************************************************************************/
+
+/*!*************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/textureTreeItemComponent.js ***!
+          \*************************************************************************************************/
+
+/*!*************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/imagePropertyGridComponent.js ***!
+          \*************************************************************************************************/
+
+/*!**************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/materialTreeItemComponent.js ***!
+          \**************************************************************************************************/
+
+/*!**************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/skeletonTreeItemComponent.js ***!
+          \**************************************************************************************************/
+
+/*!**************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/sliderPropertyGridComponent.js ***!
+          \**************************************************************************************************/
+
+/*!***************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/controlPropertyGridComponent.js ***!
+          \***************************************************************************************************/
+
+/*!***************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/ellipsePropertyGridComponent.js ***!
+          \***************************************************************************************************/
+
+/*!****************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/checkboxPropertyGridComponent.js ***!
+          \****************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/gui/controlTreeItemComponent.js ***!
+          \*****************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/postProcessTreeItemComponent.js ***!
+          \*****************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/inputTextPropertyGridComponent.js ***!
+          \*****************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/rectanglePropertyGridComponent.js ***!
+          \*****************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/textBlockPropertyGridComponent.js ***!
+          \*****************************************************************************************************/
+
+/*!******************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/stackPanelPropertyGridComponent.js ***!
+          \******************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/spriteManagerTreeItemComponent.js ***!
+          \*******************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/transformNodeTreeItemComponent.js ***!
+          \*******************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/colorPickerPropertyGridComponent.js ***!
+          \*******************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/radioButtonPropertyGridComponent.js ***!
+          \*******************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/fogPropertyGridComponent.js ***!
+          \********************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/animationGroupTreeItemComponent.js ***!
+          \********************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/particleSystemTreeItemComponent.js ***!
+          \********************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/scrollViewerPropertyGridComponent.js ***!
+          \********************************************************************************************************/
+
+/*!*********************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/commonControlPropertyGridComponent.js ***!
+          \*********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/toolBar.js ***!
+          \**********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/scenePropertyGridComponent.js ***!
+          \**********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/commonPropertyGridComponent.js ***!
+          \***********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/customPropertyGridComponent.js ***!
+          \***********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/parentPropertyGridComponent.js ***!
+          \***********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/renderingPipelineTreeItemComponent.js ***!
+          \***********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/targetedAnimationTreeItemComponent.js ***!
+          \***********************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/performanceViewer/scss/performanceViewer.scss ***!
+          \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/bottomBar.js ***!
+          \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+          !*** ../../../dev/sharedUiComponents/dist/tabs/propertyGrids/gui/imageBasedSliderPropertyGridComponent.js ***!
+          \************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/variantsPropertyGridComponent.js ***!
+          \*************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/effectLayerPipelineTreeItemComponent.js ***!
+          \*************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/performanceViewer/performanceViewerComponent.js ***!
+          \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/context.js ***!
+          \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/channelsBar.js ***!
+          \**************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/negX.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/negY.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/negZ.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/posX.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/posY.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/posZ.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/save.svg ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/canvasShader.js ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/toolSettings.js ***!
+          \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/renderGridPropertyGridComponent.js ***!
+          \***************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/mipUp.svg ***!
+          \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/reset.svg ***!
+          \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/propertiesBar.js ***!
+          \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/meshes/bonePropertyGridComponent.js ***!
+          \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/meshes/meshPropertyGridComponent.js ***!
+          \****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/layers/layerPropertyGridComponent.js ***!
+          \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/upload.svg ***!
+          \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/sounds/soundPropertyGridComponent.js ***!
+          \*****************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/curve.js ***!
+          \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/eyeOpen.svg ***!
+          \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/mipDown.svg ***!
+          \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/textureEditor.scss ***!
+          \******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/performanceViewer/performanceViewerPopupComponent.js ***!
+          \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/channelA.svg ***!
+          \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/channelB.svg ***!
+          \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/channelD.svg ***!
+          \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/channelG.svg ***!
+          \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/channelR.svg ***!
+          \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/sprites/spritePropertyGridComponent.js ***!
+          \*******************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/canvas.scss ***!
+          \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/topBar.scss ***!
+          \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/eyeClosed.svg ***!
+          \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/meshes/skeletonPropertyGridComponent.js ***!
+          \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/sceneExplorer/entities/gui/advancedDynamicTextureTreeItemComponent.js ***!
+          \********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/performanceViewer/performanceViewerSidebarComponent.js ***!
+          \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/keyPoint.js ***!
+          \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/sideBar.scss ***!
+          \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/lights/spotLightPropertyGridComponent.js ***!
+          \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/resizeTool.svg ***!
+          \*********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/performanceViewer/performancePlayheadButtonComponent.js ***!
+          \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/topBarComponent.js ***!
+          \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/lights/pointLightPropertyGridComponent.js ***!
+          \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/texturePropertyGridComponent.js ***!
+          \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/assets/babylonLogo.svg ***!
+          \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+          !*** external {"root":"BABYLON","commonjs":"@babylonjs/core","commonjs2":"@babylonjs/core","amd":"@babylonjs/core"} ***!
+          \**********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/editIcon.svg ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/loadIcon.svg ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/saveIcon.svg ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/bottomBar.scss ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/cameras/freeCameraPropertyGridComponent.js ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/lights/commonLightPropertyGridComponent.js ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/materialPropertyGridComponent.js ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/textureCanvasManager.js ***!
+          \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/boxEmitterGridComponent.js ***!
+          \***********************************************************************************************************************/
+
+/*!************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/frameIcon.svg ***!
+          \************************************************************************************************************************/
+
+/*!************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/coneEmitterGridComponent.js ***!
+          \************************************************************************************************************************/
+
+/*!************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/meshEmitterGridComponent.js ***!
+          \************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/animationPropertyGridComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/newKeyIcon.svg ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/curveEditor.scss ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/cameras/commonCameraPropertyGridComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/cameras/followCameraPropertyGridComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/defaultTools/floodfill.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/textureCanvasComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/textureEditorComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/meshes/transformNodePropertyGridComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/pointEmitterGridComponent.js ***!
+          \*************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/babylonLogo.svg ***!
+          \**************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/pbrMaterialPropertyGridComponent.js ***!
+          \**************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/defaultTools/eyedropper.js ***!
+          \**************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/defaultTools/paintbrush.js ***!
+          \**************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/sphereEmitterGridComponent.js ***!
+          \**************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/valueGradientGridComponent.js ***!
+          \**************************************************************************************************************************/
+
+/*!**************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/sprites/spriteManagerPropertyGridComponent.js ***!
+          \**************************************************************************************************************************/
+
+/*!***************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/curveComponent.js ***!
+          \***************************************************************************************************************************/
+
+/*!***************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/graphComponent.js ***!
+          \***************************************************************************************************************************/
+
+/*!***************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/nodeMaterialPropertyGridComponent.js ***!
+          \***************************************************************************************************************************/
+
+/*!***************************************************************************************************************************!*\
+          !*** external {"root":["BABYLON","GUI"],"commonjs":"@babylonjs/gui","commonjs2":"@babylonjs/gui","amd":"@babylonjs/gui"} ***!
+          \***************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/keyActiveIcon.svg ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/canvasComponent.js ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/cameras/arcRotateCameraPropertyGridComponent.js ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/lights/directionalLightPropertyGridComponent.js ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/lights/hemisphericLightPropertyGridComponent.js ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/multiMaterialPropertyGridComponent.js ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/defaultTools/defaultTools.js ***!
+          \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/cylinderEmitterGridComponent.js ***!
+          \****************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/lights/commonShadowLightPropertyGridComponent.js ***!
+          \*****************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/commonMaterialPropertyGridComponent.js ***!
+          \*****************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/animationGroupPropertyGridComponent.js ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/closeWindowIcon.svg ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/flatTangentIcon.svg ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/keyInactiveIcon.svg ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/keySelectedIcon.svg ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/stepTangentIcon.svg ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/frameBarComponent.js ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/playHeadComponent.js ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/colorGradientStepGridComponent.js ***!
+          \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/postProcessPropertyGridComponent.js ***!
+          \******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/addAnimationIcon.svg ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationEndIcon.svg ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/breakTangentIcon.svg ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/unifyTangentIcon.svg ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/sideBarComponent.js ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/standardMaterialPropertyGridComponent.js ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/defaultTools/rectangleSelect.js ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/factorGradientStepGridComponent.js ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/hemisphericEmitterGridComponent.js ***!
+          \*******************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************!*\
+          !*** external {"root":"BABYLON","commonjs":"@babylonjs/loaders","commonjs2":"@babylonjs/loaders","amd":"@babylonjs/loaders"} ***!
+          \*******************************************************************************************************************************/
+
+/*!********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationStopIcon.svg ***!
+          \********************************************************************************************************************************/
+
+/*!********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/linearTangentIcon.svg ***!
+          \********************************************************************************************************************************/
+
+/*!********************************************************************************************************************************!*\
+          !*** external {"root":["BABYLON","Debug"],"commonjs":"@babylonjs/core","commonjs2":"@babylonjs/core","amd":"@babylonjs/core"} ***!
+          \********************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationStartIcon.svg ***!
+          \*********************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/targetedAnimationPropertyGridComponent.js ***!
+          \*********************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/backgroundMaterialPropertyGridComponent.js ***!
+          \*********************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationBulletIcon.svg ***!
+          \**********************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/scrollbarHandleIcon.svg ***!
+          \**********************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/controls/textInputComponent.js ***!
+          \**********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationLastKeyIcon.svg ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationNextKeyIcon.svg ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationOptionsIcon.svg ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationPlayFwdIcon.svg ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationPlayRevIcon.svg ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/bottomBar/bottomBarComponent.js ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/graph/rangeFrameBarComponent.js ***!
+          \***********************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/particleSystems/particleSystemPropertyGridComponent.js ***!
+          \***********************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/animationCurveEditorComponent.js ***!
+          \************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationEndHoverIcon.svg ***!
+          \************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationTriangleIcon.svg ***!
+          \************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/addAnimationComponent.js ***!
+          \************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/commonPostProcessPropertyGridComponent.js ***!
+          \************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/renderingPipelinePropertyGridComponent.js ***!
+          \************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationLastFrameIcon.svg ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationNextFrameIcon.svg ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationStopHoverIcon.svg ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/bottomBar/mediaPlayerComponent.js ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/controls/actionButtonComponent.js ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/animationListComponent.js ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/editAnimationComponent.js ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/loadAnimationComponent.js ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/saveAnimationComponent.js ***!
+          \*************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************!*\
+          !*** external {"root":"BABYLON","commonjs":"@babylonjs/materials","commonjs2":"@babylonjs/materials","amd":"@babylonjs/materials"} ***!
+          \*************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationStartHoverIcon.svg ***!
+          \**************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/controls/controlButtonComponent.js ***!
+          \**************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/animationEntryComponent.js ***!
+          \**************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/bottomBar/rangeSelectorComponent.js ***!
+          \***************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationLastKeyHoverIcon.svg ***!
+          \****************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationNextKeyHoverIcon.svg ***!
+          \****************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationPlayFwdHoverIcon.svg ***!
+          \****************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationPlayRevHoverIcon.svg ***!
+          \****************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/lensRenderingPipelinePropertyGridComponent.js ***!
+          \****************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/ssaoRenderingPipelinePropertyGridComponent.js ***!
+          \****************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/sideBar/animationSubEntryComponent.js ***!
+          \*****************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/ssao2RenderingPipelinePropertyGridComponent.js ***!
+          \*****************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationLastFrameHoverIcon.svg ***!
+          \******************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/assets/animationNextFrameHoverIcon.svg ***!
+          \******************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/commonRenderingPipelinePropertyGridComponent.js ***!
+          \******************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/pbrMetallicRoughnessMaterialPropertyGridComponent.js ***!
+          \*******************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/postProcesses/defaultRenderingPipelinePropertyGridComponent.js ***!
+          \*******************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************!*\
+          !*** external {"root":"BABYLON","commonjs":"@babylonjs/serializers","commonjs2":"@babylonjs/serializers","amd":"@babylonjs/serializers"} ***!
+          \*******************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************!*\
+          !*** ../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/pbrSpecularGlossinessMaterialPropertyGridComponent.js ***!
+          \********************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************!*\
+          !*** data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 2 2%27%3E%3Cpath fill=%27rgba%281.0,1.0,1.0,0.3%29%27 fill-rule=%27evenodd%27 d=%27M0 0h1v1H0V0zm1 1h1v1H1V1z%27/%3E%3C/svg%3E ***!
+          \**********************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/embedHost/embedHost.scss ***!
+          \********************************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/actionTabs.scss ***!
+          \**********************************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/sharedUiComponents/dist/colorPicker/colorPicker.scss ***!
+          \**********************************************************************************************************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/sceneExplorer/sceneExplorer.scss ***!
+          \****************************************************************************************************************************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/performanceViewer/scss/performanceViewer.scss ***!
+          \*********************************************************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/materials/textures/textureEditor.scss ***!
+          \***************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/canvas.scss ***!
+          \*****************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/topBar.scss ***!
+          \*****************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/sideBar.scss ***!
+          \******************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/bottomBar.scss ***!
+          \********************************************************************************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+          !*** ../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../../dev/inspector/dist/components/actionTabs/tabs/propertyGrids/animations/curveEditor/scss/curveEditor.scss ***!
+          \**********************************************************************************************************************************************************************************************************************************************************************************/
+
+/**
+               * Checks if an event is supported in the current execution environment.
+               *
+               * NOTE: This will not work correctly for non-generic events such as `change`,
+               * `reset`, `load`, `error`, and `select`.
+               *
+               * Borrows from Modernizr.
+               *
+               * @param {string} eventNameSuffix Event name, e.g. "click".
+               * @return {boolean} True if the event is supported.
+               * @internal
+               * @license Modernizr 3.0.0pre (Custom Build) | MIT
+               */
+
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+/**
+ * A better abstraction over CSS.
+ *
+ * @copyright Oleg Isonen (Slobodskoi) / Isonen 2014-present
+ * @website https://github.com/cssinjs/jss
+ * @license MIT
+ */
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
+
+/**
+ * React Router DOM v6.2.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.2.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/** @license React v0.20.2
+           * scheduler-tracing.development.js
+           *
+           * Copyright (c) Facebook, Inc. and its affiliates.
+           *
+           * This source code is licensed under the MIT license found in the
+           * LICENSE file in the root directory of this source tree.
+           */
+
+/** @license React v0.20.2
+           * scheduler.development.js
+           *
+           * Copyright (c) Facebook, Inc. and its affiliates.
+           *
+           * This source code is licensed under the MIT license found in the
+           * LICENSE file in the root directory of this source tree.
+           */
+
+/** @license React v0.20.2
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+           * react-is.development.js
+           *
+           * Copyright (c) Facebook, Inc. and its affiliates.
+           *
+           * This source code is licensed under the MIT license found in the
+           * LICENSE file in the root directory of this source tree.
+           */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+           * react-dom.development.js
+           *
+           * Copyright (c) Facebook, Inc. and its affiliates.
+           *
+           * This source code is licensed under the MIT license found in the
+           * LICENSE file in the root directory of this source tree.
+           */
+
+/** @license React v17.0.2
+           * react-jsx-runtime.development.js
+           *
+           * Copyright (c) Facebook, Inc. and its affiliates.
+           *
+           * This source code is licensed under the MIT license found in the
+           * LICENSE file in the root directory of this source tree.
+           */
+
+/** @license React v17.0.2
+           * react.development.js
+           *
+           * Copyright (c) Facebook, Inc. and its affiliates.
+           *
+           * This source code is licensed under the MIT license found in the
+           * LICENSE file in the root directory of this source tree.
+           */
+
+/** @license React v17.0.2
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
